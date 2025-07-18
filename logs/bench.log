@@ -3629,3 +3629,8 @@ To avoid seeing this warning, set shallow_clone to false in your common_site_con
 2025-07-16 20:47:47,356 INFO /usr/local/bin/bench schedule
 2025-07-16 20:47:47,433 INFO /usr/local/bin/bench worker
 2025-07-16 20:47:47,517 INFO /usr/local/bin/bench watch
+2025-07-18 15:37:50,745 INFO /usr/local/bin/bench start
+2025-07-18 15:37:51,387 INFO /usr/local/bin/bench serve --port 8001
+2025-07-18 15:37:51,400 INFO /usr/local/bin/bench schedule
+2025-07-18 15:37:51,404 INFO /usr/local/bin/bench watch
+2025-07-18 15:37:51,444 INFO /usr/local/bin/bench worker
