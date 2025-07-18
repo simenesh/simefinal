@@ -1,0 +1,1504 @@
+2025-06-23 00:43:14,339 ERROR frappe Failed to run after request hook
+Site: coffeesite.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 198, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 133, in application
+    response = handle_exception(e)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 397, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 147, in application
+    run_after_request_hooks(request, response)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 162, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+2025-06-23 00:43:14,363 ERROR frappe Failed to run after request hook
+Site: coffeesite.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 198, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 133, in application
+    response = handle_exception(e)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 397, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 147, in application
+    run_after_request_hooks(request, response)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 162, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+2025-06-23 00:43:14,386 ERROR frappe Failed to run after request hook
+Site: coffeesite.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 198, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 133, in application
+    response = handle_exception(e)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 397, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 147, in application
+    run_after_request_hooks(request, response)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 162, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+2025-06-23 00:43:14,430 ERROR frappe Could not take error snapshot: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+Site: coffeesite.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 198, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1305, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 67, in get_controller
+    return import_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 89, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+2025-06-23 00:43:14,456 ERROR frappe Could not take error snapshot: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+Site: coffeesite.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 198, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1305, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 67, in get_controller
+    return import_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 89, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+2025-06-23 00:43:14,503 ERROR frappe Failed to run after request hook
+Site: coffeesite.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 198, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 133, in application
+    response = handle_exception(e)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 397, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 147, in application
+    run_after_request_hooks(request, response)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 162, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+2025-06-23 00:43:14,514 ERROR frappe Failed to run after request hook
+Site: coffeesite.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 198, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 133, in application
+    response = handle_exception(e)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 397, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 147, in application
+    run_after_request_hooks(request, response)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 162, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+2025-06-23 00:43:14,757 ERROR frappe Failed to run after request hook
+Site: coffeesite.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 198, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 133, in application
+    response = handle_exception(e)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 397, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 147, in application
+    run_after_request_hooks(request, response)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 162, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+2025-06-23 00:43:14,802 ERROR frappe Failed to run after request hook
+Site: coffeesite.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 198, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 133, in application
+    response = handle_exception(e)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 397, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 147, in application
+    run_after_request_hooks(request, response)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 162, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+2025-06-23 00:43:37,410 ERROR frappe Could not take error snapshot: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+Site: coffeesite.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 198, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1305, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 67, in get_controller
+    return import_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 89, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+2025-06-23 00:43:37,418 ERROR frappe Failed to run after request hook
+Site: coffeesite.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 198, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 133, in application
+    response = handle_exception(e)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 397, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 870, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 147, in application
+    run_after_request_hooks(request, response)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 162, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1616, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1585, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1451, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py", line 2, in <module>
+    from . import __version__ as app_version
+ImportError: cannot import name '__version__' from partially initialized module 'coffee_roaster.hooks' (most likely due to a circular import) (/home/sime/coffee_bench/apps/coffee_roaster/coffee_roaster/hooks/__init__.py)
+2025-07-01 16:00:31,181 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'sb_public_items': '[{"title":"Coffee Roaster","parent_page":"","public":"1"},{"title":"Accounting","parent_page":"","public":"1"},{"title":"Payables","parent_page":"Accounting","public":"1"},{"title":"Receivables","parent_page":"Accounting","public":"1"},{"title":"Financial Reports","parent_page":"Accounting","public":"1"},{"title":"Home","parent_page":"","public":"1"},{"title":"Buying","parent_page":"","public":"1"},{"title":"HR","parent_page":"","public":"1"},{"title":"Recruitment","parent_page":"HR","public":"1"},{"title":"Employee Lifecycle","parent_page":"HR","public":"1"},{"title":"Performance","parent_page":"HR","public":"1"},{"title":"Shift & Attendance","parent_page":"HR","public":"1"},{"title":"Expense Claims","parent_page":"HR","public":"1"},{"title":"Leaves","parent_page":"HR","public":"1"},{"title":"Selling","parent_page":"","public":"1"},{"title":"Stock","parent_page":"","public":"1"},{"title":"Assets","parent_page":"","public":"1"},{"title":"Manufacturing","parent_page":"","public":"1"},{"title":"Quality","parent_page":"","public":"1"},{"title":"CRM","parent_page":"","public":"1"},{"title":"Users","parent_page":"","public":"1"},{"title":"Payroll","parent_page":"","public":"1"},{"title":"Salary Payout","parent_page":"Payroll","public":"1"},{"title":"Tax & Benefits","parent_page":"Payroll","public":"1"},{"title":"Website","parent_page":"","public":"1"},{"title":"Tools","parent_page":"","public":"1"},{"title":"ERPNext Settings","parent_page":"","public":"1"},{"title":"Integrations","parent_page":"","public":"1"},{"title":"ERPNext Integrations","parent_page":"","public":"1"},{"title":"Build","parent_page":"","public":"1"}]', 'sb_private_items': '[]', 'cmd': 'frappe.desk.doctype.workspace.workspace.sort_pages'}
+2025-07-03 04:38:48,315 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-03 04:43:04,845 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-03 15:42:20,179 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}

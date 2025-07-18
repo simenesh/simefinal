@@ -1,0 +1,13 @@
+{
+ "db_name": "_29a1b9c886bb7434",
+ "db_password": "GE2vOwOMUX9Ai2mD",
+ "db_type": "mariadb",
+ "default_app": "coffee_roaster",
+ "desktop_start_route": "/app/coffee-roaster",
+ "developer_mode": 1,
+ "encryption_key": "6myEH6PeM1FRHEoMsWEPnsUK63oHc09tP0uOEm8ArDA=",
+ "maintenance_mode": 0,
+ "user_type_doctype_limit": {
+  "employee_self_service": 40
+ }
+}

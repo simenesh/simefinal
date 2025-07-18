@@ -1,0 +1,102 @@
+2025-07-13 10:33:21,425 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-13","2025-07-13"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 10:46:37,716 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-13","2025-07-13"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 10:46:56,938 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 12:44:08,452 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-13","2025-07-13"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 13:07:58,894 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'doctype': 'Roaster Settings', 'name': 'Roaster Settings', 'cmd': 'frappe.desk.form.load.getdoc'}
+2025-07-13 15:16:58,010 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'doctype': 'Roaster Settings', 'name': 'Roaster Settings', 'cmd': 'frappe.desk.form.load.getdoc'}
+2025-07-13 15:20:52,481 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'doctype': 'Roaster Settings', 'name': 'Roaster Settings', 'cmd': 'frappe.desk.form.load.getdoc'}
+2025-07-13 15:22:31,538 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'doctype': 'Roaster Settings', 'name': 'Roaster Settings', 'cmd': 'frappe.desk.form.load.getdoc'}
+2025-07-13 15:38:34,054 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'doctype': 'Roaster Settings', 'name': 'Roaster Settings', 'cmd': 'frappe.desk.form.load.getdoc'}
+2025-07-13 15:44:19,167 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'doctype': 'Roaster Settings', 'name': 'Roaster Settings', 'cmd': 'frappe.desk.form.load.getdoc'}
+2025-07-13 15:44:40,427 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'doctype': 'Roaster Settings', 'name': 'Roaster Settings', 'cmd': 'frappe.desk.form.load.getdoc'}
+2025-07-13 16:55:22,702 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'method': 'erpnext.selling.doctype.quotation.quotation.make_sales_invoice', 'source_names': '["SAL-QTN-2025-00001"]', 'target_doc': '{"docstatus":0,"doctype":"Sales Invoice","name":"new-sales-invoice-cwraictrnh","__islocal":1,"__unsaved":1,"owner":"Administrator","naming_series":"ACC-SINV-.YYYY.-","company":"Coffee Rosters","posting_date":"2025-07-13","set_posting_time":0,"is_pos":0,"is_consolidated":0,"is_return":0,"update_outstanding_for_self":1,"update_billed_amount_in_sales_order":0,"update_billed_amount_in_delivery_note":1,"is_debit_note":0,"currency":"ETB","selling_price_list":"Standard Selling","price_list_currency":"ETB","ignore_pricing_rule":0,"update_stock":0,"items":[],"taxes":[{"docstatus":0,"doctype":"Sales Taxes and Charges","name":"new-sales-taxes-and-charges-yytjsjfrxp","__islocal":1,"__unsaved":1,"owner":"Administrator","charge_type":"On Net Total","included_in_print_rate":0,"included_in_paid_amount":0,"cost_center":"Main - CR","account_currency":null,"dont_recompute_tax":0,"parent":"new-sales-invoice-cwraictrnh","parentfield":"taxes","parenttype":"Sales Invoice","idx":1,"row_id":null,"account_head":"VAT - CR","description":"VAT @ 15.0","rate":15,"tax_amount":0,"total":0,"tax_amount_after_discount_amount":0,"base_tax_amount":0,"base_total":0,"base_tax_amount_after_discount_amount":0,"item_wise_tax_detail":"{\\"undefined\\":[15,0]}"}],"use_company_roundoff_cost_center":0,"disable_rounded_total":0,"apply_discount_on":"Grand Total","is_cash_or_non_trade_discount":0,"pricing_rules":[],"packed_items":[],"timesheets":[],"total_billing_amount":0,"payments":[],"allocate_advances_automatically":0,"only_include_allocated_payments":0,"advances":[],"write_off_outstanding_amount_automatically":0,"redeem_loyalty_points":0,"ignore_default_payment_terms_template":0,"payment_schedule":[],"party_account_currency":"ETB","is_opening":"No","sales_team":[],"letter_head":"Coffee Solution","group_same_items":0,"status":"Draft","is_internal_customer":0,"is_discounted":0,"taxes_and_charges":"Ethiopia Tax - CR","conversion_rate":1,"plc_conversion_rate":1,"total_billing_hours":0,"company_tax_id":null,"company_address":"","company_address_display":"","base_net_total":0,"net_total":0,"base_total":0,"total":0,"total_qty":0,"grand_total":0,"base_grand_total":0,"total_taxes_and_charges":0,"base_total_taxes_and_charges":0,"rounded_total":0,"rounding_adjustment":0,"base_rounding_adjustment":0,"base_rounded_total":0,"in_words":"","base_in_words":"","base_discount_amount":0,"total_advance":0,"write_off_amount":0,"paid_amount":0,"base_paid_amount":0,"change_amount":0,"base_change_amount":0,"outstanding_amount":0,"amount_eligible_for_commission":0,"total_commission":null,"posting_time":"16:55:06"}', 'cmd': 'frappe.model.mapper.map_docs'}
+2025-07-13 16:58:56,474 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Sales Invoice","name":"new-sales-invoice-cwraictrnh","__islocal":1,"__unsaved":1,"owner":"Administrator","naming_series":"ACC-SINV-.YYYY.-","company":"Coffee Rosters","posting_date":"2025-07-13","set_posting_time":0,"is_pos":0,"is_consolidated":0,"is_return":0,"update_outstanding_for_self":1,"update_billed_amount_in_sales_order":0,"update_billed_amount_in_delivery_note":1,"is_debit_note":0,"currency":"ETB","selling_price_list":"Standard Selling","price_list_currency":"ETB","ignore_pricing_rule":0,"update_stock":0,"items":[],"taxes":[{"docstatus":0,"doctype":"Sales Taxes and Charges","name":"new-sales-taxes-and-charges-yytjsjfrxp","__islocal":1,"__unsaved":1,"owner":"Administrator","charge_type":"On Net Total","included_in_print_rate":0,"included_in_paid_amount":0,"cost_center":"Main - CR","account_currency":null,"dont_recompute_tax":0,"parent":"new-sales-invoice-cwraictrnh","parentfield":"taxes","parenttype":"Sales Invoice","idx":1,"row_id":null,"account_head":"VAT - CR","description":"VAT @ 15.0","rate":15,"tax_amount":0,"total":0,"tax_amount_after_discount_amount":0,"base_tax_amount":0,"base_total":0,"base_tax_amount_after_discount_amount":0,"item_wise_tax_detail":"{}"}],"use_company_roundoff_cost_center":0,"disable_rounded_total":0,"apply_discount_on":"Grand Total","is_cash_or_non_trade_discount":0,"pricing_rules":[],"packed_items":[],"timesheets":[],"total_billing_amount":0,"payments":[],"allocate_advances_automatically":0,"only_include_allocated_payments":0,"advances":[],"write_off_outstanding_amount_automatically":0,"redeem_loyalty_points":0,"ignore_default_payment_terms_template":0,"payment_schedule":[],"party_account_currency":"ETB","is_opening":"No","sales_team":[],"letter_head":"Coffee Solution","group_same_items":0,"status":"Draft","is_internal_customer":0,"is_discounted":0,"taxes_and_charges":"Ethiopia Tax - CR","conversion_rate":1,"plc_conversion_rate":1,"total_billing_hours":0,"company_tax_id":null,"company_address":"","company_address_display":"","base_net_total":0,"net_total":0,"base_total":0,"total":0,"total_qty":0,"grand_total":0,"base_grand_total":0,"total_taxes_and_charges":0,"base_total_taxes_and_charges":0,"rounded_total":0,"rounding_adjustment":0,"base_rounding_adjustment":0,"base_rounded_total":0,"in_words":"","base_in_words":"","base_discount_amount":0,"total_advance":0,"write_off_amount":0,"paid_amount":0,"base_paid_amount":0,"change_amount":0,"base_change_amount":0,"outstanding_amount":0,"amount_eligible_for_commission":0,"total_commission":null,"posting_time":"16:55:06","due_date":"2025-07-13","debit_to":"1310 - Debtors - CR"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2025-07-13 18:51:44,779 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-13","2025-07-13"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 18:52:02,401 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-13","2025-07-13"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 18:55:32,678 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'doctype': 'Roaster Settings', 'name': 'Roaster Settings', 'cmd': 'frappe.desk.form.load.getdoc'}
+2025-07-13 19:03:40,604 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-13","2025-07-13"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 19:12:40,204 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-13","2025-07-13"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 19:16:14,094 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-13","2025-07-13"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 20:33:24,139 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-13","2025-07-13"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 20:34:36,645 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-13","2025-07-13"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 20:35:56,972 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-13","2025-07-13"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 20:36:46,636 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-13","2025-07-13"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 21:37:20,834 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'chart_name': 'Top Communicated Customers', 'refresh': '1', 'time_interval': '', 'timespan': '', 'from_date': '', 'to_date': '', 'heatmap_year': '', 'cmd': 'frappe.desk.doctype.dashboard_chart.dashboard_chart.get'}
+2025-07-13 21:41:17,972 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'chart_name': 'Top Communicated Customers', 'refresh': '1', 'time_interval': '', 'timespan': '', 'from_date': '', 'to_date': '', 'heatmap_year': '', 'cmd': 'frappe.desk.doctype.dashboard_chart.dashboard_chart.get'}
+2025-07-13 21:49:10,009 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'chart_name': 'Top Communicated Customers', 'refresh': '1', 'time_interval': '', 'timespan': '', 'from_date': '', 'to_date': '', 'heatmap_year': '', 'cmd': 'frappe.desk.doctype.dashboard_chart.dashboard_chart.get'}
+2025-07-13 21:51:00,229 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'chart_name': 'Top Communicated Customers', 'filters': '[]', 'refresh': '1', 'time_interval': '', 'timespan': '', 'from_date': '', 'to_date': '', 'heatmap_year': '', 'cmd': 'frappe.desk.doctype.dashboard_chart.dashboard_chart.get'}
+2025-07-13 21:51:00,250 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'chart_name': 'Top Communicated Customers', 'filters': '[]', 'refresh': '1', 'time_interval': '', 'timespan': '', 'from_date': '', 'to_date': '', 'heatmap_year': '', 'cmd': 'frappe.desk.doctype.dashboard_chart.dashboard_chart.get'}
+2025-07-13 22:15:22,372 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'chart_name': 'Top Communicated Customers', 'refresh': '1', 'time_interval': '', 'timespan': '', 'from_date': '', 'to_date': '', 'heatmap_year': '', 'cmd': 'frappe.desk.doctype.dashboard_chart.dashboard_chart.get'}
+2025-07-14 00:16:44,774 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'chart_name': 'Top Communicated Customers', 'refresh': '1', 'time_interval': '', 'timespan': '', 'from_date': '', 'to_date': '', 'heatmap_year': '', 'cmd': 'frappe.desk.doctype.dashboard_chart.dashboard_chart.get'}
+2025-07-14 22:55:14,666 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-15 19:15:29,046 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-16 03:54:46,954 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-16 04:58:57,841 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-16","2025-07-16"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}

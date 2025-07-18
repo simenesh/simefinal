@@ -1,0 +1,716 @@
+2025-07-13 12:05:57,266 WARNING database DDL Query made to DB:
+create table `tabOverhead Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`overhead_type` varchar(140),
+`basis` varchar(140),
+`qty` decimal(21,9) not null default 0,
+`rate` decimal(21,9) not null default 0,
+`amount` decimal(21,9) not null default 0,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-07-13 12:05:59,161 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPackaging Cost Item` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0
+2025-07-13 12:06:02,236 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoasting Overhead Template Item` MODIFY `qty` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0
+2025-07-13 12:06:03,705 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRaw Bean Cost Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `qty_kg` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 12:06:15,203 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 12:06:17,818 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 12:06:20,407 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0
+2025-07-13 12:06:22,255 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140) default 'Company', MODIFY `default_commission_rate` decimal(21,9) not null default 0
+2025-07-13 12:06:23,419 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 12:06:28,934 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 12:06:29,380 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBatch Cost` ADD COLUMN `batch_no` varchar(140), ADD COLUMN `currency` varchar(140) default 'ETB', ADD COLUMN `total_raw_beans_cost` decimal(21,9) not null default 0, ADD COLUMN `total_roasting_overhead` decimal(21,9) not null default 0, ADD COLUMN `total_packaging_cost` decimal(21,9) not null default 0, ADD COLUMN `total_batch_cost` decimal(21,9) not null default 0, ADD COLUMN `output_weight` decimal(21,9) not null default 0, ADD COLUMN `cost_per_kg` decimal(21,9) not null default 0, ADD COLUMN `status` varchar(140) default 'Draft'
+2025-07-13 12:14:23,107 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBatch Cost` MODIFY `cost_per_kg` decimal(21,9) not null default 0, MODIFY `total_batch_cost` decimal(21,9) not null default 0, MODIFY `total_roasting_overhead` decimal(21,9) not null default 0, MODIFY `output_weight` decimal(21,9) not null default 0, MODIFY `total_packaging_cost` decimal(21,9) not null default 0, MODIFY `total_raw_beans_cost` decimal(21,9) not null default 0
+2025-07-13 12:14:24,826 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 12:14:26,600 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 12:14:28,431 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140) default 'Company', MODIFY `default_commission_rate` decimal(21,9) not null default 0
+2025-07-13 12:14:29,010 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 12:14:31,470 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 12:14:31,771 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 12:14:32,210 WARNING database DDL Query made to DB:
+ALTER TABLE `tabExtrinsic Assessment` ADD COLUMN `farm_or_coop_name` varchar(140), ADD COLUMN `processor_name` varchar(140), ADD COLUMN `process_type` varchar(140), ADD COLUMN `trading_other_attribute` varchar(140)
+2025-07-13 12:14:32,235 WARNING database DDL Query made to DB:
+ALTER TABLE `tabExtrinsic Assessment` MODIFY `trading_size_grade` varchar(140), MODIFY `trading_other_grade` varchar(140), MODIFY `trading_ico_number` varchar(140)
+2025-07-13 12:33:21,726 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBatch Cost` MODIFY `total_raw_beans_cost` decimal(21,9) not null default 0, MODIFY `cost_per_kg` decimal(21,9) not null default 0, MODIFY `total_batch_cost` decimal(21,9) not null default 0, MODIFY `total_roasting_overhead` decimal(21,9) not null default 0, MODIFY `output_weight` decimal(21,9) not null default 0, MODIFY `total_packaging_cost` decimal(21,9) not null default 0
+2025-07-13 12:33:23,492 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 12:33:27,643 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 12:33:31,001 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0
+2025-07-13 12:33:32,585 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140) default 'Company', MODIFY `default_commission_rate` decimal(21,9) not null default 0
+2025-07-13 12:33:33,760 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 12:33:38,821 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 12:33:39,229 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoasting Overhead Template Item` MODIFY `qty` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0
+2025-07-13 12:33:39,546 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 12:33:39,791 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRaw Bean Cost Item` MODIFY `qty_kg` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 12:33:40,199 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPackaging Cost Item` MODIFY `qty` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0
+2025-07-13 12:33:40,418 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOverhead Item` MODIFY `qty` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0
+2025-07-13 12:43:05,689 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 12:43:09,576 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 12:43:12,360 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0
+2025-07-13 12:43:13,641 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `default_commission_rate` decimal(21,9) not null default 0, MODIFY `customer_type` varchar(140) default 'Company'
+2025-07-13 12:43:14,458 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 12:43:19,934 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 12:43:20,350 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoasting Overhead Template Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0
+2025-07-13 12:43:20,869 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 12:43:21,293 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRaw Bean Cost Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `qty_kg` decimal(21,9) not null default 0
+2025-07-13 12:43:21,614 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBatch Cost` MODIFY `total_packaging_cost` decimal(21,9) not null default 0, MODIFY `total_batch_cost` decimal(21,9) not null default 0, MODIFY `output_weight` decimal(21,9) not null default 0, MODIFY `total_roasting_overhead` decimal(21,9) not null default 0, MODIFY `total_raw_beans_cost` decimal(21,9) not null default 0, MODIFY `cost_per_kg` decimal(21,9) not null default 0
+2025-07-13 12:43:22,066 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPackaging Cost Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 12:43:22,325 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOverhead Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0
+2025-07-13 12:53:00,543 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoasting Overhead Template Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0
+2025-07-13 12:53:03,604 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 12:53:05,592 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 12:53:07,297 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0
+2025-07-13 12:53:08,106 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140) default 'Company', MODIFY `default_commission_rate` decimal(21,9) not null default 0
+2025-07-13 12:53:08,706 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 12:53:11,561 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 12:53:11,888 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 12:53:12,080 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRaw Bean Cost Item` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `qty_kg` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0
+2025-07-13 12:53:12,250 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBatch Cost` MODIFY `cost_per_kg` decimal(21,9) not null default 0, MODIFY `output_weight` decimal(21,9) not null default 0, MODIFY `total_roasting_overhead` decimal(21,9) not null default 0, MODIFY `total_batch_cost` decimal(21,9) not null default 0, MODIFY `total_raw_beans_cost` decimal(21,9) not null default 0, MODIFY `total_packaging_cost` decimal(21,9) not null default 0
+2025-07-13 12:53:12,396 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPackaging Cost Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0
+2025-07-13 12:53:12,556 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOverhead Item` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0
+2025-07-13 13:07:28,925 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoasting Overhead Template Item` MODIFY `qty` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0
+2025-07-13 13:07:31,900 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 13:07:33,783 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 13:07:35,492 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0
+2025-07-13 13:07:36,298 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `default_commission_rate` decimal(21,9) not null default 0, MODIFY `customer_type` varchar(140) default 'Company'
+2025-07-13 13:07:36,942 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 13:07:39,848 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 13:07:40,142 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 13:07:40,319 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRaw Bean Cost Item` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `qty_kg` decimal(21,9) not null default 0
+2025-07-13 13:07:40,509 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBatch Cost` MODIFY `output_weight` decimal(21,9) not null default 0, MODIFY `total_batch_cost` decimal(21,9) not null default 0, MODIFY `cost_per_kg` decimal(21,9) not null default 0, MODIFY `total_raw_beans_cost` decimal(21,9) not null default 0, MODIFY `total_roasting_overhead` decimal(21,9) not null default 0, MODIFY `total_packaging_cost` decimal(21,9) not null default 0
+2025-07-13 13:07:40,714 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPackaging Cost Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0
+2025-07-13 13:07:40,870 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOverhead Item` MODIFY `qty` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 15:10:05,804 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoasting Overhead Template Item` MODIFY `qty` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0
+2025-07-13 15:10:07,318 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRaw Bean Cost Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `qty_kg` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 15:10:08,916 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOverhead Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 15:10:10,384 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPackaging Cost Item` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0
+2025-07-13 15:10:25,175 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBatch Cost` MODIFY `output_weight` decimal(21,9) not null default 0, MODIFY `total_packaging_cost` decimal(21,9) not null default 0, MODIFY `total_batch_cost` decimal(21,9) not null default 0, MODIFY `total_roasting_overhead` decimal(21,9) not null default 0, MODIFY `cost_per_kg` decimal(21,9) not null default 0, MODIFY `total_raw_beans_cost` decimal(21,9) not null default 0
+2025-07-13 15:10:40,887 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 15:10:42,940 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 15:10:44,619 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0
+2025-07-13 15:10:45,545 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `default_commission_rate` decimal(21,9) not null default 0, MODIFY `customer_type` varchar(140) default 'Company'
+2025-07-13 15:10:46,129 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 15:10:49,173 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 15:10:49,474 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 15:16:28,856 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 15:16:30,549 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 15:16:32,071 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0
+2025-07-13 15:16:32,795 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140) default 'Company', MODIFY `default_commission_rate` decimal(21,9) not null default 0
+2025-07-13 15:16:33,392 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 15:16:35,822 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 15:16:36,159 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoasting Overhead Template Item` MODIFY `qty` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0
+2025-07-13 15:16:36,463 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 15:16:36,670 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRaw Bean Cost Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `qty_kg` decimal(21,9) not null default 0
+2025-07-13 15:16:36,838 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBatch Cost` MODIFY `total_batch_cost` decimal(21,9) not null default 0, MODIFY `total_raw_beans_cost` decimal(21,9) not null default 0, MODIFY `output_weight` decimal(21,9) not null default 0, MODIFY `total_packaging_cost` decimal(21,9) not null default 0, MODIFY `total_roasting_overhead` decimal(21,9) not null default 0, MODIFY `cost_per_kg` decimal(21,9) not null default 0
+2025-07-13 15:16:37,172 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPackaging Cost Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0
+2025-07-13 15:16:37,350 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOverhead Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 15:19:10,533 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 15:19:12,338 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 15:19:13,782 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0
+2025-07-13 15:19:14,513 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `default_commission_rate` decimal(21,9) not null default 0, MODIFY `customer_type` varchar(140) default 'Company'
+2025-07-13 15:19:15,069 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 15:19:17,573 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 15:19:17,878 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 15:20:17,144 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 15:20:18,750 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 15:20:20,308 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0
+2025-07-13 15:20:21,176 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140) default 'Company', MODIFY `default_commission_rate` decimal(21,9) not null default 0
+2025-07-13 15:20:22,081 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 15:20:25,176 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 15:20:25,787 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 15:21:21,894 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 15:21:23,637 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 15:21:25,106 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0
+2025-07-13 15:21:25,830 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `default_commission_rate` decimal(21,9) not null default 0, MODIFY `customer_type` varchar(140) default 'Company'
+2025-07-13 15:21:26,343 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 15:21:28,712 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 15:21:28,972 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 15:23:35,659 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 15:23:38,052 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 15:23:40,368 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0
+2025-07-13 15:23:41,589 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `default_commission_rate` decimal(21,9) not null default 0, MODIFY `customer_type` varchar(140) default 'Company'
+2025-07-13 15:23:42,401 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 15:23:45,950 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 15:23:46,524 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 15:24:18,775 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 15:24:20,925 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 15:24:22,593 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0
+2025-07-13 15:24:23,410 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `default_commission_rate` decimal(21,9) not null default 0, MODIFY `customer_type` varchar(140) default 'Company'
+2025-07-13 15:24:24,018 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 15:24:27,232 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 15:24:27,632 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 15:25:23,399 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 15:25:25,292 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 15:25:26,846 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0
+2025-07-13 15:25:27,639 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140) default 'Company', MODIFY `default_commission_rate` decimal(21,9) not null default 0
+2025-07-13 15:25:28,187 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 15:25:30,520 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 15:25:30,786 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 15:34:53,538 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 15:34:55,573 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 15:34:57,550 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0
+2025-07-13 15:34:58,298 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140) default 'Company', MODIFY `default_commission_rate` decimal(21,9) not null default 0
+2025-07-13 15:34:58,902 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 15:35:01,645 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 15:35:02,067 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 15:43:46,163 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 15:43:47,894 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 15:43:49,423 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0
+2025-07-13 15:43:50,252 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `default_commission_rate` decimal(21,9) not null default 0, MODIFY `customer_type` varchar(140) default 'Company'
+2025-07-13 15:43:50,829 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 15:43:53,604 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 15:43:53,915 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 18:53:53,083 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 18:54:03,115 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 18:54:13,298 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `first_response_time` decimal(21,9), MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0
+2025-07-13 18:54:17,174 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140) default 'Company', MODIFY `default_commission_rate` decimal(21,9) not null default 0
+2025-07-13 18:54:18,392 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 18:54:31,335 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 18:54:31,924 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 20:34:53,345 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 20:34:56,091 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 20:34:58,269 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0
+2025-07-13 20:35:00,190 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `default_commission_rate` decimal(21,9) not null default 0, MODIFY `customer_type` varchar(140) default 'Company'
+2025-07-13 20:35:01,695 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 20:35:07,355 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 20:35:07,919 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 20:40:30,471 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 20:40:33,155 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 20:40:35,643 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0
+2025-07-13 20:40:36,817 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `default_commission_rate` decimal(21,9) not null default 0, MODIFY `customer_type` varchar(140) default 'Company'
+2025-07-13 20:40:38,579 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 20:40:42,557 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 20:40:43,177 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 20:49:20,183 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 20:49:23,009 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 20:49:25,619 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0
+2025-07-13 20:49:27,414 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140) default 'Company', MODIFY `default_commission_rate` decimal(21,9) not null default 0
+2025-07-13 20:49:28,746 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 20:49:31,597 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 20:49:31,907 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 20:49:32,221 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCategory 1 Defect Entry` ADD COLUMN `roast_batch` varchar(140)
+2025-07-13 20:49:32,606 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoast Batch` MODIFY `company` varchar(140) default 'frappe.defaults.get_user_default(\'Company\')', MODIFY `output_qty` decimal(21,9) not null default 0, MODIFY `weight_loss_percentage` decimal(21,9) not null default 0, MODIFY `qty_to_roast` decimal(21,9) not null default 0, MODIFY `charge_temp` decimal(21,9) not null default 0
+2025-07-13 20:49:41,927 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoast Batch` MODIFY `weight_loss_percentage` decimal(21,9) not null default 0, MODIFY `qty_to_roast` decimal(21,9) not null default 0, MODIFY `charge_temp` decimal(21,9) not null default 0, MODIFY `output_qty` decimal(21,9) not null default 0, MODIFY `company` varchar(140) default 'frappe.defaults.get_user_default(\'Company\')'
+2025-07-13 20:49:42,264 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoast Batch` MODIFY `output_qty` decimal(21,9) not null default 0, MODIFY `company` varchar(140) default 'frappe.defaults.get_user_default(\'Company\')', MODIFY `qty_to_roast` decimal(21,9) not null default 0, MODIFY `charge_temp` decimal(21,9) not null default 0, MODIFY `weight_loss_percentage` decimal(21,9) not null default 0
+2025-07-13 20:49:42,401 WARNING database DDL Query made to DB:
+ALTER TABLE `tabGreen Bean Assessment` MODIFY `moisture_content` decimal(21,9) not null default 0
+2025-07-13 20:49:42,589 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 20:49:43,732 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem` MODIFY `opening_stock` decimal(21,9) not null default 0, MODIFY `safety_stock` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `over_delivery_receipt_allowance` decimal(21,9) not null default 0, MODIFY `last_purchase_rate` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `max_discount` decimal(21,9) not null default 0, MODIFY `custom_reorder_level` decimal(21,9) not null default 0, MODIFY `total_projected_qty` decimal(21,9) not null default 0, MODIFY `standard_rate` decimal(21,9) not null default 0, MODIFY `over_billing_allowance` decimal(21,9) not null default 0
+2025-07-13 20:49:43,994 WARNING database DDL Query made to DB:
+ALTER TABLE `tabDelivery Note` MODIFY `base_rounding_adjustment` decimal(21,9) not null default 0, MODIFY `per_installed` decimal(21,9) not null default 0, MODIFY `additional_discount_percentage` decimal(21,9) not null default 0, MODIFY `total_net_weight` decimal(21,9) not null default 0, MODIFY `per_returned` decimal(21,9) not null default 0, MODIFY `plc_conversion_rate` decimal(21,9) not null default 0, MODIFY `net_total` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0, MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_grand_total` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `rounded_total` decimal(21,9) not null default 0, MODIFY `amount_eligible_for_commission` decimal(21,9) not null default 0, MODIFY `base_rounded_total` decimal(21,9) not null default 0, MODIFY `total_qty` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `base_net_total` decimal(21,9) not null default 0, MODIFY `commission_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `rounding_adjustment` decimal(21,9) not null default 0, MODIFY `base_discount_amount` decimal(21,9) not null default 0, MODIFY `total_commission` decimal(21,9) not null default 0
+2025-07-13 20:49:44,941 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem` MODIFY `safety_stock` decimal(21,9) not null default 0, MODIFY `over_delivery_receipt_allowance` decimal(21,9) not null default 0, MODIFY `custom_reorder_level` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `opening_stock` decimal(21,9) not null default 0, MODIFY `over_billing_allowance` decimal(21,9) not null default 0, MODIFY `standard_rate` decimal(21,9) not null default 0, MODIFY `last_purchase_rate` decimal(21,9) not null default 0, MODIFY `max_discount` decimal(21,9) not null default 0, MODIFY `total_projected_qty` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0
+2025-07-13 20:49:45,756 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0
+2025-07-13 20:49:45,993 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem` MODIFY `over_billing_allowance` decimal(21,9) not null default 0, MODIFY `over_delivery_receipt_allowance` decimal(21,9) not null default 0, MODIFY `standard_rate` decimal(21,9) not null default 0, MODIFY `total_projected_qty` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `safety_stock` decimal(21,9) not null default 0, MODIFY `max_discount` decimal(21,9) not null default 0, MODIFY `last_purchase_rate` decimal(21,9) not null default 0, MODIFY `opening_stock` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `custom_reorder_level` decimal(21,9) not null default 0
+2025-07-13 20:49:46,230 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSales Order Item` MODIFY `rate_with_margin` decimal(21,9) not null default 0, MODIFY `stock_uom_rate` decimal(21,9) not null default 0, MODIFY `discount_percentage` decimal(21,9) not null default 0, MODIFY `blanket_order_rate` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `distributed_discount_amount` decimal(21,9) not null default 0, MODIFY `actual_qty` decimal(21,9) not null default 0, MODIFY `company_total_stock` decimal(21,9) not null default 0, MODIFY `base_rate_with_margin` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `projected_qty` decimal(21,9) not null default 0, MODIFY `ordered_qty` decimal(21,9) not null default 0, MODIFY `net_rate` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `planned_qty` decimal(21,9) not null default 0, MODIFY `production_plan_qty` decimal(21,9) not null default 0, MODIFY `total_weight` decimal(21,9) not null default 0, MODIFY `work_order_qty` decimal(21,9) not null default 0, MODIFY `net_amount` decimal(21,9) not null default 0, MODIFY `base_rate` decimal(21,9) not null default 0, MODIFY `delivered_qty` decimal(21,9) not null default 0, MODIFY `conversion_factor` decimal(21,9) not null default 0, MODIFY `base_net_rate` decimal(21,9) not null default 0, MODIFY `stock_qty` decimal(21,9) not null default 0, MODIFY `base_amount` decimal(21,9) not null default 0, MODIFY `produced_qty` decimal(21,9) not null default 0, MODIFY `returned_qty` decimal(21,9) not null default 0, MODIFY `billed_amt` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `picked_qty` decimal(21,9) not null default 0, MODIFY `price_list_rate` decimal(21,9) not null default 0, MODIFY `gross_profit` decimal(21,9) not null default 0, MODIFY `base_price_list_rate` decimal(21,9) not null default 0, MODIFY `margin_rate_or_amount` decimal(21,9) not null default 0, MODIFY `base_net_amount` decimal(21,9) not null default 0
+2025-07-13 20:49:46,577 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSales Invoice` MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `total_billing_hours` decimal(21,9) not null default 0, MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `paid_amount` decimal(21,9) not null default 0, MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `base_net_total` decimal(21,9) not null default 0, MODIFY `total_qty` decimal(21,9) not null default 0, MODIFY `base_grand_total` decimal(21,9) not null default 0, MODIFY `base_change_amount` decimal(21,9) not null default 0, MODIFY `base_rounded_total` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `rounding_adjustment` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `rounded_total` decimal(21,9) not null default 0, MODIFY `change_amount` decimal(21,9) not null default 0, MODIFY `net_total` decimal(21,9) not null default 0, MODIFY `total_advance` decimal(21,9) not null default 0, MODIFY `loyalty_amount` decimal(21,9) not null default 0, MODIFY `outstanding_amount` decimal(21,9) not null default 0, MODIFY `amount_eligible_for_commission` decimal(21,9) not null default 0, MODIFY `total_net_weight` decimal(21,9) not null default 0, MODIFY `base_rounding_adjustment` decimal(21,9) not null default 0, MODIFY `write_off_amount` decimal(21,9) not null default 0, MODIFY `base_write_off_amount` decimal(21,9) not null default 0, MODIFY `commission_rate` decimal(21,9) not null default 0, MODIFY `base_discount_amount` decimal(21,9) not null default 0, MODIFY `total_commission` decimal(21,9) not null default 0, MODIFY `plc_conversion_rate` decimal(21,9) not null default 0, MODIFY `base_paid_amount` decimal(21,9) not null default 0, MODIFY `additional_discount_percentage` decimal(21,9) not null default 0
+2025-07-13 20:49:52,218 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:49:53,215 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:49:53,911 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `total_expense_claim` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0
+2025-07-13 20:49:54,628 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:49:55,033 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `total_billing_amount` decimal(21,9) not null default 0, MODIFY `total_expense_claim` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `progress` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0
+2025-07-13 20:49:55,472 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 20:49:56,014 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 20:49:56,559 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 20:49:56,907 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 20:49:57,158 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `condition_json` json, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 20:49:57,438 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `condition_json` json, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 20:49:58,159 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:49:58,549 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `condition_json` json, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 20:49:58,933 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:49:59,486 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `condition_json` json, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 20:49:59,797 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:50:00,353 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `condition_json` json, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 20:50:00,859 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:50:01,529 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:50:02,233 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:50:02,918 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:50:03,898 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:50:05,321 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:50:06,135 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:50:06,510 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:50:06,951 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `monthly_sales_target` decimal(21,9) not null default 0, MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `total_monthly_sales` decimal(21,9) not null default 0
+2025-07-13 20:50:07,522 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `monthly_sales_target` decimal(21,9) not null default 0, MODIFY `total_monthly_sales` decimal(21,9) not null default 0
+2025-07-13 20:50:07,813 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `total_monthly_sales` decimal(21,9) not null default 0, MODIFY `monthly_sales_target` decimal(21,9) not null default 0
+2025-07-13 20:50:08,188 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `monthly_sales_target` decimal(21,9) not null default 0, MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `total_monthly_sales` decimal(21,9) not null default 0
+2025-07-13 20:50:08,529 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `monthly_sales_target` decimal(21,9) not null default 0, MODIFY `total_monthly_sales` decimal(21,9) not null default 0
+2025-07-13 20:50:08,899 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `monthly_sales_target` decimal(21,9) not null default 0, MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `total_monthly_sales` decimal(21,9) not null default 0
+2025-07-13 20:50:09,187 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem` MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `safety_stock` decimal(21,9) not null default 0, MODIFY `last_purchase_rate` decimal(21,9) not null default 0, MODIFY `standard_rate` decimal(21,9) not null default 0, MODIFY `custom_reorder_level` decimal(21,9) not null default 0, MODIFY `over_billing_allowance` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `opening_stock` decimal(21,9) not null default 0, MODIFY `over_delivery_receipt_allowance` decimal(21,9) not null default 0, MODIFY `max_discount` decimal(21,9) not null default 0, MODIFY `total_projected_qty` decimal(21,9) not null default 0
+2025-07-13 20:55:04,060 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 20:55:07,200 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 20:55:08,995 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0
+2025-07-13 20:55:09,864 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140) default 'Company', MODIFY `default_commission_rate` decimal(21,9) not null default 0
+2025-07-13 20:55:10,543 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 20:55:13,314 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 20:55:13,495 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoasting Overhead Template Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0
+2025-07-13 20:55:13,766 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 20:55:13,967 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRaw Bean Cost Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `qty_kg` decimal(21,9) not null default 0
+2025-07-13 20:55:14,168 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBatch Cost` MODIFY `total_roasting_overhead` decimal(21,9) not null default 0, MODIFY `total_raw_beans_cost` decimal(21,9) not null default 0, MODIFY `output_weight` decimal(21,9) not null default 0, MODIFY `cost_per_kg` decimal(21,9) not null default 0, MODIFY `total_batch_cost` decimal(21,9) not null default 0, MODIFY `total_packaging_cost` decimal(21,9) not null default 0
+2025-07-13 20:55:14,497 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPackaging Cost Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0
+2025-07-13 20:55:14,684 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOverhead Item` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0
+2025-07-13 20:55:26,362 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoast Batch` MODIFY `charge_temp` decimal(21,9) not null default 0, MODIFY `company` varchar(140) default 'frappe.defaults.get_user_default(\'Company\')', MODIFY `weight_loss_percentage` decimal(21,9) not null default 0, MODIFY `qty_to_roast` decimal(21,9) not null default 0, MODIFY `output_qty` decimal(21,9) not null default 0
+2025-07-13 20:55:27,036 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoast Batch` MODIFY `output_qty` decimal(21,9) not null default 0, MODIFY `company` varchar(140) default 'frappe.defaults.get_user_default(\'Company\')', MODIFY `qty_to_roast` decimal(21,9) not null default 0, MODIFY `weight_loss_percentage` decimal(21,9) not null default 0, MODIFY `charge_temp` decimal(21,9) not null default 0
+2025-07-13 20:55:27,408 WARNING database DDL Query made to DB:
+ALTER TABLE `tabGreen Bean Assessment` MODIFY `moisture_content` decimal(21,9) not null default 0
+2025-07-13 20:55:27,804 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 20:55:30,022 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem` MODIFY `standard_rate` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `custom_reorder_level` decimal(21,9) not null default 0, MODIFY `over_billing_allowance` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `safety_stock` decimal(21,9) not null default 0, MODIFY `total_projected_qty` decimal(21,9) not null default 0, MODIFY `max_discount` decimal(21,9) not null default 0, MODIFY `last_purchase_rate` decimal(21,9) not null default 0, MODIFY `over_delivery_receipt_allowance` decimal(21,9) not null default 0, MODIFY `opening_stock` decimal(21,9) not null default 0
+2025-07-13 20:55:30,641 WARNING database DDL Query made to DB:
+ALTER TABLE `tabDelivery Note` MODIFY `total_qty` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `total_net_weight` decimal(21,9) not null default 0, MODIFY `additional_discount_percentage` decimal(21,9) not null default 0, MODIFY `amount_eligible_for_commission` decimal(21,9) not null default 0, MODIFY `base_discount_amount` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `total_commission` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `plc_conversion_rate` decimal(21,9) not null default 0, MODIFY `base_rounded_total` decimal(21,9) not null default 0, MODIFY `commission_rate` decimal(21,9) not null default 0, MODIFY `per_installed` decimal(21,9) not null default 0, MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0, MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `rounding_adjustment` decimal(21,9) not null default 0, MODIFY `per_returned` decimal(21,9) not null default 0, MODIFY `rounded_total` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `net_total` decimal(21,9) not null default 0, MODIFY `base_net_total` decimal(21,9) not null default 0, MODIFY `base_grand_total` decimal(21,9) not null default 0, MODIFY `base_rounding_adjustment` decimal(21,9) not null default 0
+2025-07-13 20:55:32,327 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem` MODIFY `custom_reorder_level` decimal(21,9) not null default 0, MODIFY `max_discount` decimal(21,9) not null default 0, MODIFY `last_purchase_rate` decimal(21,9) not null default 0, MODIFY `over_billing_allowance` decimal(21,9) not null default 0, MODIFY `standard_rate` decimal(21,9) not null default 0, MODIFY `total_projected_qty` decimal(21,9) not null default 0, MODIFY `over_delivery_receipt_allowance` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `safety_stock` decimal(21,9) not null default 0, MODIFY `opening_stock` decimal(21,9) not null default 0
+2025-07-13 20:55:33,219 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0
+2025-07-13 20:55:33,495 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem` MODIFY `over_billing_allowance` decimal(21,9) not null default 0, MODIFY `total_projected_qty` decimal(21,9) not null default 0, MODIFY `over_delivery_receipt_allowance` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `standard_rate` decimal(21,9) not null default 0, MODIFY `safety_stock` decimal(21,9) not null default 0, MODIFY `opening_stock` decimal(21,9) not null default 0, MODIFY `max_discount` decimal(21,9) not null default 0, MODIFY `custom_reorder_level` decimal(21,9) not null default 0, MODIFY `last_purchase_rate` decimal(21,9) not null default 0
+2025-07-13 20:55:33,762 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSales Order Item` MODIFY `company_total_stock` decimal(21,9) not null default 0, MODIFY `base_net_amount` decimal(21,9) not null default 0, MODIFY `margin_rate_or_amount` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `net_amount` decimal(21,9) not null default 0, MODIFY `projected_qty` decimal(21,9) not null default 0, MODIFY `discount_percentage` decimal(21,9) not null default 0, MODIFY `base_rate` decimal(21,9) not null default 0, MODIFY `base_net_rate` decimal(21,9) not null default 0, MODIFY `planned_qty` decimal(21,9) not null default 0, MODIFY `rate_with_margin` decimal(21,9) not null default 0, MODIFY `billed_amt` decimal(21,9) not null default 0, MODIFY `stock_uom_rate` decimal(21,9) not null default 0, MODIFY `gross_profit` decimal(21,9) not null default 0, MODIFY `production_plan_qty` decimal(21,9) not null default 0, MODIFY `work_order_qty` decimal(21,9) not null default 0, MODIFY `delivered_qty` decimal(21,9) not null default 0, MODIFY `conversion_factor` decimal(21,9) not null default 0, MODIFY `stock_qty` decimal(21,9) not null default 0, MODIFY `total_weight` decimal(21,9) not null default 0, MODIFY `ordered_qty` decimal(21,9) not null default 0, MODIFY `base_amount` decimal(21,9) not null default 0, MODIFY `actual_qty` decimal(21,9) not null default 0, MODIFY `produced_qty` decimal(21,9) not null default 0, MODIFY `returned_qty` decimal(21,9) not null default 0, MODIFY `picked_qty` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `base_rate_with_margin` decimal(21,9) not null default 0, MODIFY `price_list_rate` decimal(21,9) not null default 0, MODIFY `distributed_discount_amount` decimal(21,9) not null default 0, MODIFY `base_price_list_rate` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `net_rate` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `blanket_order_rate` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0
+2025-07-13 20:55:34,139 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSales Invoice` MODIFY `total_advance` decimal(21,9) not null default 0, MODIFY `base_grand_total` decimal(21,9) not null default 0, MODIFY `amount_eligible_for_commission` decimal(21,9) not null default 0, MODIFY `commission_rate` decimal(21,9) not null default 0, MODIFY `net_total` decimal(21,9) not null default 0, MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `rounded_total` decimal(21,9) not null default 0, MODIFY `base_paid_amount` decimal(21,9) not null default 0, MODIFY `total_qty` decimal(21,9) not null default 0, MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `total_billing_hours` decimal(21,9) not null default 0, MODIFY `additional_discount_percentage` decimal(21,9) not null default 0, MODIFY `base_write_off_amount` decimal(21,9) not null default 0, MODIFY `loyalty_amount` decimal(21,9) not null default 0, MODIFY `base_rounded_total` decimal(21,9) not null default 0, MODIFY `outstanding_amount` decimal(21,9) not null default 0, MODIFY `total_commission` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `base_rounding_adjustment` decimal(21,9) not null default 0, MODIFY `base_discount_amount` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `base_net_total` decimal(21,9) not null default 0, MODIFY `paid_amount` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0, MODIFY `plc_conversion_rate` decimal(21,9) not null default 0, MODIFY `base_change_amount` decimal(21,9) not null default 0, MODIFY `total_net_weight` decimal(21,9) not null default 0, MODIFY `rounding_adjustment` decimal(21,9) not null default 0, MODIFY `change_amount` decimal(21,9) not null default 0, MODIFY `write_off_amount` decimal(21,9) not null default 0
+2025-07-13 20:55:41,851 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:55:42,338 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:55:42,617 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `estimated_costing` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `total_expense_claim` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `percent_complete` decimal(21,9) not null default 0
+2025-07-13 20:55:42,926 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:55:43,130 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `total_expense_claim` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0, MODIFY `progress` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billing_amount` decimal(21,9) not null default 0
+2025-07-13 20:55:43,480 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 20:55:43,950 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `condition_json` json, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 20:55:44,383 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 20:55:44,777 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `condition_json` json, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 20:55:45,169 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 20:55:45,637 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `condition_json` json, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 20:55:46,171 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:55:46,628 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `condition_json` json, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 20:55:47,217 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:55:47,571 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 20:55:48,049 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:55:48,553 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 20:55:49,032 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:55:49,503 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:55:50,110 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:55:50,572 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:55:51,057 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:55:51,595 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:55:52,133 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:55:52,728 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 20:55:53,210 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `monthly_sales_target` decimal(21,9) not null default 0, MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `total_monthly_sales` decimal(21,9) not null default 0
+2025-07-13 20:55:53,653 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `monthly_sales_target` decimal(21,9) not null default 0, MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `total_monthly_sales` decimal(21,9) not null default 0
+2025-07-13 20:55:54,263 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `monthly_sales_target` decimal(21,9) not null default 0, MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `total_monthly_sales` decimal(21,9) not null default 0
+2025-07-13 20:55:54,735 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `total_monthly_sales` decimal(21,9) not null default 0, MODIFY `monthly_sales_target` decimal(21,9) not null default 0
+2025-07-13 20:55:55,195 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `total_monthly_sales` decimal(21,9) not null default 0, MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `monthly_sales_target` decimal(21,9) not null default 0
+2025-07-13 20:55:55,752 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `total_monthly_sales` decimal(21,9) not null default 0, MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `monthly_sales_target` decimal(21,9) not null default 0
+2025-07-13 20:55:56,272 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem` MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `standard_rate` decimal(21,9) not null default 0, MODIFY `over_delivery_receipt_allowance` decimal(21,9) not null default 0, MODIFY `total_projected_qty` decimal(21,9) not null default 0, MODIFY `safety_stock` decimal(21,9) not null default 0, MODIFY `max_discount` decimal(21,9) not null default 0, MODIFY `opening_stock` decimal(21,9) not null default 0, MODIFY `last_purchase_rate` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `over_billing_allowance` decimal(21,9) not null default 0, MODIFY `custom_reorder_level` decimal(21,9) not null default 0
+2025-07-13 21:01:35,048 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 21:01:38,202 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 21:01:40,690 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9), MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0
+2025-07-13 21:01:41,784 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140) default 'Company', MODIFY `default_commission_rate` decimal(21,9) not null default 0
+2025-07-13 21:01:42,744 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 21:01:48,088 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 21:01:48,468 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoasting Overhead Template Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0
+2025-07-13 21:01:49,334 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 21:01:49,588 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRaw Bean Cost Item` MODIFY `qty_kg` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 21:01:49,841 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBatch Cost` MODIFY `output_weight` decimal(21,9) not null default 0, MODIFY `cost_per_kg` decimal(21,9) not null default 0, MODIFY `total_raw_beans_cost` decimal(21,9) not null default 0, MODIFY `total_batch_cost` decimal(21,9) not null default 0, MODIFY `total_packaging_cost` decimal(21,9) not null default 0, MODIFY `total_roasting_overhead` decimal(21,9) not null default 0
+2025-07-13 21:01:50,202 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPackaging Cost Item` MODIFY `qty` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0
+2025-07-13 21:01:50,436 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOverhead Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0
+2025-07-13 21:02:05,975 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoast Batch` MODIFY `qty_to_roast` decimal(21,9) not null default 0, MODIFY `company` varchar(140) default 'frappe.defaults.get_user_default(\'Company\')', MODIFY `charge_temp` decimal(21,9) not null default 0, MODIFY `output_qty` decimal(21,9) not null default 0, MODIFY `weight_loss_percentage` decimal(21,9) not null default 0
+2025-07-13 21:02:06,445 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoast Batch` MODIFY `company` varchar(140) default 'frappe.defaults.get_user_default(\'Company\')', MODIFY `weight_loss_percentage` decimal(21,9) not null default 0, MODIFY `qty_to_roast` decimal(21,9) not null default 0, MODIFY `charge_temp` decimal(21,9) not null default 0, MODIFY `output_qty` decimal(21,9) not null default 0
+2025-07-13 21:02:06,636 WARNING database DDL Query made to DB:
+ALTER TABLE `tabGreen Bean Assessment` MODIFY `moisture_content` decimal(21,9) not null default 0
+2025-07-13 21:02:07,576 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 21:02:15,816 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem` MODIFY `standard_rate` decimal(21,9) not null default 0, MODIFY `over_delivery_receipt_allowance` decimal(21,9) not null default 0, MODIFY `last_purchase_rate` decimal(21,9) not null default 0, MODIFY `total_projected_qty` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `custom_reorder_level` decimal(21,9) not null default 0, MODIFY `safety_stock` decimal(21,9) not null default 0, MODIFY `over_billing_allowance` decimal(21,9) not null default 0, MODIFY `max_discount` decimal(21,9) not null default 0, MODIFY `opening_stock` decimal(21,9) not null default 0
+2025-07-13 21:02:16,337 WARNING database DDL Query made to DB:
+ALTER TABLE `tabDelivery Note` MODIFY `base_discount_amount` decimal(21,9) not null default 0, MODIFY `base_rounded_total` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `per_installed` decimal(21,9) not null default 0, MODIFY `net_total` decimal(21,9) not null default 0, MODIFY `amount_eligible_for_commission` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `additional_discount_percentage` decimal(21,9) not null default 0, MODIFY `plc_conversion_rate` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `rounded_total` decimal(21,9) not null default 0, MODIFY `commission_rate` decimal(21,9) not null default 0, MODIFY `total_commission` decimal(21,9) not null default 0, MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `total_qty` decimal(21,9) not null default 0, MODIFY `rounding_adjustment` decimal(21,9) not null default 0, MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `total_net_weight` decimal(21,9) not null default 0, MODIFY `per_returned` decimal(21,9) not null default 0, MODIFY `base_grand_total` decimal(21,9) not null default 0, MODIFY `base_net_total` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `base_rounding_adjustment` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0
+2025-07-13 21:02:18,733 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem` MODIFY `over_delivery_receipt_allowance` decimal(21,9) not null default 0, MODIFY `max_discount` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `custom_reorder_level` decimal(21,9) not null default 0, MODIFY `safety_stock` decimal(21,9) not null default 0, MODIFY `opening_stock` decimal(21,9) not null default 0, MODIFY `over_billing_allowance` decimal(21,9) not null default 0, MODIFY `last_purchase_rate` decimal(21,9) not null default 0, MODIFY `total_projected_qty` decimal(21,9) not null default 0, MODIFY `standard_rate` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0
+2025-07-13 21:02:19,946 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTimesheet` MODIFY `base_total_costing_amount` decimal(21,9) not null default 0, MODIFY `base_total_billed_amount` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `base_total_billable_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billable_hours` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `total_billed_hours` decimal(21,9) not null default 0
+2025-07-13 21:02:20,442 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem` MODIFY `last_purchase_rate` decimal(21,9) not null default 0, MODIFY `total_projected_qty` decimal(21,9) not null default 0, MODIFY `over_delivery_receipt_allowance` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `over_billing_allowance` decimal(21,9) not null default 0, MODIFY `standard_rate` decimal(21,9) not null default 0, MODIFY `safety_stock` decimal(21,9) not null default 0, MODIFY `opening_stock` decimal(21,9) not null default 0, MODIFY `custom_reorder_level` decimal(21,9) not null default 0, MODIFY `max_discount` decimal(21,9) not null default 0
+2025-07-13 21:02:20,696 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSales Order Item` MODIFY `projected_qty` decimal(21,9) not null default 0, MODIFY `work_order_qty` decimal(21,9) not null default 0, MODIFY `net_amount` decimal(21,9) not null default 0, MODIFY `billed_amt` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `net_rate` decimal(21,9) not null default 0, MODIFY `base_rate_with_margin` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `distributed_discount_amount` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `produced_qty` decimal(21,9) not null default 0, MODIFY `base_price_list_rate` decimal(21,9) not null default 0, MODIFY `base_net_amount` decimal(21,9) not null default 0, MODIFY `stock_uom_rate` decimal(21,9) not null default 0, MODIFY `total_weight` decimal(21,9) not null default 0, MODIFY `returned_qty` decimal(21,9) not null default 0, MODIFY `discount_percentage` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `rate_with_margin` decimal(21,9) not null default 0, MODIFY `delivered_qty` decimal(21,9) not null default 0, MODIFY `production_plan_qty` decimal(21,9) not null default 0, MODIFY `base_net_rate` decimal(21,9) not null default 0, MODIFY `blanket_order_rate` decimal(21,9) not null default 0, MODIFY `stock_qty` decimal(21,9) not null default 0, MODIFY `base_rate` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `price_list_rate` decimal(21,9) not null default 0, MODIFY `conversion_factor` decimal(21,9) not null default 0, MODIFY `ordered_qty` decimal(21,9) not null default 0, MODIFY `planned_qty` decimal(21,9) not null default 0, MODIFY `base_amount` decimal(21,9) not null default 0, MODIFY `gross_profit` decimal(21,9) not null default 0, MODIFY `company_total_stock` decimal(21,9) not null default 0, MODIFY `picked_qty` decimal(21,9) not null default 0, MODIFY `margin_rate_or_amount` decimal(21,9) not null default 0, MODIFY `actual_qty` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0
+2025-07-13 21:02:21,107 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSales Invoice` MODIFY `paid_amount` decimal(21,9) not null default 0, MODIFY `total_advance` decimal(21,9) not null default 0, MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `rounded_total` decimal(21,9) not null default 0, MODIFY `total_net_weight` decimal(21,9) not null default 0, MODIFY `base_rounding_adjustment` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `additional_discount_percentage` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_paid_amount` decimal(21,9) not null default 0, MODIFY `base_discount_amount` decimal(21,9) not null default 0, MODIFY `base_rounded_total` decimal(21,9) not null default 0, MODIFY `total_billing_hours` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `total_commission` decimal(21,9) not null default 0, MODIFY `rounding_adjustment` decimal(21,9) not null default 0, MODIFY `base_change_amount` decimal(21,9) not null default 0, MODIFY `change_amount` decimal(21,9) not null default 0, MODIFY `commission_rate` decimal(21,9) not null default 0, MODIFY `base_write_off_amount` decimal(21,9) not null default 0, MODIFY `base_net_total` decimal(21,9) not null default 0, MODIFY `loyalty_amount` decimal(21,9) not null default 0, MODIFY `plc_conversion_rate` decimal(21,9) not null default 0, MODIFY `net_total` decimal(21,9) not null default 0, MODIFY `amount_eligible_for_commission` decimal(21,9) not null default 0, MODIFY `total_qty` decimal(21,9) not null default 0, MODIFY `base_grand_total` decimal(21,9) not null default 0, MODIFY `write_off_amount` decimal(21,9) not null default 0, MODIFY `outstanding_amount` decimal(21,9) not null default 0, MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0
+2025-07-13 21:02:26,862 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 21:02:27,368 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 21:02:27,547 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProject` MODIFY `percent_complete` decimal(21,9) not null default 0, MODIFY `total_sales_amount` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `total_billable_amount` decimal(21,9) not null default 0, MODIFY `total_billed_amount` decimal(21,9) not null default 0, MODIFY `per_gross_margin` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `gross_margin` decimal(21,9) not null default 0, MODIFY `total_expense_claim` decimal(21,9) not null default 0, MODIFY `total_purchase_cost` decimal(21,9) not null default 0, MODIFY `total_consumed_material_cost` decimal(21,9) not null default 0, MODIFY `estimated_costing` decimal(21,9) not null default 0
+2025-07-13 21:02:27,774 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 21:02:28,041 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTask` MODIFY `progress` decimal(21,9) not null default 0, MODIFY `total_costing_amount` decimal(21,9) not null default 0, MODIFY `actual_time` decimal(21,9) not null default 0, MODIFY `total_expense_claim` decimal(21,9) not null default 0, MODIFY `total_billing_amount` decimal(21,9) not null default 0, MODIFY `task_weight` decimal(21,9) not null default 0
+2025-07-13 21:02:28,258 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 21:02:28,435 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 21:02:28,671 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `condition_json` json, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 21:02:28,867 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `condition_json` json, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 21:02:29,072 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `condition_json` json, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 21:02:29,414 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 21:02:29,663 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 21:02:29,843 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 21:02:30,123 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 21:02:30,416 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `condition_json` json
+2025-07-13 21:02:30,658 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 21:02:30,876 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `condition_json` json, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 21:02:31,227 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 21:02:31,615 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 21:02:31,969 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 21:02:32,205 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 21:02:32,463 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 21:02:32,945 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 21:02:33,254 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 21:02:33,495 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2025-07-13 21:02:33,771 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `total_monthly_sales` decimal(21,9) not null default 0, MODIFY `monthly_sales_target` decimal(21,9) not null default 0
+2025-07-13 21:02:34,003 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `total_monthly_sales` decimal(21,9) not null default 0, MODIFY `monthly_sales_target` decimal(21,9) not null default 0
+2025-07-13 21:02:34,286 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `total_monthly_sales` decimal(21,9) not null default 0, MODIFY `monthly_sales_target` decimal(21,9) not null default 0, MODIFY `credit_limit` decimal(21,9) not null default 0
+2025-07-13 21:02:34,545 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `total_monthly_sales` decimal(21,9) not null default 0, MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `monthly_sales_target` decimal(21,9) not null default 0
+2025-07-13 21:02:34,788 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `total_monthly_sales` decimal(21,9) not null default 0, MODIFY `monthly_sales_target` decimal(21,9) not null default 0, MODIFY `credit_limit` decimal(21,9) not null default 0
+2025-07-13 21:02:35,034 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `total_monthly_sales` decimal(21,9) not null default 0, MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `monthly_sales_target` decimal(21,9) not null default 0
+2025-07-13 21:02:35,283 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem` MODIFY `custom_reorder_level` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `total_projected_qty` decimal(21,9) not null default 0, MODIFY `standard_rate` decimal(21,9) not null default 0, MODIFY `safety_stock` decimal(21,9) not null default 0, MODIFY `max_discount` decimal(21,9) not null default 0, MODIFY `last_purchase_rate` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `over_billing_allowance` decimal(21,9) not null default 0, MODIFY `opening_stock` decimal(21,9) not null default 0, MODIFY `over_delivery_receipt_allowance` decimal(21,9) not null default 0
+2025-07-13 21:21:29,630 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRaw Bean Cost Item` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `qty_kg` decimal(21,9) not null default 0
+2025-07-13 21:21:31,218 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOverhead Item` MODIFY `qty` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0
+2025-07-13 21:21:32,589 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPackaging Cost Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 21:21:34,003 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoasting Overhead Template Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0
+2025-07-13 21:22:39,963 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBatch Cost` MODIFY `total_raw_beans_cost` decimal(21,9) not null default 0, MODIFY `output_weight` decimal(21,9) not null default 0, MODIFY `total_packaging_cost` decimal(21,9) not null default 0, MODIFY `cost_per_kg` decimal(21,9) not null default 0, MODIFY `total_batch_cost` decimal(21,9) not null default 0, MODIFY `total_roasting_overhead` decimal(21,9) not null default 0
+2025-07-13 21:23:06,289 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2025-07-13 21:23:08,171 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2025-07-13 21:23:10,030 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `total` decimal(21,9) not null default 0, MODIFY `annual_revenue` decimal(21,9) not null default 0, MODIFY `base_opportunity_amount` decimal(21,9) not null default 0, MODIFY `opportunity_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `first_response_time` decimal(21,9)
+2025-07-13 21:23:11,058 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `default_commission_rate` decimal(21,9) not null default 0, MODIFY `customer_type` varchar(140) default 'Company'
+2025-07-13 21:23:12,060 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2025-07-13 21:23:15,169 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `customer_type` varchar(140)
+2025-07-13 21:23:15,562 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOpportunity` MODIFY `expected_value` decimal(21,9) not null default 0
+2025-07-13 21:23:26,604 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoast Batch` MODIFY `company` varchar(140) default 'frappe.defaults.get_user_default(\'Company\')', MODIFY `charge_temp` decimal(21,9) not null default 0, MODIFY `output_qty` decimal(21,9) not null default 0, MODIFY `qty_to_roast` decimal(21,9) not null default 0, MODIFY `weight_loss_percentage` decimal(21,9) not null default 0
+2025-07-13 21:23:26,915 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRoast Batch` MODIFY `qty_to_roast` decimal(21,9) not null default 0, MODIFY `output_qty` decimal(21,9) not null default 0, MODIFY `charge_temp` decimal(21,9) not null default 0, MODIFY `weight_loss_percentage` decimal(21,9) not null default 0, MODIFY `company` varchar(140) default 'frappe.defaults.get_user_default(\'Company\')'
+2025-07-13 21:23:27,067 WARNING database DDL Query made to DB:
+ALTER TABLE `tabGreen Bean Assessment` MODIFY `moisture_content` decimal(21,9) not null default 0
+2025-07-13 21:23:27,259 WARNING database DDL Query made to DB:
+ALTER TABLE `tabWeb Form` MODIFY `condition_json` json, MODIFY `amount` decimal(21,9) not null default 0
+2025-07-13 21:23:28,525 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem` MODIFY `over_delivery_receipt_allowance` decimal(21,9) not null default 0, MODIFY `opening_stock` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `total_projected_qty` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `last_purchase_rate` decimal(21,9) not null default 0, MODIFY `safety_stock` decimal(21,9) not null default 0, MODIFY `max_discount` decimal(21,9) not null default 0, MODIFY `standard_rate` decimal(21,9) not null default 0, MODIFY `custom_reorder_level` decimal(21,9) not null default 0, MODIFY `over_billing_allowance` decimal(21,9) not null default 0

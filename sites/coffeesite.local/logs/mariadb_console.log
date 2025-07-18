@@ -1,0 +1,12 @@
+_HiStOrY_V2_
+SELECT\040name\040FROM\040tabCustom\040Field\040WHERE\040dt\040=\040'Green\040Bean\040Assessment'\040AND\040fieldname\040=\040'workflow_state';
+SELECT\040name\040FROM\040`tabCustom\040Field`\040WHERE\040dt\040=\040'Green\040Bean\040Assessment'\040AND\040fieldname\040=\040'workflow_state';
+MariaDB>\040DESCRIBE\040`tabWorkspace`\040LIKE\040'route';
+DESCRIBE\040`tabWorkspace`\040LIKE\040'route';
+SHOW\040COLUMNS\040FROM\040`tabWorkspace`\040LIKE\040'route';
+DESC\040`tabSales\040Order`;
+SELECT\040name,\040parent,\040fieldname,\040label\040FROM\040`tabDocField`\040WHERE\040fieldname\040IS\040NULL\040OR\040fieldname\040=\040'';
+DELETE\040FROM\040`tabDocField`\040WHERE\040fieldname\040IS\040NULL\040OR\040fieldname\040=\040'';
+DESCRIBE\040`tabAffective\040Assessment`\040LIKE\040'grade';
+SHOW\040COLUMNS\040FROM\040`tabAffective\040Assessment`\040LIKE\040'grade';
+DESCRIBE\040`tabAffective\040Assessment`\040`grade`;

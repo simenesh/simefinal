@@ -1,0 +1,6 @@
+frappe
+erpnext
+payments
+webshop
+coffee_roaster
+hrms

@@ -1,0 +1,1376 @@
+2025-07-12 01:51:36,270 ERROR frappe Could not take error snapshot: (0, '')
+Site: coffeesite.local
+Form Dict: {'name': '["like","%roa%"]', 'app_path': 'report'}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 20, in get_response
+    return renderer_instance.render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 171, in get_boot_data
+    apps = get_apps() or []
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/apps.py", line 20, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/desk/desktop.py", line 460, in get_workspace_sidebar_items
+    workspace = Workspace(page, True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/desk/desktop.py", line 38, in __init__
+    self.user = frappe.get_user()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 654, in get_user
+    local.user_perms = UserPermissions(local.session.user)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/user.py", line 46, in __init__
+    self.setup_user()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/user.py", line 63, in setup_user
+    user_doc = frappe.cache.hget("user_doc", self.name, get_user_doc)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/redis_wrapper.py", line 241, in hget
+    value = generator()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/user.py", line 52, in get_user_doc
+    user = frappe.get_doc("User", self.name).as_dict()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
+    return controller(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 207, in load_from_db
+    self.set(df.fieldname, children)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 237, in set
+    self.extend(key, value)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 304, in extend
+    self.append(key, v)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 263, in append
+    d = self._init_child(value, key)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 322, in _init_child
+    value = get_controller(doctype)(value)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 67, in get_controller
+    return import_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 82, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 514, in get_value
+    result = self.get_values(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 618, in get_values
+    out = self._get_values_from_table(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 891, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 124, in application
+    response = get_response()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 883, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 171, in get_boot_data
+    apps = get_apps() or []
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/apps.py", line 20, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/desk/desktop.py", line 451, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2046, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2021, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 67, in get_controller
+    return import_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 82, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 514, in get_value
+    result = self.get_values(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 618, in get_values
+    out = self._get_values_from_table(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 891, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+2025-07-12 01:51:36,408 ERROR frappe Could not take error snapshot: (0, '')
+Site: coffeesite.local
+Form Dict: {'app_path': 'query-report/Roast Batch Profitability'}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/www/app.py", line 30, in get_context
+    boot = frappe.sessions.get()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/sessions.py", line 143, in get
+    bootinfo = get_bootinfo()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/boot.py", line 63, in get_bootinfo
+    bootinfo.letter_heads = get_letter_heads()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/boot.py", line 161, in get_letter_heads
+    for letter_head in frappe.get_list("Letter Head", fields=["name", "content", "footer"]):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2021, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 20, in get_response
+    return renderer_instance.render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 95, in get_html
+    self.update_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 163, in update_context
+    data = self.run_pymodule_method("get_context")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 223, in run_pymodule_method
+    return method(self.context)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/www/app.py", line 32, in get_context
+    raise frappe.SessionBootFailed from e
+frappe.exceptions.SessionBootFailed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 124, in application
+    response = get_response()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 883, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 171, in get_boot_data
+    apps = get_apps() or []
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/apps.py", line 20, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/desk/desktop.py", line 451, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2046, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2021, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 67, in get_controller
+    return import_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 82, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 514, in get_value
+    result = self.get_values(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 618, in get_values
+    out = self._get_values_from_table(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 891, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+2025-07-12 01:51:36,429 ERROR frappe Could not take error snapshot: (0, '')
+Site: coffeesite.local
+Form Dict: {'app_path': 'query-report/Roast Batch Profitability'}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/www/app.py", line 30, in get_context
+    boot = frappe.sessions.get()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/sessions.py", line 143, in get
+    bootinfo = get_bootinfo()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/boot.py", line 53, in get_bootinfo
+    bootinfo.sysdefaults["setup_complete"] = frappe.is_setup_complete()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2410, in is_setup_complete
+    if all(frappe.get_all("Installed Application", {"has_setup_wizard": 1}, pluck="is_setup_complete")):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2046, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2021, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 20, in get_response
+    return renderer_instance.render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 95, in get_html
+    self.update_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 163, in update_context
+    data = self.run_pymodule_method("get_context")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 223, in run_pymodule_method
+    return method(self.context)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/www/app.py", line 32, in get_context
+    raise frappe.SessionBootFailed from e
+frappe.exceptions.SessionBootFailed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 124, in application
+    response = get_response()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 883, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 171, in get_boot_data
+    apps = get_apps() or []
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/apps.py", line 20, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/desk/desktop.py", line 451, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2046, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2021, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 67, in get_controller
+    return import_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 82, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 514, in get_value
+    result = self.get_values(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 618, in get_values
+    out = self._get_values_from_table(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 891, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+2025-07-12 01:51:36,481 ERROR frappe Could not take error snapshot: (0, '')
+Site: coffeesite.local
+Form Dict: {'app_path': 'query-report/Roast Batch Profitability'}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/www/app.py", line 30, in get_context
+    boot = frappe.sessions.get()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/sessions.py", line 143, in get
+    bootinfo = get_bootinfo()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/boot.py", line 53, in get_bootinfo
+    bootinfo.sysdefaults["setup_complete"] = frappe.is_setup_complete()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2410, in is_setup_complete
+    if all(frappe.get_all("Installed Application", {"has_setup_wizard": 1}, pluck="is_setup_complete")):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2046, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2021, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 20, in get_response
+    return renderer_instance.render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 95, in get_html
+    self.update_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 163, in update_context
+    data = self.run_pymodule_method("get_context")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 223, in run_pymodule_method
+    return method(self.context)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/www/app.py", line 32, in get_context
+    raise frappe.SessionBootFailed from e
+frappe.exceptions.SessionBootFailed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 124, in application
+    response = get_response()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 883, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 171, in get_boot_data
+    apps = get_apps() or []
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/apps.py", line 20, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/desk/desktop.py", line 451, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2046, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2021, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 67, in get_controller
+    return import_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 82, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 514, in get_value
+    result = self.get_values(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 618, in get_values
+    out = self._get_values_from_table(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 891, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+2025-07-12 01:51:36,503 ERROR frappe Could not take error snapshot: (0, '')
+Site: coffeesite.local
+Form Dict: {'app_path': 'query-report/Roast Batch Profitability'}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/www/app.py", line 30, in get_context
+    boot = frappe.sessions.get()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/sessions.py", line 143, in get
+    bootinfo = get_bootinfo()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/boot.py", line 81, in get_bootinfo
+    bootinfo.navbar_settings = get_navbar_settings()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/core/doctype/navbar_settings/navbar_settings.py", line 61, in get_navbar_settings
+    return frappe.get_single("Navbar Settings")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1331, in get_single
+    return get_doc(doctype, doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
+    return controller(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 158, in load_from_db
+    if not getattr(self, "_metaclass", False) and self.meta.issingle:
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 143, in meta
+    return frappe.get_meta(self.doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1338, in get_meta
+    return frappe.model.meta.get_meta(doctype, cached=cached)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/meta.py", line 70, in get_meta
+    meta = Meta(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/meta.py", line 124, in __init__
+    super().__init__("DocType", doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/meta.py", line 130, in load_from_db
+    super().load_from_db()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 174, in load_from_db
+    d = frappe.db.get_value(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 514, in get_value
+    result = self.get_values(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 618, in get_values
+    out = self._get_values_from_table(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 891, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 20, in get_response
+    return renderer_instance.render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 95, in get_html
+    self.update_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 163, in update_context
+    data = self.run_pymodule_method("get_context")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 223, in run_pymodule_method
+    return method(self.context)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/www/app.py", line 32, in get_context
+    raise frappe.SessionBootFailed from e
+frappe.exceptions.SessionBootFailed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 124, in application
+    response = get_response()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 883, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 171, in get_boot_data
+    apps = get_apps() or []
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/apps.py", line 20, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/desk/desktop.py", line 451, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2046, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2021, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 67, in get_controller
+    return import_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 82, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 514, in get_value
+    result = self.get_values(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 618, in get_values
+    out = self._get_values_from_table(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 891, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+2025-07-12 01:51:36,531 ERROR frappe Could not take error snapshot: (0, '')
+Site: coffeesite.local
+Form Dict: {'app_path': 'query-report/Roast Batch Profitability'}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/www/app.py", line 30, in get_context
+    boot = frappe.sessions.get()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/sessions.py", line 143, in get
+    bootinfo = get_bootinfo()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/boot.py", line 81, in get_bootinfo
+    bootinfo.navbar_settings = get_navbar_settings()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/core/doctype/navbar_settings/navbar_settings.py", line 61, in get_navbar_settings
+    return frappe.get_single("Navbar Settings")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1331, in get_single
+    return get_doc(doctype, doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
+    return controller(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 158, in load_from_db
+    if not getattr(self, "_metaclass", False) and self.meta.issingle:
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 143, in meta
+    return frappe.get_meta(self.doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1338, in get_meta
+    return frappe.model.meta.get_meta(doctype, cached=cached)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/meta.py", line 70, in get_meta
+    meta = Meta(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/meta.py", line 124, in __init__
+    super().__init__("DocType", doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/meta.py", line 130, in load_from_db
+    super().load_from_db()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 174, in load_from_db
+    d = frappe.db.get_value(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 514, in get_value
+    result = self.get_values(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 618, in get_values
+    out = self._get_values_from_table(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 891, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 20, in get_response
+    return renderer_instance.render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 95, in get_html
+    self.update_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 163, in update_context
+    data = self.run_pymodule_method("get_context")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 223, in run_pymodule_method
+    return method(self.context)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/www/app.py", line 32, in get_context
+    raise frappe.SessionBootFailed from e
+frappe.exceptions.SessionBootFailed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 124, in application
+    response = get_response()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 883, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 171, in get_boot_data
+    apps = get_apps() or []
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/apps.py", line 20, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/desk/desktop.py", line 451, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2046, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2021, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 67, in get_controller
+    return import_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 82, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 514, in get_value
+    result = self.get_values(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 618, in get_values
+    out = self._get_values_from_table(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 891, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+2025-07-12 01:51:36,555 ERROR frappe Could not take error snapshot: (0, '')
+Site: coffeesite.local
+Form Dict: {'app_path': 'query-report/Roast Batch Profitability'}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/www/app.py", line 30, in get_context
+    boot = frappe.sessions.get()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/sessions.py", line 143, in get
+    bootinfo = get_bootinfo()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/boot.py", line 81, in get_bootinfo
+    bootinfo.navbar_settings = get_navbar_settings()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/core/doctype/navbar_settings/navbar_settings.py", line 61, in get_navbar_settings
+    return frappe.get_single("Navbar Settings")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1331, in get_single
+    return get_doc(doctype, doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
+    return controller(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 158, in load_from_db
+    if not getattr(self, "_metaclass", False) and self.meta.issingle:
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 143, in meta
+    return frappe.get_meta(self.doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1338, in get_meta
+    return frappe.model.meta.get_meta(doctype, cached=cached)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/meta.py", line 70, in get_meta
+    meta = Meta(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/meta.py", line 124, in __init__
+    super().__init__("DocType", doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/meta.py", line 130, in load_from_db
+    super().load_from_db()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 196, in load_from_db
+    frappe.db.get_values(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 618, in get_values
+    out = self._get_values_from_table(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 891, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 20, in get_response
+    return renderer_instance.render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 95, in get_html
+    self.update_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 163, in update_context
+    data = self.run_pymodule_method("get_context")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 223, in run_pymodule_method
+    return method(self.context)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/www/app.py", line 32, in get_context
+    raise frappe.SessionBootFailed from e
+frappe.exceptions.SessionBootFailed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 124, in application
+    response = get_response()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 883, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 171, in get_boot_data
+    apps = get_apps() or []
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/apps.py", line 20, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/desk/desktop.py", line 451, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2046, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2021, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 67, in get_controller
+    return import_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 82, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 514, in get_value
+    result = self.get_values(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 618, in get_values
+    out = self._get_values_from_table(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 891, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+2025-07-12 01:51:36,560 ERROR frappe Could not take error snapshot: (0, '')
+Site: coffeesite.local
+Form Dict: {'app_path': 'home'}
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 20, in get_response
+    return renderer_instance.render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 171, in get_boot_data
+    apps = get_apps() or []
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/apps.py", line 20, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/desk/desktop.py", line 460, in get_workspace_sidebar_items
+    workspace = Workspace(page, True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/desk/desktop.py", line 38, in __init__
+    self.user = frappe.get_user()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 654, in get_user
+    local.user_perms = UserPermissions(local.session.user)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/user.py", line 46, in __init__
+    self.setup_user()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/user.py", line 63, in setup_user
+    user_doc = frappe.cache.hget("user_doc", self.name, get_user_doc)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/redis_wrapper.py", line 241, in hget
+    value = generator()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/user.py", line 52, in get_user_doc
+    user = frappe.get_doc("User", self.name).as_dict()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
+    return controller(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 207, in load_from_db
+    self.set(df.fieldname, children)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 237, in set
+    self.extend(key, value)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 304, in extend
+    self.append(key, v)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 263, in append
+    d = self._init_child(value, key)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 322, in _init_child
+    value = get_controller(doctype)(value)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 67, in get_controller
+    return import_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 82, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 514, in get_value
+    result = self.get_values(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 618, in get_values
+    out = self._get_values_from_table(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 891, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/app.py", line 124, in application
+    response = get_response()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/permissions.py", line 883, in wrapper
+    return fn(e, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 534, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
+    context.boot = get_boot_data()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/website/utils.py", line 171, in get_boot_data
+    apps = get_apps() or []
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/apps.py", line 20, in get_apps
+    allowed_workspaces = get_workspace_sidebar_items().get("pages")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/typing_validations.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/desk/desktop.py", line 451, in get_workspace_sidebar_items
+    all_pages = frappe.get_all(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2046, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2021, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 67, in get_controller
+    return import_controller(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/base_document.py", line 82, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 514, in get_value
+    result = self.get_values(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 618, in get_values
+    out = self._get_values_from_table(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 891, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 562, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 843, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+2025-07-12 09:41:41,893 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["0002-01-01","0000-01-01"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-12 10:12:32,171 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["0002-01-01","0000-01-01"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-12 10:42:53,021 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["0002-01-01","0000-01-01"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-12 10:43:29,379 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["0002-01-01","0000-01-01"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-12 10:51:21,209 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["0002-01-01","0000-01-01"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-12 11:27:44,311 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'method': 'erpnext.selling.doctype.sales_order.sales_order.make_sales_invoice', 'source_names': '["SAL-ORD-2025-00001"]', 'target_doc': '{"docstatus":0,"doctype":"Sales Invoice","name":"new-sales-invoice-bpzlufqkqb","__islocal":1,"__unsaved":1,"owner":"Administrator","naming_series":"ACC-SINV-.YYYY.-","company":"Coffee Rosters","posting_date":"2025-07-12","set_posting_time":0,"is_pos":0,"is_consolidated":0,"is_return":0,"update_outstanding_for_self":1,"update_billed_amount_in_sales_order":0,"update_billed_amount_in_delivery_note":1,"is_debit_note":0,"currency":"ETB","selling_price_list":"Standard Selling","price_list_currency":"ETB","ignore_pricing_rule":0,"update_stock":0,"items":[],"taxes":[{"docstatus":0,"doctype":"Sales Taxes and Charges","name":"new-sales-taxes-and-charges-nlhzvatxda","__islocal":1,"__unsaved":1,"owner":"Administrator","charge_type":"On Net Total","included_in_print_rate":0,"included_in_paid_amount":0,"cost_center":"Main - CR","account_currency":null,"dont_recompute_tax":0,"parent":"new-sales-invoice-bpzlufqkqb","parentfield":"taxes","parenttype":"Sales Invoice","idx":1,"row_id":null,"account_head":"VAT - CR","description":"VAT @ 15.0","rate":15,"tax_amount":0,"total":0,"tax_amount_after_discount_amount":0,"base_tax_amount":0,"base_total":0,"base_tax_amount_after_discount_amount":0,"item_wise_tax_detail":"{}"}],"use_company_roundoff_cost_center":0,"disable_rounded_total":0,"apply_discount_on":"Grand Total","is_cash_or_non_trade_discount":0,"pricing_rules":[],"packed_items":[],"timesheets":[],"total_billing_amount":0,"payments":[],"allocate_advances_automatically":0,"only_include_allocated_payments":0,"advances":[],"write_off_outstanding_amount_automatically":0,"redeem_loyalty_points":0,"ignore_default_payment_terms_template":0,"payment_schedule":[],"party_account_currency":"ETB","is_opening":"No","sales_team":[],"letter_head":"Coffee Solution","group_same_items":0,"status":"Draft","is_internal_customer":0,"is_discounted":0,"taxes_and_charges":"Ethiopia Tax - CR","posting_time":"11:26:31","conversion_rate":1,"total_billing_hours":0,"plc_conversion_rate":1,"company_tax_id":null,"base_net_total":0,"net_total":0,"base_total":0,"total":0,"total_qty":0,"grand_total":0,"base_grand_total":0,"total_taxes_and_charges":0,"base_total_taxes_and_charges":0,"rounded_total":0,"rounding_adjustment":0,"base_rounding_adjustment":0,"base_rounded_total":0,"in_words":"","base_in_words":"","base_discount_amount":0,"total_advance":0,"write_off_amount":0,"paid_amount":0,"base_paid_amount":0,"change_amount":0,"base_change_amount":0,"outstanding_amount":0,"amount_eligible_for_commission":0,"total_commission":null,"company_address":"","company_address_display":"","custom_batch_no":"uiytr","total_net_weight":0}', 'cmd': 'frappe.model.mapper.map_docs'}
+2025-07-12 17:17:57,951 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["0002-01-01","0000-01-01"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-12 21:45:56,390 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'doctype': 'Affective Assessment', 'fields': '["`tabAffective Assessment`.`name`","`tabAffective Assessment`.`owner`","`tabAffective Assessment`.`creation`","`tabAffective Assessment`.`modified`","`tabAffective Assessment`.`modified_by`","`tabAffective Assessment`.`_user_tags`","`tabAffective Assessment`.`_comments`","`tabAffective Assessment`.`_assign`","`tabAffective Assessment`.`_liked_by`","`tabAffective Assessment`.`docstatus`","`tabAffective Assessment`.`idx`","`tabAffective Assessment`.`total_score`","`tabAffective Assessment`.`grade`"]', 'filters': '[]', 'order_by': '`tabAffective Assessment`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+2025-07-12 21:48:41,344 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'doctype': 'Affective Assessment', 'fields': '["`tabAffective Assessment`.`name`","`tabAffective Assessment`.`owner`","`tabAffective Assessment`.`creation`","`tabAffective Assessment`.`modified`","`tabAffective Assessment`.`modified_by`","`tabAffective Assessment`.`_user_tags`","`tabAffective Assessment`.`_comments`","`tabAffective Assessment`.`_assign`","`tabAffective Assessment`.`_liked_by`","`tabAffective Assessment`.`docstatus`","`tabAffective Assessment`.`idx`","`tabAffective Assessment`.`total_score`","`tabAffective Assessment`.`grade`"]', 'filters': '[]', 'order_by': '`tabAffective Assessment`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+2025-07-12 21:53:29,245 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'doctype': 'Affective Assessment', 'fields': '["`tabAffective Assessment`.`name`","`tabAffective Assessment`.`owner`","`tabAffective Assessment`.`creation`","`tabAffective Assessment`.`modified`","`tabAffective Assessment`.`modified_by`","`tabAffective Assessment`.`_user_tags`","`tabAffective Assessment`.`_comments`","`tabAffective Assessment`.`_assign`","`tabAffective Assessment`.`_liked_by`","`tabAffective Assessment`.`docstatus`","`tabAffective Assessment`.`idx`","`tabAffective Assessment`.`total_score`","`tabAffective Assessment`.`grade`"]', 'filters': '[]', 'order_by': '`tabAffective Assessment`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+2025-07-12 23:18:08,180 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["0002-01-01","0000-01-01"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-12 23:20:32,843 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["0002-01-01","0000-01-01"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-12 23:27:43,143 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-12","2025-07-12"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-12 23:28:20,500 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-12","2025-07-12"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 00:03:10,024 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-13","2025-07-13"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 00:04:29,369 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Roast Batch Profitability', 'filters': '{"company":"Coffee Rosters","roast_date_range":["2025-07-13","2025-07-13"]}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 09:57:46,368 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 10:01:15,777 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 10:04:38,390 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 10:18:32,386 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 10:20:20,880 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 10:22:23,341 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 10:22:50,926 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 10:25:50,104 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 10:28:03,835 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}
+2025-07-13 10:28:10,395 ERROR frappe New Exception collected in error log
+Site: coffeesite.local
+Form Dict: {'report_name': 'Coffee Quality Report', 'filters': '{}', 'ignore_prepared_report': 'false', 'are_default_filters': 'true', 'cmd': 'frappe.desk.query_report.run'}

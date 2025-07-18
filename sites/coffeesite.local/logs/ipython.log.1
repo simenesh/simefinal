@@ -1,0 +1,2402 @@
+2025-06-17 23:26:36,596 INFO ipython === bench console session ===
+2025-06-17 23:26:36,596 INFO ipython import frappe
+
+# Check if already exists
+if not frappe.db.exists("Module Def", "Coffee Roaster"):
+    doc = frappe.new_doc("Module Def")
+    doc.module_name = "Coffee Roaster"
+    doc.app_name = "coffee_roaster"
+    doc.label = "Coffee Roaster"
+    doc.insert()
+    frappe.db.commit()
+exit()
+2025-06-17 23:26:36,597 INFO ipython === session end ===
+2025-06-17 23:29:12,370 INFO ipython === bench console session ===
+2025-06-17 23:29:12,377 INFO ipython import frappe
+
+if not frappe.db.exists("Module Def", "Coffee Roaster"):
+    m = frappe.new_doc("Module Def")
+    m.module_name = "Coffee Roaster"
+    m.app_name = "coffee_roaster"
+    m.label = "Coffee Roaster"
+    m.insert()
+    frappe.db.commit()
+exit()
+2025-06-17 23:29:12,384 INFO ipython === session end ===
+2025-06-17 23:35:23,793 INFO ipython === bench console session ===
+2025-06-17 23:35:23,794 INFO ipython frappe.get_all("DocType", filters={"module": "Coffee Roaster"})
+2025-06-17 23:35:23,794 INFO ipython frappe.get_all("DocType", filters={"module": "Coffee Roaster"})
+2025-06-17 23:35:23,794 INFO ipython === session end ===
+2025-06-17 23:55:25,587 INFO ipython === bench console session ===
+2025-06-17 23:55:25,588 INFO ipython frappe.get_all("DocType", filters={"module": "Coffee Roaster"})
+2025-06-17 23:55:25,588 INFO ipython === session end ===
+2025-06-18 00:05:54,980 INFO ipython === bench console session ===
+2025-06-18 00:05:54,982 INFO ipython frappe.get_all("DocType", filters={"module": "Coffee Roaster"})
+2025-06-18 00:05:54,983 INFO ipython === session end ===
+2025-06-18 00:08:00,879 INFO ipython === bench console session ===
+2025-06-18 00:08:00,880 INFO ipython import os, json
+from frappe.core.doctype.doctype.doctype import make_module_and_roles
+
+base = "apps/coffee_roaster/coffee_roaster/doctype"
+for doctype in os.listdir(base):
+    doctype_path = os.path.join(base, doctype)
+    json_file = os.path.join(doctype_path, f"{doctype}.json")
+    if os.path.isfile(json_file):
+        print(f"Importing: {doctype}")
+        with open(json_file) as f:
+            doc = frappe.get_doc(json.load(f))
+            try:
+                doc.insert()
+            except frappe.DuplicateEntryError:
+                print(f"Skipped (already exists): {doctype}")
+            except Exception as e:
+                print(f"Error importing {doctype}: {e}")
+frappe.db.commit()
+exit()
+2025-06-18 00:08:00,880 INFO ipython === session end ===
+2025-06-18 00:10:55,472 INFO ipython === bench console session ===
+2025-06-18 00:10:55,473 INFO ipython import os, json
+from frappe.core.doctype.doctype.doctype import make_module_and_roles
+
+base = "apps/coffee_roaster/coffee_roaster/doctype"
+imported = []
+
+for doctype in os.listdir(base):
+    json_path = os.path.join(base, doctype, f"{doctype}.json")
+    if os.path.exists(json_path):
+        with open(json_path) as f:
+            try:
+                doc = frappe.get_doc(json.load(f))
+                doc.insert()
+                imported.append(doctype)
+                print(f"✅ Imported: {doctype}")
+            except frappe.DuplicateEntryError:
+                print(f"⚠️ Skipped (already exists): {doctype}")
+            except Exception as e:
+                print(f"❌ Error importing {doctype}: {e}")
+
+frappe.db.commit()
+print(f"✅ Done. {len(imported)} DocTypes imported.")
+exit()
+2025-06-18 00:10:55,473 INFO ipython import os
+import frappe
+
+# Get the absolute path to the 'doctype' directory in your app
+# Replace 'coffee_roaster' with your actual app name if different
+app_name = "coffee_roaster"
+base_path = frappe.get_app_path(app_name, "doctype")
+
+imported = []
+
+# Check if the directory exists before trying to list its contents
+if not os.path.exists(base_path):
+    print(f"Error: Directory not found at {base_path}")
+else:
+    for doctype in os.listdir(base_path):
+        json_path = os.path.join(base_path, doctype, f"{doctype}.json")
+        if os.path.exists(json_path):
+            # Your logic here
+            print(f"Found JSON for doctype: {doctype}")
+            imported.append(doctype)
+            exit()
+            
+2025-06-18 00:10:55,474 INFO ipython === session end ===
+2025-06-18 00:17:32,220 INFO ipython === bench console session ===
+2025-06-18 00:17:32,228 INFO ipython import os, json
+from frappe.core.doctype.doctype.doctype import make_module_and_roles
+
+app_name = "coffee_roaster"
+base_path = frappe.get_app_path(app_name, "doctype")
+imported = []
+
+if not os.path.exists(base_path):
+    print(f"Error: Directory not found at {base_path}")
+else:
+    for doctype in os.listdir(base_path):
+        json_path = os.path.join(base_path, doctype, f"{doctype}.json")
+        if os.path.exists(json_path):
+            with open(json_path) as f:
+                try:
+                    doc = frappe.get_doc(json.load(f))
+                    doc.insert()
+                    imported.append(doctype)
+                    print(f"✅ Imported: {doctype}")
+                except frappe.DuplicateEntryError:
+                    print(f"⚠️ Skipped (already exists): {doctype}")
+                except Exception as e:
+                    print(f"❌ Error importing {doctype}: {e}")
+
+frappe.db.commit()
+print(f"\n✅ Done. {len(imported)} DocTypes inserted.")
+2025-06-18 00:17:32,228 INFO ipython === session end ===
+2025-06-18 00:30:44,619 INFO ipython === bench console session ===
+2025-06-18 00:30:44,627 INFO ipython import os, json
+from frappe.core.doctype.doctype.doctype import make_module_and_roles
+
+app_name = "coffee_roaster"
+base_path = frappe.get_app_path(app_name, "doctype")
+imported = []
+
+if not os.path.exists(base_path):
+    print(f"❌ Error: Directory not found at {base_path}")
+else:
+    for doctype in os.listdir(base_path):
+        json_path = os.path.join(base_path, doctype, f"{doctype}.json")
+        if os.path.exists(json_path):
+            with open(json_path) as f:
+                try:
+                    doc = frappe.get_doc(json.load(f))
+                    doc.insert()
+                    imported.append(doctype)
+                    print(f"✅ Imported: {doctype}")
+                except frappe.DuplicateEntryError:
+                    print(f"⚠️ Skipped (already exists): {doctype}")
+                except Exception as e:
+                    print(f"❌ Error importing {doctype}: {e}")
+
+frappe.db.commit()
+print(f"\n✅ Done. {len(imported)} DocTypes inserted.")
+2025-06-18 00:30:44,627 INFO ipython === session end ===
+2025-06-18 00:32:51,231 INFO ipython === bench console session ===
+2025-06-18 00:32:51,232 INFO ipython import os, json
+from frappe.core.doctype.doctype.doctype import make_module_and_roles
+
+app_name = "coffee_roaster"
+base_path = frappe.get_app_path(app_name, "doctype")
+imported = []
+
+if not os.path.exists(base_path):
+    print(f"❌ Error: Directory not found at {base_path}")
+else:
+    for doctype in os.listdir(base_path):
+        json_path = os.path.join(base_path, doctype, f"{doctype}.json")
+        if os.path.exists(json_path):
+            with open(json_path) as f:
+                try:
+                    doc = frappe.get_doc(json.load(f))
+                    doc.insert()
+                    imported.append(doctype)
+                    print(f"✅ Imported: {doctype}")
+                except frappe.DuplicateEntryError:
+                    print(f"⚠️ Skipped (already exists): {doctype}")
+                except Exception as e:
+                    print(f"❌ Error importing {doctype}: {e}")
+
+frappe.db.commit()
+print(f"\n✅ Done. {len(imported)} DocTypes inserted.")
+2025-06-18 00:32:51,232 INFO ipython === session end ===
+2025-06-18 00:36:44,086 INFO ipython === bench console session ===
+2025-06-18 00:36:44,151 INFO ipython import os, json
+from frappe.core.doctype.doctype.doctype import make_module_and_roles
+
+app_name = "coffee_roaster"
+base_path = frappe.get_app_path(app_name, "doctype")
+imported = []
+
+if not os.path.exists(base_path):
+    print(f"❌ Error: Directory not found at {base_path}")
+else:
+    for doctype in os.listdir(base_path):
+        json_path = os.path.join(base_path, doctype, f"{doctype}.json")
+        if os.path.exists(json_path):
+            with open(json_path) as f:
+                try:
+                    doc = frappe.get_doc(json.load(f))
+                    doc.insert()
+                    imported.append(doctype)
+                    print(f"✅ Imported: {doctype}")
+                except frappe.DuplicateEntryError:
+                    print(f"⚠️ Skipped (already exists): {doctype}")
+                except Exception as e:
+                    print(f"❌ Error importing {doctype}: {e}")
+
+frappe.db.commit()
+print(f"\n✅ Done. {len(imported)} DocTypes inserted.")
+2025-06-18 00:36:44,152 INFO ipython === session end ===
+2025-06-18 00:38:23,802 INFO ipython === bench console session ===
+2025-06-18 00:38:23,804 INFO ipython === session end ===
+2025-06-18 00:42:15,502 INFO ipython === bench console session ===
+2025-06-18 00:42:15,508 INFO ipython import os, json
+from frappe.core.doctype.doctype.doctype import make_module_and_roles
+
+app_name = "coffee_roaster"
+base_path = frappe.get_app_path(app_name, "doctype")
+imported = []
+
+if not os.path.exists(base_path):
+    print(f"❌ Error: Directory not found at {base_path}")
+else:
+    for doctype in os.listdir(base_path):
+        json_path = os.path.join(base_path, doctype, f"{doctype}.json")
+        if os.path.exists(json_path):
+            with open(json_path) as f:
+                try:
+                    doc = frappe.get_doc(json.load(f))
+                    doc.insert()
+                    imported.append(doctype)
+                    print(f"✅ Imported: {doctype}")
+                except frappe.DuplicateEntryError:
+                    print(f"⚠️ Skipped (already exists): {doctype}")
+                except Exception as e:
+                    print(f"❌ Error importing {doctype}: {e}")
+
+frappe.db.commit()
+print(f"\n✅ Done. {len(imported)} DocTypes inserted.")
+2025-06-18 00:42:15,509 INFO ipython === session end ===
+2025-06-18 00:47:51,677 INFO ipython === bench console session ===
+2025-06-18 00:47:51,685 INFO ipython try:
+    frappe.get_doc("DocType", "Green Bean Assessment").delete()
+    frappe.db.commit()
+    print("✅ Deleted previous Green Bean Assessment")
+except Exception as e:
+    print(f"⚠️ Not found or already removed: {e}")
+2025-06-18 00:47:51,686 INFO ipython import os, json
+from frappe.core.doctype.doctype.doctype import make_module_and_roles
+
+app_name = "coffee_roaster"
+base_path = frappe.get_app_path(app_name, "doctype")
+imported = []
+
+if not os.path.exists(base_path):
+    print(f"❌ Error: Directory not found at {base_path}")
+else:
+    for doctype in os.listdir(base_path):
+        json_path = os.path.join(base_path, doctype, f"{doctype}.json")
+        if os.path.exists(json_path):
+            with open(json_path) as f:
+                try:
+                    doc = frappe.get_doc(json.load(f))
+                    doc.insert()
+                    imported.append(doctype)
+                    print(f"✅ Imported: {doctype}")
+                except frappe.DuplicateEntryError:
+                    print(f"⚠️ Skipped (already exists): {doctype}")
+                except Exception as e:
+                    print(f"❌ Error importing {doctype}: {e}")
+
+frappe.db.commit()
+print(f"\n✅ Done. {len(imported)} DocTypes inserted.")
+2025-06-18 00:47:51,686 INFO ipython frappe.get_all("DocType", filters={"module": "Coffee Roaster"})
+2025-06-18 00:47:51,686 INFO ipython === session end ===
+2025-06-18 00:53:54,212 INFO ipython === bench console session ===
+2025-06-18 00:53:54,216 INFO ipython import os, json
+   ...: from frappe.core.doctype.doctype.doctype import make_module_and_roles
+   ...: 
+   ...: app_name = "coffee_roaster"
+   ...: base_path = frappe.get_app_path(app_name, "doctype")
+   ...: imported = []
+   ...: 
+   ...: if not os.path.exists(base_path):
+   ...:     print(f"❌ Error: Directory not found at {base_path}")
+   ...: else:
+   ...:     for doctype in os.listdir(base_path):
+   ...:         json_path = os.path.join(base_path, doctype, f"{doctype}.json")
+   ...:         if os.path.exists(json_path):
+   ...:             with open(json_path) as f:
+   ...:                 try:
+   ...:                     doc = frappe.get_doc(json.load(f))
+   ...:                     doc.insert()
+   ...:                     imported.append(doctype)
+   ...:                     print(f"✅ Imported: {doctype}")
+   ...:                 except frappe.DuplicateEntryError:
+   ...:                     print(f"⚠️ Skipped (already exists): {doctype}")
+   ...:                 except Exception as e:
+   ...:                     print(f"❌ Error importing {doctype}: {e}")
+   ...: 
+   ...: frappe.db.commit()
+   ...: print(f"\n✅ Done. {len(imported)} DocTypes inserted.")
+   ...: 
+2025-06-18 00:53:54,217 INFO ipython try:
+    frappe.get_doc("DocType", "Affective Cupping").delete()
+    frappe.db.commit()
+    print("✅ Deleted broken Affective Cupping")
+except Exception as e:
+    print(f"⚠️ Not found or already deleted: {e}")
+2025-06-18 00:53:54,218 INFO ipython # Inside console
+import os, json
+from frappe.core.doctype.doctype.doctype import make_module_and_roles
+
+app_name = "coffee_roaster"
+base_path = frappe.get_app_path(app_name, "doctype")
+imported = []
+
+if not os.path.exists(base_path):
+    print(f"❌ Error: Directory not found at {base_path}")
+else:
+    for doctype in os.listdir(base_path):
+        json_path = os.path.join(base_path, doctype, f"{doctype}.json")
+        if os.path.exists(json_path):
+            with open(json_path) as f:
+                try:
+                    doc = frappe.get_doc(json.load(f))
+                    doc.insert()
+                    imported.append(doctype)
+                    print(f"✅ Imported: {doctype}")
+                except frappe.DuplicateEntryError:
+                    print(f"⚠️ Skipped (already exists): {doctype}")
+                except Exception as e:
+                    print(f"❌ Error importing {doctype}: {e}")
+
+frappe.db.commit()
+print(f"\n✅ Done. {len(imported)} DocTypes inserted.")
+2025-06-18 00:53:54,218 INFO ipython === session end ===
+2025-06-18 00:55:39,426 INFO ipython === bench console session ===
+2025-06-18 00:55:39,427 INFO ipython frappe.get_all("DocType", filters={"module": "Coffee Roaster"})
+2025-06-18 00:55:39,427 INFO ipython === session end ===
+2025-06-18 16:19:35,470 INFO ipython === bench console session ===
+2025-06-18 16:19:35,472 INFO ipython frappe.get_all("Workspace", filters={"title": "Coffee Roaster"})
+2025-06-18 16:19:35,472 INFO ipython === session end ===
+2025-06-18 16:23:53,470 INFO ipython === bench console session ===
+2025-06-18 16:23:53,470 INFO ipython doc = frappe.get_doc({
+    "doctype": "Workspace",
+    "title": "Coffee Roaster",
+    "label": "Coffee Roaster",
+    "module": "coffee_roaster",
+    "public": 1,
+    "is_standard": 1
+})
+doc.insert(ignore_permissions=True)
+frappe.db.commit()
+2025-06-18 16:23:53,470 INFO ipython frappe.get_doc({
+    "doctype": "Module Def",
+    "module_name": "coffee_roaster",
+    "app_name": "coffee_roaster",
+    "app_label": "Coffee Roaster",
+    "custom": 1
+}).insert()
+frappe.db.commit()
+2025-06-18 16:23:53,470 INFO ipython doc = frappe.get_doc({
+    "doctype": "Workspace",
+    "title": "Coffee Roaster",
+    "label": "Coffee Roaster",
+    "module": "coffee_roaster",
+    "public": 1,
+    "is_standard": 1
+})
+doc.insert(ignore_permissions=True)
+frappe.db.commit()
+2025-06-18 16:23:53,471 INFO ipython === session end ===
+2025-06-18 16:29:10,257 INFO ipython === bench console session ===
+2025-06-18 16:29:10,258 INFO ipython doc = frappe.get_doc({
+    "doctype": "Workspace",
+    "title": "Coffee Roaster",
+    "label": "Coffee Roaster",
+    "module": "coffee_roaster",
+    "public": 1,
+    "is_standard": 1
+})
+doc.insert(ignore_permissions=True)
+frappe.db.commit()
+2025-06-18 16:29:10,258 INFO ipython frappe.db.set_value("Module Def", "coffee_roaster", "package", "coffee_roaster")
+frappe.db.commit()
+2025-06-18 16:29:10,258 INFO ipython doc = frappe.get_doc({
+    "doctype": "Workspace",
+    "title": "Coffee Roaster",
+    "label": "Coffee Roaster",
+    "module": "coffee_roaster",
+    "public": 1,
+    "is_standard": 1
+})
+doc.insert(ignore_permissions=True)
+frappe.db.commit()
+2025-06-18 16:29:10,258 INFO ipython frappe.get_all("Workspace", filters={"title": "Coffee Roaster"})
+2025-06-18 16:29:10,258 INFO ipython === session end ===
+2025-06-18 16:46:50,845 INFO ipython === bench console session ===
+2025-06-18 16:46:50,846 INFO ipython frappe.get_doc({
+    "doctype": "Workspace",
+    "title": "Coffee Roaster",
+    "module": "coffee_roaster",
+    "public": 1,
+    "is_standard": 1
+}).insert(ignore_permissions=True)
+frappe.db.commit()
+2025-06-18 16:46:50,846 INFO ipython import json
+
+workspace = frappe.get_doc("Workspace", "Coffee Roaster")
+
+workspace.content = json.dumps([
+    {"label": "Operations", "type": "section"},
+    {
+        "type": "link",
+        "label": "Roast Batch",
+        "link_type": "DocType",
+        "link_to": "Roast Batch"
+    },
+    {
+        "type": "link",
+        "label": "Green Bean Analysis",
+        "link_type": "DocType",
+        "link_to": "Green Bean Analysis"
+    }
+])
+
+workspace.save()
+frappe.db.commit()
+2025-06-18 16:46:50,846 INFO ipython frappe.db.set_value("Module Def", "coffee_roaster", "package", "coffeeroaster")
+2025-06-18 16:46:50,846 INFO ipython frappe.db.commit()
+2025-06-18 16:46:50,847 INFO ipython workspace = frappe.get_doc("Workspace", "Coffee Roaster")
+2025-06-18 16:46:50,847 INFO ipython workspace.content = json.dumps([
+    {"label": "Production", "type": "section"},
+        {
+                "type": "link",
+                        "label": "Roast Batch",
+                                "link_type": "DocType",
+                                        "link_to": "Roast Batch"
+                                            }
+                                            ])
+2025-06-18 16:46:50,847 INFO ipython workspace.save()
+2025-06-18 16:46:50,847 INFO ipython frappe.db.commit()
+2025-06-18 16:46:50,847 INFO ipython === session end ===
+2025-06-18 16:51:51,828 INFO ipython === bench console session ===
+2025-06-18 16:51:51,829 INFO ipython import json
+
+workspace = frappe.get_doc("Workspace", "Coffee Roaster")
+
+workspace.content = json.dumps([
+    {
+        "type": "card",
+        "label": "Production",
+        "links": [
+            {
+                "type": "DocType",
+                "name": "Roast Batch",
+                "label": "Roast Batch"
+            },
+            {
+                "type": "DocType",
+                "name": "Roast Log",
+                "label": "Roast Log"
+            }
+        ]
+    },
+    {
+        "type": "card",
+        "label": "Quality & Inventory",
+        "links": [
+            {
+                "type": "DocType",
+                "name": "Green Bean Assessment",
+                "label": "Green Bean Assessment"
+            },
+            {
+                "type": "DocType",
+                "name": "Item",
+                "label": "Items"
+            },
+            {
+                "type": "DocType",
+                "name": "Sales Invoice",
+                "label": "Sales Invoice"
+            }
+        ]
+    }
+])
+
+workspace.save()
+frappe.db.commit()
+2025-06-18 16:51:51,829 INFO ipython import json
+
+workspace = frappe.get_doc("Workspace", "Coffee Roaster")
+
+workspace.content = json.dumps([
+    {
+        "type": "card",
+        "label": "Production",
+        "links": [
+            {
+                "type": "DocType",
+                "name": "Roast Batch",
+                "label": "Roast Batch"
+            },
+            {
+                "type": "DocType",
+                "name": "Roast Log",
+                "label": "Roast Log"
+            }
+        ]
+    },
+    {
+        "type": "card",
+        "label": "Quality & Inventory",
+        "links": [
+            {
+                "type": "DocType",
+                "name": "Green Bean Assessment",
+                "label": "Green Bean Assessment"
+            },
+            {
+                "type": "DocType",
+                "name": "Item",
+                "label": "Items"
+            },
+            {
+                "type": "DocType",
+                "name": "Sales Invoice",
+                "label": "Sales Invoice"
+            }
+        ]
+    }
+])
+
+workspace.save()
+frappe.db.commit()
+2025-06-18 16:51:51,829 INFO ipython === session end ===
+2025-06-19 10:36:29,649 INFO ipython === bench console session ===
+2025-06-19 10:36:29,726 INFO ipython import json
+
+workspace = frappe.get_doc("Workspace", "Coffee Roaster")
+
+workspace.content = json.dumps([
+    {
+        "type": "card",
+        "label": "Roasting",
+        "links": [
+            {
+                "type": "DocType",
+                "name": "Roast Batch",
+                "label": "Roast Batch"
+            },
+            {
+                "type": "DocType",
+                "name": "Roast Log",
+                "label": "Roast Log"
+            }
+        ]
+    },
+    {
+        "type": "card",
+        "label": "Inventory & Quality",
+        "links": [
+            {
+                "type": "DocType",
+                "name": "Green Bean Assessment",
+                "label": "Green Bean Analysis"
+            },
+            {
+                "type": "DocType",
+                "name": "Item",
+                "label": "Items"
+            }
+        ]
+    }
+])
+
+workspace.save()
+frappe.db.commit()
+2025-06-19 10:36:29,727 INFO ipython frappe.get_doc({
+    "doctype": "Package",
+    "name": "coffeeroaster",  # ⚠️ NO underscore
+    "package_name": "coffeeroaster",
+    "app_name": "coffee_roaster"
+}).insert()
+frappe.db.commit()
+2025-06-19 10:36:29,727 INFO ipython frappe.db.set_value("Module Def", "coffee_roaster", "package", "coffeeroaster")
+frappe.db.commit()
+2025-06-19 10:36:29,728 INFO ipython all_docs = frappe.get_all("DocType", filters={"module": "Coffee Roaster"}, pluck="name")
+
+workspace_cards = [
+    {
+        "type": "card",
+        "label": "Coffee Roaster Module",
+        "links": [{"type": "DocType", "name": doc, "label": doc} for doc in all_docs]
+    }
+]
+
+workspace = frappe.get_doc("Workspace", "Coffee Roaster")
+workspace.content = json.dumps(workspace_cards)
+workspace.save()
+frappe.db.commit()
+2025-06-19 10:36:29,728 INFO ipython import json
+workspace = frappe.get_doc("Workspace", "Coffee Roaster")
+print(json.loads(workspace.content))
+2025-06-19 10:36:29,728 INFO ipython frappe.db.set_value("Module Def", "coffee_roaster", "icon", "fa fa-coffee")
+frappe.db.commit()
+2025-06-19 10:36:29,729 INFO ipython frappe.get_doc({
+    "doctype": "Custom Field",
+    "dt": "Module Def",
+    "fieldname": "icon",
+    "label": "Icon",
+    "fieldtype": "Data",
+    "insert_after": "app_name",
+    "default": "fa fa-coffee"
+}).insert()
+frappe.db.commit()
+2025-06-19 10:36:29,729 INFO ipython frappe.db.set_value("Module Def", "coffee_roaster", "icon", "fa fa-coffee")
+frappe.db.commit()
+2025-06-19 10:36:29,729 INFO ipython frappe.db.set_value("Module Def", "coffee_roaster", "icon", "fa fa-coffee")
+frappe.db.commit()
+2025-06-19 10:36:29,730 INFO ipython # Adds the icon field to Module Def
+frappe.get_doc({
+    "doctype": "Custom Field",
+    "dt": "Module Def",
+    "fieldname": "icon",
+    "label": "Icon",
+    "fieldtype": "Data",
+    "insert_after": "app_name",  # or wherever you like
+    "default": "fa fa-coffee"
+}).insert()
+frappe.db.commit()
+2025-06-19 10:36:29,730 INFO ipython frappe.db.set_value("Module Def", "coffee_roaster", "icon", "fa fa-coffee")
+frappe.db.commit()
+2025-06-19 10:36:29,730 INFO ipython frappe.get_all("Custom Field", filters={"dt": "Module Def", "fieldname": "icon"})
+2025-06-19 10:36:29,731 INFO ipython === session end ===
+2025-06-19 10:48:32,568 INFO ipython === bench console session ===
+2025-06-19 10:48:32,569 INFO ipython frappe.db.set_value("Module Def", "Agriculture", "restrict_to_domain", "Non Existent Domain")
+frappe.db.set_value("Module Def", "Agriculture", "custom", 1)
+frappe.db.set_value("Module Def", "Agriculture", "app_name", "hide_it")
+frappe.db.commit()
+2025-06-19 10:48:32,569 INFO ipython === session end ===
+2025-06-19 10:51:34,796 INFO ipython === bench console session ===
+2025-06-19 10:51:34,796 INFO ipython # Hide 'Support' module
+frappe.db.set_value("Module Def", "Support", "restrict_to_domain", "Hidden")
+frappe.db.set_value("Module Def", "Support", "custom", 1)
+
+# Hide 'Projects' module
+frappe.db.set_value("Module Def", "Projects", "restrict_to_domain", "Hidden")
+frappe.db.set_value("Module Def", "Projects", "custom", 1)
+
+# Commit changes
+frappe.db.commit()
+2025-06-19 10:51:34,796 INFO ipython === session end ===
+2025-06-19 10:54:23,098 INFO ipython === bench console session ===
+2025-06-19 10:54:23,099 INFO ipython === session end ===
+2025-06-19 10:58:07,351 INFO ipython === bench console session ===
+2025-06-19 10:58:07,351 INFO ipython frappe.db.set_value("Module Def", "Support", "restrict_to_domain", "Non Existent Domain")
+frappe.db.set_value("Module Def", "Support", "custom", 1)
+frappe.db.set_value("Module Def", "Support", "app_name", "hide_it")
+frappe.db.commit()
+2025-06-19 10:58:07,352 INFO ipython frappe.db.set_value("Module Def", "Projects", "restrict_to_domain", "Non Existent Domain")
+frappe.db.set_value("Module Def", "Projects", "custom", 1)
+
+frappe.db.commit()
+2025-06-19 10:58:07,352 INFO ipython === session end ===
+2025-06-19 11:04:17,605 INFO ipython === bench console session ===
+2025-06-19 11:04:17,605 INFO ipython frappe.clear_cache()
+2025-06-19 11:04:17,606 INFO ipython === session end ===
+2025-06-19 11:04:51,850 INFO ipython === bench console session ===
+2025-06-19 11:04:51,850 INFO ipython frappe.db.set_value("Workspace", "Support", "public", 0)
+frappe.db.set_value("Workspace", "Projects", "public", 0)
+frappe.db.commit()
+2025-06-19 11:04:51,850 INFO ipython === session end ===
+2025-06-19 11:33:40,045 INFO ipython === bench console session ===
+2025-06-19 11:33:40,046 INFO ipython === session end ===
+2025-06-19 11:50:11,951 INFO ipython === bench console session ===
+2025-06-19 11:50:11,953 INFO ipython # Set workspace visibility to 'module view'
+ws = frappe.get_doc("Workspace", "Coffee Roaster")
+ws.public = 0  # set to non-public
+ws.for_user = ""
+ws.save()
+frappe.db.commit()
+2025-06-19 11:50:11,953 INFO ipython === session end ===
+2025-06-19 12:03:06,144 INFO ipython === bench console session ===
+2025-06-19 12:03:06,144 INFO ipython frappe.get_doc({
+    "doctype": "Module Def",
+    "module_name": "Coffee Roaster",
+    "app_name": "coffee_roaster",
+    "package": "coffeeroaster",  # no underscores
+    "icon": "fa fa-coffee",
+    "custom": 1
+}).insert(ignore_permissions=True)
+frappe.db.commit()
+2025-06-19 12:03:06,145 INFO ipython frappe.db.set_value("Module Def", "Coffee Roaster", "package", "coffeeroaster")
+frappe.db.set_value("Module Def", "Coffee Roaster", "app_name", "coffee_roaster")
+frappe.db.set_value("Module Def", "Coffee Roaster", "icon", "fa fa-coffee")
+frappe.db.set_value("Module Def", "Coffee Roaster", "custom", 1)
+frappe.db.commit()
+2025-06-19 12:03:06,145 INFO ipython workspace = frappe.get_doc("Workspace", "Coffee Roaster")
+workspace.public = 0
+workspace.module = "Coffee Roaster"
+workspace.label = "Coffee Roaster"
+workspace.for_user = ""
+workspace.save()
+frappe.db.commit()
+2025-06-19 12:03:06,145 INFO ipython doc = frappe.get_doc({
+    "doctype": "Workspace",
+    "title": "Coffee Roaster",
+    "module": "Coffee Roaster",
+    "label": "Coffee Roaster",
+    "public": 0,
+    "is_standard": 1,
+})
+doc.insert(ignore_permissions=True)
+frappe.db.commit()
+2025-06-19 12:03:06,145 INFO ipython import json
+
+workspace = frappe.get_doc("Workspace", "Coffee Roaster")
+workspace.content = json.dumps([
+    {
+        "type": "card",
+        "label": "Coffee Roaster Module",
+        "links": [
+            {"type": "DocType", "name": "Green Bean Assessment", "label": "Green Bean"},
+            {"type": "DocType", "name": "Roast Batch", "label": "Roast Batch"},
+            {"type": "DocType", "name": "Roast Log", "label": "Roast Log"}
+        ]
+    }
+])
+workspace.save()
+frappe.db.commit()
+2025-06-19 12:03:06,145 INFO ipython === session end ===
+2025-06-19 12:05:09,741 INFO ipython === bench console session ===
+2025-06-19 12:05:09,742 INFO ipython === session end ===
+2025-06-19 12:06:34,393 INFO ipython === bench console session ===
+2025-06-19 12:06:34,393 INFO ipython # Delete the incorrect module def
+frappe.delete_doc("Module Def", "coffee_roaster")
+frappe.db.commit()
+2025-06-19 12:06:34,393 INFO ipython frappe.db.set_value("Module Def", "Coffee Roaster", "package", "coffeeroaster")
+frappe.db.set_value("Module Def", "Coffee Roaster", "app_name", "coffee_roaster")
+frappe.db.commit()
+2025-06-19 12:06:34,394 INFO ipython exi
+2025-06-19 12:06:34,394 INFO ipython === session end ===
+2025-06-20 16:32:07,728 INFO ipython === bench console session ===
+2025-06-20 16:32:07,731 INFO ipython frappe.delete_doc("Workspace", "Coffee Roaster")
+frappe.db.commit()
+2025-06-20 16:32:07,732 INFO ipython ~/coffee_bench/apps/coffee_roaster/coffee_roaster/workspace/coffee_roaster_workspace.json
+2025-06-20 16:32:07,732 INFO ipython === session end ===
+2025-06-20 16:39:29,091 INFO ipython === bench console session ===
+2025-06-20 16:39:29,093 INFO ipython frappe.delete_doc("Workspace", "Coffee Roaster")
+frappe.db.commit()
+2025-06-20 16:39:29,093 INFO ipython === session end ===
+2025-06-20 16:49:01,826 INFO ipython === bench console session ===
+2025-06-20 16:49:01,827 INFO ipython frappe.get_all("Workspace", filters={"name": "Coffee Roaster"})
+2025-06-20 16:49:01,827 INFO ipython from frappe.modules.import_file import import_file
+
+import_file("coffee_roaster", "workspace", "coffee_roaster_workspace", force=True, data_import=True)
+frappe.db.commit()
+2025-06-20 16:49:01,827 INFO ipython from frappe.modules.import_file import import_file
+
+import_file("coffee_roaster", "workspace", "coffee_roaster_workspace", force=True)
+frappe.db.commit()
+2025-06-20 16:49:01,827 INFO ipython mkdir -p ~/coffee_bench/apps/coffee_roaster/coffee_roaster/modules/coffee_operations/workspace/
+mv ~/coffee_bench/apps/coffee_roaster/coffee_roaster/workspace/coffee_roaster_workspace.json \
+   ~/coffee_bench/apps/coffee_roaster/coffee_roaster/modules/coffee_operations/workspace/
+2025-06-20 16:49:01,827 INFO ipython === session end ===
+2025-06-20 22:28:42,166 INFO ipython === bench console session ===
+2025-06-20 22:28:42,168 INFO ipython from frappe.modules.import_file import import_file
+
+import_file("coffee_operations", "workspace", "coffee_roaster_workspace", force=True)
+frappe.db.commit()
+2025-06-20 22:28:42,168 INFO ipython from frappe.modules.import_file import import_fi
+
+
+
+exit()
+2025-06-20 22:28:42,168 INFO ipython === session end ===
+2025-06-20 22:43:05,757 INFO ipython === bench console session ===
+2025-06-20 22:43:05,758 INFO ipython from frappe.modules.import_file import import_file
+import_file("Coffee Roaster", "Workspace", "coffee_roaster_workspace", force=True)
+frappe.db.commit()
+2025-06-20 22:43:05,759 INFO ipython === session end ===
+2025-06-20 22:48:23,740 INFO ipython === bench console session ===
+2025-06-20 22:48:23,741 INFO ipython from frappe.modules.import_file import import_file
+
+import_file("coffee_roaster", "Workspace", "coffee_roaster_workspace", force=True)
+frappe.db.commit()
+2025-06-20 22:48:23,741 INFO ipython from frappe.modules.import_file import import_file
+
+import_file("coffee_roaster", "Workspace", "coffee_roaster_workspace", force=True)
+frappe.db.commit()
+2025-06-20 22:48:23,741 INFO ipython === session end ===
+2025-06-20 23:00:58,150 INFO ipython === bench console session ===
+2025-06-20 23:00:58,152 INFO ipython === session end ===
+2025-06-21 07:57:48,018 INFO ipython === bench console session ===
+2025-06-21 07:57:48,025 INFO ipython frappe.get_all("Workspace", filters={"module": "Coffee Roaster"})
+2025-06-21 07:57:48,026 INFO ipython doc = frappe.get_doc("Workspace", "Coffee Roaster")
+doc.public
+2025-06-21 07:57:48,026 INFO ipython doc.public = 1
+doc.save()
+frappe.db.commit()
+2025-06-21 07:57:48,026 INFO ipython doc.db_set("public", 1)
+frappe.db.commit()
+2025-06-21 07:57:48,026 INFO ipython === session end ===
+2025-06-21 10:19:09,237 INFO ipython === bench console session ===
+2025-06-21 10:19:09,239 INFO ipython doc = frappe.get_doc("Workspace", "Coffee Roaster")
+
+# Clear existing links
+doc.links = []
+
+# Add custom sections
+doc.append("links", {
+    "label": "Quality Control",
+    "type": "DocType",
+    "name": "Affective Cupping"
+})
+doc.append("links", {
+    "label": "Quality Control",
+    "type": "DocType",
+    "name": "Descriptive Cupping"
+})
+doc.append("links", {
+    "label": "Quality Control",
+    "type": "DocType",
+    "name": "Green Bean Assessment"
+})
+
+doc.append("links", {
+    "label": "Roasting",
+    "type": "DocType",
+    "name": "Roast Batch"
+})
+doc.append("links", {
+    "label": "Roasting",
+    "type": "DocType",
+    "name": "Roast Log"
+})
+doc.append("links", {
+    "label": "Roasting",
+    "type": "DocType",
+    "name": "Roast Profile"
+})
+
+doc.save()
+frappe.db.commit()
+2025-06-21 10:19:09,240 INFO ipython doc = frappe.get_doc("Workspace", "Coffee Roaster")
+
+# Clear old links
+doc.links = []
+
+# Quality Control Section
+doc.append("links", {"label": "Quality Control", "type": "Card Break"})
+doc.append("links", {"label": "Affective Cupping", "type": "Link", "link_type": "DocType", "link_to": "Affective Cupping"})
+doc.append("links", {"label": "Descriptive Cupping", "type": "Link", "link_type": "DocType", "link_to": "Descriptive Cupping"})
+doc.append("links", {"label": "Green Bean Assessment", "type": "Link", "link_type": "DocType", "link_to": "Green Bean Assessment"})
+
+# Roasting Section
+doc.append("links", {"label": "Roasting", "type": "Card Break"})
+doc.append("links", {"label": "Roast Batch", "type": "Link", "link_type": "DocType", "link_to": "Roast Batch"})
+doc.append("links", {"label": "Roast Log", "type": "Link", "link_type": "DocType", "link_to": "Roast Log"})
+doc.append("links", {"label": "Roast Profile", "type": "Link", "link_type": "DocType", "link_to": "Roast Profile"})
+
+# Save changes
+doc.save()
+frappe.db.commit()
+2025-06-21 10:19:09,240 INFO ipython === session end ===
+2025-06-21 10:24:11,309 INFO ipython === bench console session ===
+2025-06-21 10:24:11,309 INFO ipython doc = frappe.get_doc("Workspace", "Coffee Roaster")
+doc.db_set("public", 1)
+frappe.db.commit()
+2025-06-21 10:24:11,309 INFO ipython === session end ===
+2025-06-21 10:54:25,672 INFO ipython === bench console session ===
+2025-06-21 10:54:25,674 INFO ipython frappe.delete_doc("Custom Field", "Green Bean Assessment-workflow_state")
+frappe.db.commit()
+2025-06-21 10:54:25,674 INFO ipython === session end ===
+2025-06-22 10:35:39,352 INFO ipython === bench console session ===
+2025-06-22 10:35:39,355 INFO ipython frappe.get_meta("Green Bean Assessment").get_fieldnames()
+2025-06-22 10:35:39,355 INFO ipython frappe.get_meta("Green Bean Assessment").get_fieldnames()
+2025-06-22 10:35:39,355 INFO ipython [field.fieldname for field in frappe.get_meta("Green Bean Assessment").fields]
+2025-06-22 10:35:39,355 INFO ipython === session end ===
+2025-06-22 11:04:18,444 INFO ipython === bench console session ===
+2025-06-22 11:04:18,445 INFO ipython frappe.get_meta("Green Bean Assessment").get_field("total_cat_1_defects")
+2025-06-22 11:04:18,445 INFO ipython === session end ===
+2025-06-22 11:20:05,412 INFO ipython === bench console session ===
+2025-06-22 11:20:05,418 INFO ipython === session end ===
+2025-06-22 12:09:37,244 INFO ipython === bench console session ===
+2025-06-22 12:09:37,245 INFO ipython frappe.get_meta("Green Bean Assessment").get("fields")
+2025-06-22 12:09:37,246 INFO ipython frappe.get_meta("Category 1 Defect Entry").get("fields")
+frappe.get_meta("Category 2 Defect Entry").get("fields")
+2025-06-22 12:09:37,246 INFO ipython === session end ===
+2025-06-22 15:51:52,321 INFO ipython === bench console session ===
+2025-06-22 15:51:52,326 INFO ipython import frappe
+
+if not frappe.db.exists("Module Def", "Coffee Roaster"):
+    frappe.get_doc({
+        "doctype":      "Module Def",
+        "module_name":  "Coffee Roaster",
+        "app_name":     "coffee_roaster"
+    }).insert()
+    frappe.db.commit()
+
+exit()
+2025-06-22 15:51:52,326 INFO ipython === session end ===
+2025-06-22 15:58:55,191 INFO ipython === bench console session ===
+2025-06-22 15:58:55,193 INFO ipython frappe.get_module_path("Coffee Roaster")
+2025-06-22 15:58:55,193 INFO ipython === session end ===
+2025-06-22 16:12:43,838 INFO ipython === bench console session ===
+2025-06-22 16:12:43,839 INFO ipython frappe.get_module_path("Coffee Roaster")
+2025-06-22 16:12:43,840 INFO ipython === session end ===
+2025-06-22 16:23:41,422 INFO ipython === bench console session ===
+2025-06-22 16:23:41,424 INFO ipython frappe.get_module_path("Coffee Roaster")
+2025-06-22 16:23:41,424 INFO ipython frappe.get_module_path("coffee_roaster.coffee_roaster")
+2025-06-22 16:23:41,424 INFO ipython frappe.get_module_path("coffee_roaster")                      # → app path
+frappe.get_module_path("coffee_roaster.coffee_roaster")       # → base package path
+frappe.get_module_path("coffee_roaster.coffee_roaster.<submodule>")
+2025-06-22 16:23:41,424 INFO ipython === session end ===
+2025-06-22 16:29:36,957 INFO ipython === bench console session ===
+2025-06-22 16:29:36,958 INFO ipython frappe.get_module_path("coffee_roaster.coffee_roaster")
+2025-06-22 16:29:36,958 INFO ipython === session end ===
+2025-06-22 16:40:56,518 INFO ipython === bench console session ===
+2025-06-22 16:40:56,520 INFO ipython frappe.get_module_path("coffee_roaster.coffee_roaster")
+2025-06-22 16:40:56,520 INFO ipython === session end ===
+2025-06-22 16:46:09,052 INFO ipython === bench console session ===
+2025-06-22 16:46:09,053 INFO ipython frappe.get_module_path("coffee_roaster.coffee_roaster")
+2025-06-22 16:46:09,054 INFO ipython === session end ===
+2025-06-22 16:55:26,826 INFO ipython === bench console session ===
+2025-06-22 16:55:26,828 INFO ipython frappe.get_module_path("coffee_roaster")
+2025-06-22 16:55:26,828 INFO ipython frappe.get_module_path("coffee_roaster")
+2025-06-22 16:55:26,828 INFO ipython === session end ===
+2025-06-22 17:09:41,788 INFO ipython === bench console session ===
+2025-06-22 17:09:41,790 INFO ipython frappe.get_module_path("coffee_roaster")
+2025-06-22 17:09:41,790 INFO ipython === session end ===
+2025-06-22 17:10:51,084 INFO ipython === bench console session ===
+2025-06-22 17:10:51,084 INFO ipython frappe.get_module_path("coffee_roaster")
+2025-06-22 17:10:51,085 INFO ipython === session end ===
+2025-06-22 17:15:00,169 INFO ipython === bench console session ===
+2025-06-22 17:15:00,171 INFO ipython frappe.get_module_path("coffee_roaster")
+2025-06-22 17:15:00,171 INFO ipython === session end ===
+2025-06-22 17:26:03,267 INFO ipython === bench console session ===
+2025-06-22 17:26:03,268 INFO ipython frappe.get_doc("Workspace", "Coffee Roaster").as_dict()
+2025-06-22 17:26:03,269 INFO ipython === session end ===
+2025-06-22 17:33:23,271 INFO ipython === bench console session ===
+2025-06-22 17:33:23,273 INFO ipython frappe.db.set_value("Module Def", "Coffee Roaster", "module_name", "coffee_roaster")
+frappe.db.set_value("Module Def", "Coffee Roaster", "name", "coffee_roaster")
+frappe.rename_doc("Module Def", "Coffee Roaster", "coffee_roaster")
+2025-06-22 17:33:23,273 INFO ipython doc = frappe.new_doc("Module Def")
+doc.app_name = "coffee_roaster"
+doc.module_name = "coffee_roaster"
+doc.module_type = "module"
+doc.save()
+2025-06-22 17:33:23,274 INFO ipython frappe.rename_doc("Module Def", "Coffee Roaster", "coffee_roaster", force=True)
+2025-06-22 17:33:23,274 INFO ipython frappe.get_all("Module Def", filters={"module_name": "Coffee Roaster"})
+2025-06-22 17:33:23,274 INFO ipython frappe.get_all("Module Def", filters={"name": "coffee_roaster"})
+2025-06-22 17:33:23,274 INFO ipython frappe.db.set_value("Module Def", "coffee_roaster", "module_name", "coffee_roaster")
+frappe.db.set_value("Module Def", "coffee_roaster", "app_name", "coffee_roaster")
+2025-06-22 17:33:23,274 INFO ipython frappe.db.set_value("Workspace", "Coffee Roaster", "module", "coffee_roaster")
+2025-06-22 17:33:23,274 INFO ipython frappe.get_doc("Module Def", "coffee_roaster").as_dict()
+2025-06-22 17:33:23,274 INFO ipython === session end ===
+2025-06-22 17:35:31,177 INFO ipython === bench console session ===
+2025-06-22 17:35:31,177 INFO ipython frappe.get_module_path("coffee_roaster")
+2025-06-22 17:35:31,177 INFO ipython === session end ===
+2025-06-22 18:10:17,852 INFO ipython === bench console session ===
+2025-06-22 18:10:17,855 INFO ipython frappe.get_doc("Module Def", "coffee_roaster").as_dict()
+2025-06-22 18:10:17,855 INFO ipython frappe.get_doc({
+    "doctype": "Module Def",
+    "module_name": "Coffee Roaster",
+    "app_name": "coffee_roaster"
+}).insert(ignore_if_duplicate=True)
+frappe.db.commit()
+2025-06-22 18:10:17,856 INFO ipython === session end ===
+2025-06-22 18:17:45,044 INFO ipython === bench console session ===
+2025-06-22 18:17:45,048 INFO ipython import frappe, json
+
+# 1. Does the Module Def exist?
+module_exists = frappe.db.exists("Module Def", "Coffee Roaster")
+print("Module Def present? →", bool(module_exists))
+
+# 1a. Create it if missing
+if not module_exists:
+    frappe.get_doc({
+        "doctype": "Module Def",
+        "module_name": "coffee_roaster",   # internal name
+        "app_name": "coffee_roaster",      # your app’s package
+        "custom": 1                        # mark custom so it won’t clash
+    }).insert()
+    frappe.db.commit()
+    print("✓  Created Module Def")
+
+# 2. Does a Workspace exist?
+ws_exists = frappe.db.exists("Workspace", "Coffee Roaster")
+print("Workspace present?  →", bool(ws_exists))
+
+# 2a. Create a bare-bones Workspace if missing
+if not ws_exists:
+    frappe.get_doc({
+        "doctype": "Workspace",
+        "title": "Coffee Roaster",
+        "module": "Coffee Roaster",
+        "public": 1,               # show for everyone
+        "content": "[]"            # empty layout (you can edit later)
+    }).insert()
+    frappe.db.commit()
+    print("✓  Created Workspace")
+
+print("\nAll done — reload your browser tab.")
+2025-06-22 18:17:45,048 INFO ipython m = frappe.get_all("Module Def", fields=["name", "app_name"])
+print(m)
+w = frappe.get_all("Workspace", fields=["name", "route", "module", "public"])
+print(w)
+2025-06-22 18:17:45,048 INFO ipython === session end ===
+2025-06-22 18:27:23,102 INFO ipython === bench console session ===
+2025-06-22 18:27:23,105 INFO ipython import frappe
+frappe.reload_doc('desk', 'doctype', 'workspace', force=True)
+frappe.db.commit()
+2025-06-22 18:27:23,105 INFO ipython === session end ===
+2025-06-22 18:34:44,955 INFO ipython === bench console session ===
+2025-06-22 18:34:44,957 INFO ipython import frappe
+
+# add the column only if it doesn't exist
+if not frappe.db.has_column("Workspace", "route"):
+    frappe.db.add_column("Workspace", "route", "varchar(140)")
+    frappe.db.commit()
+    print("✓ Added route column to tabWorkspace")
+else:
+    print("route column already exists")
+2025-06-22 18:34:44,957 INFO ipython import frappe
+
+# fallback if has_column() is missing, too
+table_cols = frappe.db.get_table_columns("Workspace")  
+
+if "route" not in table_cols:
+    frappe.db.sql("""ALTER TABLE `tabWorkspace`
+                     ADD COLUMN `route` VARCHAR(140) NULL AFTER `title`""")
+    frappe.db.commit()
+    print("✓ Added route column to tabWorkspace")
+else:
+    print("route column already exists")
+2025-06-22 18:34:44,957 INFO ipython import frappe
+
+# set the route value
+frappe.db.set_value(
+    "Workspace",
+    "Coffee Roaster",          # workspace name (exact)
+    "route",
+    "coffee-roaster"           # slug you want
+)
+frappe.db.commit()
+print("✓ Route field set")
+
+quit()    # or press Ctrl-D
+2025-06-22 18:34:44,957 INFO ipython === session end ===
+2025-06-22 18:39:11,544 INFO ipython === bench console session ===
+2025-06-22 18:39:11,545 INFO ipython import frappe
+
+# point the workspace at the exact slug the sidebar uses
+frappe.db.set_value("Workspace", "Coffee Roaster", "route", "coffee_roaster")
+
+# make sure it’s public and enabled
+frappe.db.set_value("Workspace", "Coffee Roaster", {
+    "public": 1,
+    "disabled": 0
+})
+
+frappe.db.commit()
+quit()          # or press Ctrl-D
+2025-06-22 18:39:11,546 INFO ipython import frappe
+
+# point the workspace to the exact slug used in the sidebar
+frappe.db.set_value("Workspace", "Coffee Roaster", "route", "coffee_roaster")
+
+# mark it public if that column exists
+if "public" in frappe.db.get_table_columns("Workspace"):
+    frappe.db.set_value("Workspace", "Coffee Roaster", "public", 1)
+
+frappe.db.commit()
+quit()      # Ctrl-D also works
+2025-06-22 18:39:11,546 INFO ipython === session end ===
+2025-06-22 18:42:06,381 INFO ipython === bench console session ===
+2025-06-22 18:42:06,382 INFO ipython import frappe, pprint
+ws = frappe.get_doc("Workspace", "Coffee Roaster")
+pprint.pprint({"route_in_db": ws.route})
+quit()
+2025-06-22 18:42:06,382 INFO ipython === session end ===
+2025-06-22 18:49:28,327 INFO ipython === bench console session ===
+2025-06-22 18:49:28,328 INFO ipython import frappe
+
+frappe.db.set_value("Workspace", "Coffee Roaster", "route", "coffee-roaster")
+frappe.db.commit()
+quit()            # or press Ctrl-D
+2025-06-22 18:49:28,329 INFO ipython === session end ===
+2025-06-22 18:54:19,574 INFO ipython === bench console session ===
+2025-06-22 18:54:19,576 INFO ipython import frappe
+
+# ► the sidebar link points to /app/coffee-roaster  (hyphen)
+#   so use that same slug below
+frappe.db.set_value("Workspace", "Coffee Roaster", "route", "coffee-roaster")
+
+# make sure the workspace is visible to everyone
+frappe.db.set_value("Workspace", "Coffee Roaster", "public", 1)
+
+frappe.db.commit()
+quit()
+2025-06-22 18:54:19,576 INFO ipython === session end ===
+2025-06-22 19:05:05,435 INFO ipython === bench console session ===
+2025-06-22 19:05:05,441 INFO ipython import frappe
+
+# ❶ delete the broken workspace (ignore if it isn't there)
+try:
+    frappe.delete_doc("Workspace", "Coffee Roaster", force=1)
+    frappe.db.commit()
+    print("✓ Deleted old workspace")
+except frappe.DoesNotExistError:
+    print("Workspace already gone")
+
+# ❷ create a fresh, minimal workspace with the correct slug
+ws = frappe.get_doc({
+    "doctype":  "Workspace",
+    "title":    "Coffee Roaster",
+    "module":   "Coffee Roaster",
+    "public":   1,
+    "route":    "coffee-roaster"      # ← slug that the sidebar link uses
+}).insert()
+frappe.db.commit()
+print("✓ New workspace created:", ws.name)
+
+quit()
+2025-06-22 19:05:05,441 INFO ipython import frappe
+
+# create a brand-new Coffee Roaster workspace
+ws = frappe.get_doc({
+    "doctype":  "Workspace",
+
+    # ─── the two required ID fields ─────────────────────
+    "name":     "Coffee Roaster",        # primary key
+    "title":    "Coffee Roaster",        # what users see
+
+    # ─── make it show up under the Coffee Roaster module ─
+    "module":   "Coffee Roaster",
+
+    # ─── make it visible & routable ─────────────────────
+    "public":   1,
+    "route":    "coffee-roaster",        # <– slug used by the sidebar
+
+    # (optional but harmless — avoids later collisions)
+    "sequence_id": 0
+}).insert(ignore_if_duplicate=True)
+
+frappe.db.commit()
+print("✓ Workspace created:", ws.name)
+quit()
+2025-06-22 19:05:05,442 INFO ipython === session end ===
+2025-06-22 22:56:39,487 INFO ipython === bench console session ===
+2025-06-22 22:56:39,491 INFO ipython "coffee_roaster.hooks.inventory_hooks.create_stock_entry"
+2025-06-22 22:56:39,491 INFO ipython # coffee_roaster/coffee_roaster/hooks.py
+doc_events = {
+    "Roast Batch": {
+        "on_submit": [
+            "coffee_roaster.hooks.inventory_hooks.inventory_hooks.create_stock_entry",
+            "coffee_roaster.hooks.accounting_hooks.create_sales_invoice"
+        ]
+    }
+}
+2025-06-22 22:56:39,491 INFO ipython === session end ===
+2025-06-23 00:35:38,581 INFO ipython === bench console session ===
+2025-06-23 00:35:38,587 INFO ipython import frappe
+print(frappe.get_hooks().get("app_title"))
+2025-06-23 00:35:38,587 INFO ipython import frappe
+print(frappe.get_installed_apps())
+2025-06-23 00:35:38,587 INFO ipython === session end ===
+2025-06-23 00:37:31,328 INFO ipython === bench console session ===
+2025-06-23 00:37:31,330 INFO ipython import frappe
+print(frappe.get_hooks().get("app_title"))
+2025-06-23 00:37:31,331 INFO ipython === session end ===
+2025-06-23 00:40:11,994 INFO ipython === bench console session ===
+2025-06-23 00:40:11,994 INFO ipython import coffee_roaster
+print(coffee_roaster)
+print(dir(coffee_roaster))
+2025-06-23 00:40:11,995 INFO ipython === session end ===
+2025-06-24 11:08:54,155 INFO ipython === bench console session ===
+2025-06-24 11:08:54,163 INFO ipython import frappe
+for d in frappe.get_all("DocType", fields=["name", "module"], order_by="module"):
+    print(f"{d.module:20} | {d.name}")
+exit()
+2025-06-24 11:08:54,164 INFO ipython === session end ===
+2025-06-24 11:10:06,408 INFO ipython === bench console session ===
+2025-06-24 11:10:06,409 INFO ipython for d in frappe.get_all("DocType", filters={"custom": 1}, fields=["name","module"]):
+    print(f"{d.module:20} | {d.name}")
+exit()
+2025-06-24 11:10:06,409 INFO ipython === session end ===
+2025-06-24 11:10:47,783 INFO ipython === bench console session ===
+2025-06-24 11:10:47,784 INFO ipython for c in frappe.get_all("Custom Field", fields=["name", "dt"]):
+    print(f"{c.dt:30} → {c.name}")
+exit()
+2025-06-24 11:10:47,784 INFO ipython === session end ===
+2025-06-24 11:12:21,514 INFO ipython === bench console session ===
+2025-06-24 11:12:21,514 INFO ipython for s in frappe.get_all("Server Script", fields=["name","script_type","document_type"]):
+    print(f"{s.script_type:15} | {s.document_type:30} | {s.name}")
+exit()
+2025-06-24 11:12:21,514 INFO ipython === session end ===
+2025-06-24 14:13:38,803 INFO ipython === bench console session ===
+2025-06-24 14:13:38,806 INFO ipython import frappe
+
+# Delete the old workspace
+if frappe.db.exists("Workspace", "Coffee Roaster"):
+    frappe.delete_doc("Workspace", "Coffee Roaster")
+    frappe.db.commit()
+    print("Old Workspace deleted.")
+else:
+    print("No existing Workspace found.")
+
+# Exit
+exit()
+2025-06-24 14:13:38,807 INFO ipython === session end ===
+2025-06-24 14:20:02,791 INFO ipython === bench console session ===
+2025-06-24 14:20:02,793 INFO ipython import frappe
+from coffee_roaster.config.workspace import get_data
+from frappe.core.doctype.workspace.workspace import create_workspace
+
+# Delete any old “Coffee Roaster” workspace
+if frappe.db.exists("Workspace", "Coffee Roaster"):
+    frappe.delete_doc("Workspace", "Coffee Roaster")
+    frappe.db.commit()
+
+# Re-create from your config
+create_workspace(get_data())
+frappe.db.commit()
+print("✅ Coffee Roaster workspace re-created.")
+2025-06-24 14:20:02,793 INFO ipython import frappe
+from coffee_roaster.config.workspace import get_data
+from frappe.core.doctype.workspace.workspace import create_workspace
+
+# Delete any old “Coffee Roaster” workspace
+if frappe.db.exists("Workspace", "Coffee Roaster"):
+    frappe.delete_doc("Workspace", "Coffee Roasr")
+    frappe.db.commit()
+
+# Re-create from your config
+create_workspace(get_data())
+frappe.db.commit()
+print("✅ Coffee Roaster workspace re-created.")
+2025-06-24 14:20:02,793 INFO ipython === session end ===
+2025-06-24 14:28:51,596 INFO ipython === bench console session ===
+2025-06-24 14:28:51,597 INFO ipython import frappe
+from coffee_roaster.config.workspace import get_data
+from frappe.core.doctype.workspace.workspace import create_workspace
+
+# Delete any old record
+if frappe.db.exists("Workspace", "Coffee Roaster"):
+    frappe.delete_doc("Workspace", "Coffee Roaster")
+    frappe.db.commit()
+
+# Create fresh
+create_workspace(get_data())
+frappe.db.commit()
+print("✅ Workspace re-created!")
+2025-06-24 14:28:51,598 INFO ipython === session end ===
+2025-06-24 14:33:17,949 INFO ipython === bench console session ===
+2025-06-24 14:33:17,950 INFO ipython bench --site coffeesite.local console
+# then:
+import frappe
+from coffee_roaster.config.workspace import get_data
+from frappe.core.doctype.workspace.workspace import create_workspace
+
+frappe.delete_doc_if_exists("Workspace", "Coffee Roaster")
+create_workspace(get_data())
+frappe.db.commit()
+exit()
+2025-06-24 14:33:17,950 INFO ipython import frappe
+from coffee_roaster.config.workspace import get_data
+from frappe.core.doctype.workspace.workspace import create_workspace
+
+# Remove any old Coffee Roaster workspace
+if frappe.db.exists("Workspace", "Coffee Roaster"):
+    frappe.delete_doc("Workspace", "Coffee Roaster")
+    frappe.db.commit()
+
+# Create a fresh one from your config
+create_workspace(get_data())
+frappe.db.commit()
+print("✅ Coffee Roaster workspace re-created.")
+2025-06-24 14:33:17,951 INFO ipython === session end ===
+2025-06-24 14:34:32,089 INFO ipython === bench console session ===
+2025-06-24 14:34:32,089 INFO ipython import frappe
+from coffee_roaster.config.workspace import get_data
+from frappe.desk.doctype.workspace.workspace import create_workspace
+
+# 1. Delete old Workspace if present
+if frappe.db.exists("Workspace", "Coffee Roaster"):
+    frappe.delete_doc("Workspace", "Coffee Roaster")
+    frappe.db.commit()
+
+# 2. Re-create from your config
+create_workspace(get_data())
+frappe.db.commit()
+
+print("✅ Coffee Roaster workspace re-created.")
+2025-06-24 14:34:32,091 INFO ipython import frappe
+from coffee_roaster.config.workspace import get_data
+
+data = get_data()
+workspace_name = data["label"]
+
+# 1. Delete any old record
+if frappe.db.exists("Workspace", workspace_name):
+    frappe.delete_doc("Workspace", workspace_name)
+    frappe.db.commit()
+
+# 2. Create a fresh Workspace doc
+ws = frappe.new_doc("Workspace")
+ws.title = workspace_name
+ws.label = workspace_name
+ws.show_on_desktop = 1
+ws.icon = data.get("icon", "")
+# append each item
+for item in data["items"]:
+    # frappe will validate keys; unsupported keys are ignored
+    ws.append("items", item)
+
+# 3. Insert and commit
+ws.insert(ignore_permissions=True)
+frappe.db.commit()
+
+print(f"✅ Workspace '{workspace_name}' created with {len(data['items'])} items.")
+2025-06-24 14:34:32,092 INFO ipython === session end ===
+2025-06-24 15:00:45,624 INFO ipython === bench console session ===
+2025-06-24 15:00:45,629 INFO ipython import coffee_roaster.config.workspace as ws
+print(ws.get_data()["label"])
+exit()
+2025-06-24 15:00:45,629 INFO ipython === session end ===
+2025-06-24 15:04:10,771 INFO ipython === bench console session ===
+2025-06-24 15:04:10,773 INFO ipython import coffee_roaster.config.workspace as ws
+print(ws.get_data()["label"])  # should print "Coffee Roaster"
+exit()
+2025-06-24 15:04:10,773 INFO ipython === session end ===
+2025-06-24 15:06:06,887 INFO ipython === bench console session ===
+2025-06-24 15:06:06,887 INFO ipython import coffee_roaster.config.workspace as ws
+print(ws.get_data()["label"]) 
+2025-06-24 15:06:06,888 INFO ipython import coffee_roaster.config.workspace as ws
+print(ws.get_data()["label"])  # expecting "Coffee Roaster"
+exit()
+2025-06-24 15:06:06,888 INFO ipython === session end ===
+2025-06-24 15:07:50,887 INFO ipython === bench console session ===
+2025-06-24 15:07:50,888 INFO ipython import frappe
+from coffee_roaster.config.workspace import get_data
+
+data = get_data()
+# delete any stale record
+frappe.delete_doc_if_exists("Workspace", data["label"])
+frappe.db.commit()
+
+# create a new Workspace
+ws = frappe.get_doc({
+    "doctype": "Workspace",
+    "title": data["label"],
+    "label": data["label"],
+    "show_on_desktop": 1,
+    "icon": data.get("icon", ""),
+    "items": data["items"]
+})
+ws.insert(ignore_permissions=True)
+frappe.db.commit()
+print("✅ Workspace created.")
+exit()
+2025-06-24 15:07:50,888 INFO ipython === session end ===
+2025-06-24 15:10:04,590 INFO ipython === bench console session ===
+2025-06-24 15:10:04,591 INFO ipython import frappe
+
+# Load the workspace
+ws = frappe.get_doc("Workspace", "Coffee Roaster")
+
+# Tell it which route to use
+ws.route = "coffee-roaster"
+
+# Make sure it shows on your desktop/sidebar
+ws.show_on_desktop = 1
+
+ws.save(ignore_permissions=True)
+frappe.db.commit()
+print("✅ Route set to /app/coffee-roaster")
+exit()
+2025-06-24 15:10:04,591 INFO ipython === session end ===
+2025-06-24 15:17:25,963 INFO ipython === bench console session ===
+2025-06-24 15:17:25,964 INFO ipython import frappe
+
+# Load the Coffee Roaster workspace
+ws = frappe.get_doc("Workspace", "Coffee Roaster")
+
+# Assign the URL slug you’ll browse to
+ws.route = "coffee-roaster"
+
+# Make sure it shows in the sidebar
+ws.show_on_desktop = 1
+
+# (Optional) Assign it to a module so it groups nicely
+ws.module = "Custom"
+
+ws.save(ignore_permissions=True)
+frappe.db.commit()
+print("✅ Route set and workspace updated.")
+exit()
+2025-06-24 15:17:25,965 INFO ipython === session end ===
+2025-06-24 15:23:14,558 INFO ipython === bench console session ===
+2025-06-24 15:23:14,560 INFO ipython import frappe
+# this is the Title of your Workspace, not the route
+ws = frappe.get_doc("Workspace", "Coffee Roaster")
+2025-06-24 15:23:14,560 INFO ipython # In your bench console, continue at In [2]:
+ws.route = "coffee-roaster"      # the URL slug
+ws.show_on_desktop = 1           # make it appear in the sidebar
+ws.public = 1                    # optional: visible to all roles
+ws.module = "Custom"             # or pick your Module Def name
+ws.save(ignore_permissions=True) # write the changes
+frappe.db.commit()               # commit to the database
+print("✅ Workspace updated – browse to /app/coffee-roaster")
+exit()
+2025-06-24 15:23:14,561 INFO ipython === session end ===
+2025-06-24 15:33:24,649 INFO ipython === bench console session ===
+2025-06-24 15:33:24,650 INFO ipython import frappe
+from coffee_roaster.config.workspace import get_data
+
+data = get_data()
+
+# load your workspace
+ws = frappe.get_doc("Workspace", "Coffee Roaster")
+
+# clear any existing items
+ws.items = []
+
+# append every item from your config
+for item in data["items"]:
+    ws.append("items", item)
+
+# (re)set routing & sidebar flags, just in case
+ws.route         = data.get("route", "coffee-roaster")
+ws.show_on_desktop = 1
+ws.public        = 1
+ws.module        = ws.module or "Custom"
+
+ws.save(ignore_permissions=True)
+frappe.db.commit()
+print(f"✅ Injected {len(data['items'])} items into your Coffee Roaster workspace.")
+exit()
+2025-06-24 15:33:24,651 INFO ipython === session end ===
+2025-06-25 15:42:12,529 INFO ipython === bench console session ===
+2025-06-25 15:42:12,536 INFO ipython from coffee_roaster.coffee_roaster.doctype.roast_batch.roast_batch import create_stock_entry
+import frappe
+
+# Replace with your actual batch name:
+batch = frappe.get_doc("Roast Batch", "0625RB00001")
+create_stock_entry(batch, None)
+2025-06-25 15:42:12,537 INFO ipython === session end ===
+2025-06-25 15:53:30,803 INFO ipython === bench console session ===
+2025-06-25 15:53:30,804 INFO ipython # Correct import path:
+from coffee_roaster.doctype.roast_batch.roast_batch import create_stock_entry
+import frappe
+
+# Fetch an existing batch (replace with your actual name):
+batch = frappe.get_doc("Roast Batch", "0625RB00001")
+
+# Call the function
+create_stock_entry(batch, None)
+2025-06-25 15:53:30,804 INFO ipython # Correct import path:
+from coffee_roaster.doctype.roast_batch.roast_batch import create_stock_entry
+import frappe
+
+# Fetch an existing batch (replace with your actual name):
+batch = frappe.get_doc("Roast Batch", "252200002")
+
+# Call the function
+create_stock_entry(batch, None)
+2025-06-25 15:53:30,804 INFO ipython import frappe
+print(frappe.get_all("Roast Batch", fields=["name"]))   # shows all batch names in DB
+2025-06-25 15:53:30,804 INFO ipython import frappe
+
+# Adjust these to fill in required fields on your Roast Batch
+batch = frappe.get_doc({
+    "doctype": "Roast Batch",
+    "name": "252200002",         # the “missing” key
+    "profile": "Default Profile",# example mandatory field
+    "roast_date": "2025-06-25",
+    # …add any other mandatory field name/value pairs…
+})
+batch.insert(ignore_permissions=True)
+frappe.db.commit()
+
+print("Created Roast Batch:", batch.name)
+2025-06-25 15:53:30,805 INFO ipython import frappe
+
+meta = frappe.get_meta("Roast Batch")
+required = [df.fieldname for df in meta.fields if df.reqd]
+print("Required fields:", required)
+2025-06-25 15:53:30,805 INFO ipython === session end ===
+2025-06-25 16:15:37,867 INFO ipython === bench console session ===
+2025-06-25 16:15:37,868 INFO ipython import frappe
+
+# Fetch all Roast Batch names
+batch_names = frappe.get_all("Roast Batch", pluck="name")
+
+# Delete each one
+for name in batch_names:
+    frappe.delete_doc("Roast Batch", name, force=True)
+
+# Persist changes
+frappe.db.commit()
+
+print(f"Deleted {len(batch_names)} Roast Batch records.")
+2025-06-25 16:15:37,868 INFO ipython === session end ===
+2025-06-25 16:29:19,419 INFO ipython === bench console session ===
+2025-06-25 16:29:19,419 INFO ipython # In apps/coffee_roaster/coffee_roaster/api.py
+
+import frappe
+from datetime import datetime
+
+def generate_batch_id(doc, method):
+    frappe.log_error("generate_batch_id hook called", frappe.as_json({
+        "doctype": doc.doctype,
+        "name": doc.name
+    }))
+
+    if not doc.batch_id:
+        prefix = datetime.now().strftime("%m%y") + "RB"
+        # … rest of your logic …
+2025-06-25 16:29:19,419 INFO ipython === session end ===
+2025-06-26 10:10:24,672 INFO ipython === bench console session ===
+2025-06-26 10:10:24,679 INFO ipython import frappe
+print(frappe.db.exists("DocType", "Green Bean"))
+2025-06-26 10:10:24,679 INFO ipython === session end ===
+2025-06-26 11:21:31,368 INFO ipython === bench console session ===
+2025-06-26 11:21:31,368 INFO ipython import frappe
+print(frappe.db.exists("DocType", "Roasting Batch"))
+# → None  means Frappe never loaded your JSON
+2025-06-26 11:21:31,369 INFO ipython import frappe
+
+# Check for a specific module name:
+exists = frappe.db.exists("Module Def", "Coffee Roaster")
+print("Registered?" , bool(exists))
+
+# Or list all modules:
+modules = frappe.get_all("Module Def", fields=["module_name"])
+print([m.module_name for m in modules])
+2025-06-26 11:21:31,369 INFO ipython import frappe
+
+# List all DocTypes assigned to your module
+dts = frappe.get_all(
+    "DocType",
+    filters={ "module": "Coffee Roaster" },
+    fields=["name", "custom"]
+)
+print([dt["name"] for dt in dts])
+2025-06-26 11:21:31,369 INFO ipython import frappe
+
+# Fetch all custom DocTypes with their module
+custom_dts = frappe.get_all(
+  "DocType",
+  filters={"custom": 1},
+  fields=["name", "module"]
+)
+
+# Print them out
+for dt in custom_dts:
+    print(f"{dt['name']}: {dt['module']}")
+2025-06-26 11:21:31,369 INFO ipython === session end ===
+2025-06-26 12:00:32,227 INFO ipython === bench console session ===
+2025-06-26 12:00:32,228 INFO ipython import frappe
+
+# Fetch all custom DocTypes with their module
+dts = frappe.get_all(
+    "DocType",
+    filters={"custom": 1},
+    fields=["name", "module"]
+)
+
+# Print them sorted by module
+for dt in sorted(dts, key=lambda x: (x["module"], x["name"])):
+    print(f"{dt['name']}: {dt['module']}")
+2025-06-26 12:00:32,228 INFO ipython import frappe, os
+
+# Base path to your app’s code
+bench_root = os.getcwd()
+app_path = os.path.join(bench_root, "apps", "coffee_roaster", "coffee_roaster")
+
+# Fetch all custom DocTypes
+custom_dts = frappe.get_all(
+    "DocType",
+    filters={"custom": 1},
+    fields=["name", "module"]
+)
+
+print(f"{'DocType':30} {'Module':20} {'Expected JSON Path':80} Status")
+print("-"*150)
+for dt in custom_dts:
+    # derive folder names
+    module_folder = dt["module"].lower().replace(" ", "_")
+    dt_folder     = dt["name"].lower().replace(" ", "_")
+    json_path = os.path.join(
+        app_path,
+        module_folder,
+        "doctype",
+        dt_folder,
+        f"{dt_folder}.json"
+    )
+    status = "FOUND" if os.path.exists(json_path) else "MISSING"
+    print(f"{dt['name']:30} {dt['module']:20} {json_path:80} {status}")
+2025-06-26 12:00:32,228 INFO ipython import frappe, os
+
+# This is the true path to your app’s code
+app_path = frappe.get_app_path("coffee_roaster", "coffee_roaster")
+
+# Fetch all custom DocTypes
+dts = frappe.get_all(
+    "DocType",
+    filters={"custom": 1},
+    fields=["name", "module"]
+)
+
+print(f"{'DocType':30} {'Module':20} {'Expected JSON Path':80} Status")
+print("-"*150)
+for dt in dts:
+    module_folder = dt["module"].lower().replace(" ", "_")
+    dt_folder     = dt["name"].lower().replace(" ", "_")
+    # Build the correct path under your app code
+    json_path = os.path.join(
+        app_path,
+        module_folder,
+        "doctype",
+        dt_folder,
+        f"{dt_folder}.json"
+    )
+    status = "FOUND" if os.path.exists(json_path) else "MISSING"
+    print(f"{dt['name']:30} {dt['module']:20} {json_path:80} {status}")
+2025-06-26 12:00:32,228 INFO ipython import frappe, os
+
+# 1) Locate your app’s code root
+app_root = frappe.get_app_path("coffee_roaster")
+print("App root is:", app_root)
+print("Top-level folders in app_root:", os.listdir(app_root))
+
+# If you see a subfolder named 'coffee_roaster', that's where your doctype folder is.  
+# Build that path:
+inner = os.path.join(app_root, "coffee_roaster") if "coffee_roaster" in os.listdir(app_root) else app_root
+print("Using code path:", inner)
+print("Folders here:", os.listdir(inner))
+
+print("\nChecking each custom DocType…\n")
+print(f"{'DocType':30} {'Module':20} {'Exists at':60}")
+print("-"*120)
+
+# 2) Get all your custom DocTypes
+dts = frappe.get_all("DocType", filters={"custom":1}, fields=["name","module"])
+for dt in dts:
+    mod = dt["module"].lower().replace(" ", "_")
+    dtf = dt["name"].lower().replace(" ", "_")
+    # two candidate paths:
+    p1 = os.path.join(inner, mod, "doctype", dtf, f"{dtf}.json")
+    p2 = os.path.join(app_root, mod, "doctype", dtf, f"{dtf}.json")
+    status = ("FOUND in inner" if os.path.exists(p1) else
+              "FOUND in root"  if os.path.exists(p2) else
+              "MISSING")
+    exists_at = p1 if os.path.exists(p1) else (p2 if os.path.exists(p2) else "")
+    print(f"{dt['name']:30} {dt['module']:20} {status:60}")
+2025-06-26 12:00:32,228 INFO ipython === session end ===
+2025-06-26 12:22:46,418 INFO ipython === bench console session ===
+2025-06-26 12:22:46,419 INFO ipython import frappe, os
+
+# Locate your app’s code root
+app_root = frappe.get_app_path("coffee_roaster", "coffee_roaster")
+
+print(f"{'DocType':30} {'Module':20} {'JSON Exists':12} {'PY Exists':12}")
+print("-"*80)
+
+# Fetch all custom DocTypes
+for dt in frappe.get_all("DocType", filters={"custom":1}, fields=["name","module"]):
+    name = dt["name"]
+    module = dt["module"]
+    module_folder = module.lower().replace(" ", "_")
+    dt_folder     = name.lower().replace(" ", "_")
+
+    base = os.path.join(app_root, module_folder, "doctype", dt_folder)
+    json_path = os.path.join(base, f"{dt_folder}.json")
+    py_path   = os.path.join(base, f"{dt_folder}.py")
+
+    print(f"{name:30} {module:20} {os.path.exists(json_path)!s:12} {os.path.exists(py_path)!s:12}")
+2025-06-26 12:22:46,419 INFO ipython === session end ===
+2025-06-26 20:02:37,652 INFO ipython === bench console session ===
+2025-06-26 20:02:37,660 INFO ipython === session end ===
+2025-06-26 20:03:44,404 INFO ipython === bench console session ===
+2025-06-26 20:03:44,405 INFO ipython === session end ===
+2025-06-26 20:13:24,407 INFO ipython === bench console session ===
+2025-06-26 20:13:24,407 INFO ipython modules = frappe.get_all("Module Def", fields=["module_name"])
+print([m.module_name for m in modules])
+2025-06-26 20:13:24,408 INFO ipython frappe.get_all("DocType", filters={"module": "Accounts"}, fields=["name"])
+2025-06-26 20:13:24,408 INFO ipython frappe.get_all("DocType", filters={"module": "Coffee Roaster"}, fields=["name"])
+2025-06-26 20:13:24,408 INFO ipython frappe.get_all("Custom DocType", filters={"module": "Coffee Roaster"}, fields=["name"])
+2025-06-26 20:13:24,408 INFO ipython === session end ===
+2025-06-26 20:16:16,237 INFO ipython === bench console session ===
+2025-06-26 20:16:16,237 INFO ipython fixtures = ["Custom Field", "Custom Doctype"]
+2025-06-26 20:16:16,238 INFO ipython === session end ===
+2025-06-27 04:20:36,935 INFO ipython === bench console session ===
+2025-06-27 04:20:36,941 INFO ipython frappe.get_all("Module Def", filters={"module_name": "Coffee Roaster"})
+2025-06-27 04:20:36,942 INFO ipython frappe.get_all("DocType", filters={"module": "Coffee Roaster"}, fields=["name"])
+2025-06-27 04:20:36,942 INFO ipython frappe.get_all("DocType", filters={"custom": 0, "owner": frappe.session.user}, fields=["name", "module"])
+2025-06-27 04:20:36,942 INFO ipython frappe.get_all("DocType", filters={"module": "Coffee Roaster"}, fields=["name"])
+2025-06-27 04:20:36,942 INFO ipython frappe.get_all(
+    "DocType",
+    filters={"custom": 1},
+    fields=["name", "module"]
+)
+2025-06-27 04:20:36,942 INFO ipython frappe.db.set_value("DocType", "Green Bean", "module", "Coffee Roaster")
+frappe.db.set_value("DocType", "Roast Batch", "module", "Coffee Roaster")
+frappe.db.set_value("DocType", "Roast Profile", "module", "Coffee Roaster")
+frappe.db.set_value("DocType", "Green Bean Assessment", "module", "Coffee Roaster")
+frappe.db.set_value("DocType", "Category 1 Defect Entry", "module", "Coffee Roaster")
+frappe.db.set_value("DocType", "Category 2 Defect Entry", "module", "Coffee Roaster")
+frappe.db.set_value("DocType", "Descriptive Cupping", "module", "Coffee Roaster")
+frappe.db.set_value("DocType", "Affective Cupping", "module", "Coffee Roaster")
+frappe.db.set_value("DocType", "Cupping Score Entry", "module", "Coffee Roaster")
+frappe.db.set_value("DocType", "Roast Phase Entry", "module", "Coffee Roaster")
+frappe.db.set_value("DocType", "Roast Log", "module", "Coffee Roaster")
+
+frappe.db.commit()
+2025-06-27 04:20:36,943 INFO ipython frappe.get_all("DocType", filters={"module": "Coffee Roaster"}, fields=["name"])
+2025-06-27 04:20:36,943 INFO ipython === session end ===
+2025-06-27 04:32:09,963 INFO ipython === bench console session ===
+2025-06-27 04:32:09,963 INFO ipython frappe.get_all("DocType", filters={"module": "Coffee Roaster"}, fields=["name"])
+2025-06-27 04:32:09,964 INFO ipython cat apps/coffee_roaster/coffee_roaster/coffee_roaster/doctype/roast_log/roast_log.json
+2025-06-27 04:32:09,964 INFO ipython === session end ===
+2025-06-27 14:10:27,107 INFO ipython === bench console session ===
+2025-06-27 14:10:27,114 INFO ipython === session end ===
+2025-06-27 15:12:49,285 INFO ipython === bench console session ===
+2025-06-27 15:12:49,286 INFO ipython registered = frappe.get_all("DocType", filters={"custom": 0}, fields=["name", "module"])
+for d in registered:
+    print("✅ Registered:", d.module, "-", d.name)
+2025-06-27 15:12:49,286 INFO ipython custom = frappe.get_all("DocType", filters={"custom": 1}, fields=["name", "module"])
+for d in custom:
+    print("❌ Custom / Unregistered:", d.module, "-", d.name)
+2025-06-27 15:12:49,286 INFO ipython modules = [m.module_name for m in frappe.get_all("Module Def")]
+invalid = frappe.get_all("DocType", fields=["name", "module"], filters={"custom": 1})
+for d in invalid:
+    if d.module not in modules:
+        print("🚫 Invalid Module Name:", d.module, "-", d.name)
+2025-06-27 15:12:49,286 INFO ipython frappe.db.set_value("DocType", "Roast Log", "custom", 0)
+frappe.db.set_value("DocType", "Roast Log", "module", "coffee_roaster")
+frappe.db.commit()
+2025-06-27 15:12:49,286 INFO ipython === session end ===
+2025-06-27 15:34:01,606 INFO ipython === bench console session ===
+2025-06-27 15:34:01,611 INFO ipython invalid = frappe.get_all("DocType", fields=["name", "module"], filters={"custom": 1})
+fixed = []
+
+for d in invalid:
+    if d.module == "Coffee Roaster":
+        frappe.db.set_value("DocType", d.name, "module", "coffee_roaster")
+        frappe.db.set_value("DocType", d.name, "custom", 0)
+        fixed.append(d.name)
+
+frappe.db.commit()
+print("✅ Fixed the following DocTypes:")
+for name in fixed:
+    print("  -", name)
+2025-06-27 15:34:01,611 INFO ipython me@sime-virtual-machine:~/coffee_bench$ bench console
+Apps in this namespace:
+frappe, erpnext, coffee_roaster
+
+In [1]: invalid = frappe.get_all("DocType", fields=["name", "module"], filters={"custom": 1})
+   ...: fixed = []
+   ...: 
+   ...: for d in invalid:
+   ...:     if d.module == "Coffee Roaster":
+   ...:         frappe.db.set_value("DocType", d.name, "module", "coffee_roaster")
+   ...:         frappe.db.set_value("DocType", d.name, "custom", 0)
+   ...:         fixed.append(d.name)
+   ...: 
+   ...: frappe.db.commit()
+   ...: print("✅ Fixed the following DocTypes:")
+   ...: for name in fixed:
+   ...:     print("  -", name)
+   ...: 
+✅ Fixed the following DocTypes:
+  - Roast Phase Entry
+  - Cupping Score Entry
+  - Affective Cupping
+  - Descriptive Cupping
+  - Category 2 Defect Entry
+  - Category 1 Defect Entry
+  - Green Bean Assessment
+  - Roast Profile
+  - Roast Batch
+  - Green Bean
+
+In [2]: 
+
+    fixtures = ["DocType"]
+2025-06-27 15:34:01,612 INFO ipython invalid = frappe.get_all("DocType", fields=["name", "module"], filters={"custom": 1})
+fixed = []
+
+for d in invalid:
+    if d.module == "Coffee Roaster":
+        frappe.db.set_value("DocType", d.name, "module", "coffee_roaster")
+        frappe.db.set_value("DocType", d.name, "custom", 0)
+        fixed.append(d.name)
+
+frappe.db.commit()
+print("Fixed the following DocTypes:")
+for name in fixed:
+    print("  -", name)
+2025-06-27 15:34:01,612 INFO ipython === session end ===
+2025-06-28 04:34:35,555 INFO ipython === bench console session ===
+2025-06-28 04:34:35,562 INFO ipython import coffee_roaster
+2025-06-28 04:34:35,563 INFO ipython === session end ===
+2025-06-28 05:09:29,184 INFO ipython === bench console session ===
+2025-06-28 05:09:29,184 INFO ipython import coffee_roaster; coffee_roaster.__file__
+2025-06-28 05:09:29,184 INFO ipython frappe.db.exists("Module Def", "Coffee Roaster")
+2025-06-28 05:09:29,185 INFO ipython === session end ===
+2025-06-28 05:17:50,334 INFO ipython === bench console session ===
+2025-06-28 05:17:50,334 INFO ipython import frappe, pprint
+pprint.pprint(frappe.get_all("Module Def", pluck="name"))
+2025-06-28 05:17:50,334 INFO ipython import frappe
+
+GOOD_MODULE = "Coffee Roaster"
+
+for dt in frappe.get_all("DocType",
+                         filters={"module": "coffee_roaster"},
+                         pluck="name"):
+    doc = frappe.get_doc("DocType", dt)
+    doc.module = GOOD_MODULE
+    doc.save()
+frappe.db.commit()
+print("✓ Updated", len(frappe.get_all('DocType', filters={'module': GOOD_MODULE})),
+      "doctypes to →", GOOD_MODULE)
+2025-06-28 05:17:50,335 INFO ipython import frappe
+if not frappe.db.exists("Module Def", "coffee_roaster"):
+    frappe.get_doc({
+        "doctype": "Module Def",
+        "module_name": "coffee_roaster",   # ← lower-case on purpose
+        "app_name":  "coffee_roaster"
+    }).insert()
+    frappe.db.commit()
+    print("✓  Created Module Def coffee_roaster")
+else:
+    print("Module Def already exists")
+exit
+2025-06-28 05:17:50,335 INFO ipython import frappe
+if not frappe.db.exists("Module Def", "coffee_roaster"):
+    frappe.get_doc({
+        "doctype": "Module Def",
+        "module_name": "coffee_roaster",   # ← lower-case on purpose
+        "app_name":  "coffee_roaster"
+    }).insert()
+    frappe.db.commit()
+    print("✓  Created Module Def coffee_roaster")
+else:
+    print("Module Def already exists")
+exit
+2025-06-28 05:17:50,335 INFO ipython import frappe
+
+# keep lower-case "coffee_roaster"  ➜  delete title-case "Coffee Roaster"
+if frappe.db.exists("Module Def", "Coffee Roaster"):
+    frappe.delete_doc("Module Def", "Coffee Roaster", force=1)
+    frappe.db.commit()
+    print("✓  Removed duplicate Module Def 'Coffee Roaster'")
+else:
+    print("Only the correct Module Def is present")
+exit
+2025-06-28 05:17:50,335 INFO ipython import frappe
+GOOD = "coffee_roaster"
+
+for dt in frappe.get_all(
+        "DocType",
+        filters={"module": ["!=", GOOD], "app": "coffee_roaster"},
+        pluck="name"):
+    doc = frappe.get_doc("DocType", dt)
+    doc.module = GOOD
+    doc.save()
+
+frappe.db.commit()
+print("✓  All doctypes now reference", GOOD)
+exit
+2025-06-28 05:17:50,335 INFO ipython === session end ===
+2025-06-28 05:21:20,406 INFO ipython === bench console session ===
+2025-06-28 05:21:20,407 INFO ipython import frappe, json
+
+if not frappe.db.exists("Module Def", "Coffee Roaster"):
+    frappe.get_doc({
+        "doctype":     "Module Def",
+        "module_name": "Coffee Roaster",   # ← Title Case, with space
+        "app_name":    "coffee_roaster"
+    }).insert()
+    frappe.db.commit()
+    print("✓  Restored Module Def 'Coffee Roaster'")
+else:
+    print("Module Def already present")
+exit
+2025-06-28 05:21:20,407 INFO ipython fixtures = [
+    {"doctype": "Module Def", "filters": [["name", "=", "Coffee Roaster"]]},
+    {"doctype": "DocType",    "filters": [["module", "=", "Coffee Roaster"]]},
+]
+2025-06-28 05:21:20,407 INFO ipython === session end ===
+2025-06-28 05:24:35,324 INFO ipython === bench console session ===
+2025-06-28 05:24:35,325 INFO ipython import frappe, json
+   ...: 
+   ...: if not frappe.db.exists("Module Def", "Coffee Roaster"):
+   ...:     frappe.get_doc({
+   ...:         "doctype":     "Module Def",
+   ...:         "module_name": "Coffee Roaster",   # ← Title Case, with space
+   ...:         "app_name":    "coffee_roaster"
+   ...:     }).insert()
+   ...:     frappe.db.commit()
+   ...:     print("✓  Restored Module Def 'Coffee Roaster'")
+   ...: else:
+   ...:     print("Module Def already present")
+   ...: exit
+2025-06-28 05:24:35,325 INFO ipython === session end ===
+2025-06-28 20:57:08,948 INFO ipython === bench console session ===
+2025-06-28 20:57:08,954 INFO ipython python - <<'PY'
+import json, pathlib, re
+
+root = pathlib.Path("apps/coffee_roaster/coffee_roaster/coffee_roaster")
+bad = []
+
+for path in root.rglob("*.json"):
+    # ignore translation dictionaries outside the module folder
+    if "translations" in path.parts:
+        continue
+
+    try:
+        data = json.load(path.open())
+    except Exception as e:
+        print("⚠️  invalid JSON →", path)
+        continue
+
+    # a fixture file can contain a list; normal files are dicts
+    docs = data if isinstance(data, list) else [data]
+
+    for doc in docs:
+        if isinstance(doc, dict) and doc.get("doctype") not in ("Translation",):
+            if "name" not in doc or "module" not in doc:
+                bad.append(path)
+                break
+
+if bad:
+    print("\n🚩  Files missing 'name' or 'module':")
+    for p in bad:
+        print("   ", p)
+else:
+    print("✅  every importable JSON has 'name' + 'module'")
+PY
+2025-06-28 20:57:08,955 INFO ipython === session end ===
+2025-06-28 22:49:28,547 INFO ipython === bench console session ===
+2025-06-28 22:49:28,549 INFO ipython doc = frappe.get_doc("DocType", "Physical Assessment")
+doc.istable, doc.issingle
+2025-06-28 22:49:28,549 INFO ipython from frappe.core.doctype.role_permission_for_page_and_report.role_permission_for_page_and_report import get_roles_with_read_access
+get_roles_with_read_access("Physical Assessment")
+2025-06-28 22:49:28,549 INFO ipython roles = frappe.get_all(
+    "Has Role",
+    filters={"parent": ("not like", "Guest"), "parenttype": "User"},
+    fields=["parent as user", "role"]
+)
+print("Sample of user → role mappings:", roles[:5])
+
+# for the DocType
+perm_rows = frappe.get_all(
+    "DocPerm",
+    filters={"parent": "Physical Assessment"},
+    fields=["role", "read", "write", "submit"]
+)
+print("DocPerm rows on Physical Assessment:", perm_rows)
+2025-06-28 22:49:28,549 INFO ipython === session end ===
+2025-06-29 02:29:22,138 INFO ipython === bench console session ===
+2025-06-29 02:29:22,139 INFO ipython batch = frappe.get_doc("Roast Batch", "fcv2k6g89f")
+batch.start_roast()
+2025-06-29 02:29:22,139 INFO ipython batch = frappe.get_doc("Roast Batch", "fcv2k6g89f")
+batch.start_roast()
+2025-06-29 02:29:22,139 INFO ipython === session end ===
+2025-06-29 02:32:44,891 INFO ipython === bench console session ===
+2025-06-29 02:32:44,892 INFO ipython batch = frappe.get_doc("Roast Batch", "fcv2k6g89f")
+ batch.start_roast()
+2025-06-29 02:32:44,892 INFO ipython batch = frappe.get_doc("Roast Batch", "fcv2k6g89f")
+batch.start_roast()
+2025-06-29 02:32:44,892 INFO ipython frappe.get_doc("Roast Batch", "fcv2k6g89f").start_roast()
+2025-06-29 02:32:44,893 INFO ipython === session end ===
+2025-06-29 03:29:13,296 INFO ipython === bench console session ===
+2025-06-29 03:29:13,313 INFO ipython batch = frappe.get_doc("Roast Batch", "fcv2k6g89f")
+batch.start_roast()
+2025-06-29 03:29:13,313 INFO ipython === session end ===
+2025-06-29 03:50:09,886 INFO ipython === bench console session ===
+2025-06-29 03:50:09,892 INFO ipython import os
+
+# Let's inspect the previous directory to check if Sales Invoice Item customization or relevant files might be missing
+custom_field_path = "/mnt/data/erp/apps/coffee_roaster/coffee_roaster/coffee_roaster/doctype/sales_invoice_item"
+existing_files = []
+
+if os.path.exists(custom_field_path):
+    existing_files = os.listdir(custom_field_path)
+
+existing_files
+2025-06-29 03:50:09,893 INFO ipython import os
+
+# Let's confirm if there's any custom field created for batch in Sales Order Item
+custom_fields_path = "/mnt/data/erp/apps/coffee_roaster/coffee_roaster/coffee_roaster/custom_field"
+custom_field_files = []
+
+if os.path.exists(custom_fields_path):
+    custom_field_files = os.listdir(custom_fields_path)
+
+custom_field_files
+2025-06-29 03:50:09,893 INFO ipython === session end ===
+2025-06-29 03:58:18,968 INFO ipython === bench console session ===
+2025-06-29 03:58:18,970 INFO ipython import os
+
+# Let's confirm if there's any custom field created for batch in Sales Order Item
+custom_fields_path = "/mnt/data/erp/apps/coffee_roaster/coffee_roaster/coffee_roaster/custom_field"
+custom_field_files = []
+
+if os.path.exists(custom_fields_path):
+    custom_field_files = os.listdir(custom_fields_path)
+
+custom_field_files
+2025-06-29 03:58:18,970 INFO ipython import os
+
+# Let's confirm if there's any custom field created for batch in Sales Order Item
+custom_fields_path = "/mnt/data/erp/apps/coffee_roaster/coffee_roaster/coffee_roaster/custom_field"
+custom_field_files = []
+
+if os.path.exists(custom_fields_path):
+    custom_field_files = os.listdir(custom_fields_path)
+
+custom_field_files
+2025-06-29 03:58:18,971 INFO ipython === session end ===
+2025-06-29 04:24:47,523 INFO ipython === bench console session ===
+2025-06-29 04:24:47,525 INFO ipython batch = frappe.get_doc("Roast Batch", "tyhg")
+batch.start_roast()
+2025-06-29 04:24:47,525 INFO ipython batch = frappe.get_doc("Roast Batch", "hu7td513rc")
+batch.start_roast()
+2025-06-29 04:24:47,525 INFO ipython === session end ===
+2025-06-29 04:32:17,510 INFO ipython === bench console session ===
+2025-06-29 04:32:17,510 INFO ipython  batch = frappe.get_doc("Roast Batch", "hu7td513rc")batch.start_roast()
+2025-06-29 04:32:17,510 INFO ipython  batch = frappe.get_doc("Roast Batch", "hu7td513rc")batch.start_roast()
+2025-06-29 04:32:17,511 INFO ipython batch = frappe.get_doc("Roast Batch", "hu7td513rc")
+batch.start_roast()
+2025-06-29 04:32:17,511 INFO ipython === session end ===
+2025-06-29 05:02:02,403 INFO ipython === bench console session ===
+2025-06-29 05:02:02,404 INFO ipython frappe.get_meta("Stock Entry").name
+2025-06-29 05:02:02,405 INFO ipython [link.fieldname for link in frappe.get_meta("Stock Entry").fields if link.fieldtype == "Link" and link.options == "Roast Batch"]
+2025-06-29 05:02:02,405 INFO ipython frappe.get_all("Stock Entry", filters={"stock_entry_type": "Manufacture"}, fields=["name", "roast_batch"])
+2025-06-29 05:02:02,405 INFO ipython from erpnext.stock.utils import get_stock_balance
+get_stock_balance("ETH-SID-G1", "Stores - CR")
+2025-06-29 05:02:02,405 INFO ipython batch = frappe.get_all("Batch", filters={"reference_doctype": "Roast Batch"}, fields=["name", "item", "batch_id"])
+batch
+2025-06-29 05:02:02,405 INFO ipython frappe.get_all("DocType", filters={"module": "Coffee Roaster", "name": ["in", ["Stock Entry", "Batch", "Item", "Warehouse"]]})
+2025-06-29 05:02:02,405 INFO ipython self.create_erpnext_batch()
+2025-06-29 05:02:02,405 INFO ipython batch = frappe.get_doc("Roast Batch", "<your_roast_batch_id>")
+batch.start_roast()
+2025-06-29 05:02:02,405 INFO ipython frappe.get_all("Roast Batch", fields=["name", "batch_id", "docstatus"])
+2025-06-29 05:02:02,406 INFO ipython batch = frappe.get_doc("Roast Batch", "fcv2k6g89f")
+batch.start_roast()
+2025-06-29 05:02:02,406 INFO ipython batch = frappe.get_doc("Roast Batch", "fcv2k6g89f")
+batch.start_roast()
+2025-06-29 05:02:02,406 INFO ipython batch = frappe.get_doc("Roast Batch", "fcv2k6g89f")
+batch.start_roast()
+2025-06-29 05:02:02,406 INFO ipython === session end ===
+2025-06-29 05:03:12,303 INFO ipython === bench console session ===
+2025-06-29 05:03:12,303 INFO ipython batch = frappe.get_doc("Roast Batch", "fcv2k6g89f")
+batch.start_roast()
+2025-06-29 05:03:12,304 INFO ipython === session end ===
+2025-06-29 05:07:11,189 INFO ipython === bench console session ===
+2025-06-29 05:07:11,189 INFO ipython batch = frappe.get_doc("Roast Batch", "fcv2k6g89f")
+batch.start_roast()
+2025-06-29 05:07:11,190 INFO ipython === session end ===
+2025-06-29 05:45:23,756 INFO ipython === bench console session ===
+2025-06-29 05:45:23,762 INFO ipython frappe.get_all("Company", fields=["name", "default_currency", "abbr"])
+2025-06-29 05:45:23,762 INFO ipython frappe.get_all("Account", filters={"company": "Coffee Rosters"}, fields=["name", "account_name", "parent_account"])
+2025-06-29 05:45:23,762 INFO ipython frappe.get_all("Account", filters={"company": "Coffee Rosters", "root_type": "Asset"}, fields=["name", "account_type", "is_group"])
+2025-06-29 05:45:23,762 INFO ipython frappe.get_all("GL Entry", filters={"company": "Coffee Rosters"}, fields=["posting_date", "account", "debit", "credit"], limit=5)
+2025-06-29 05:45:23,762 INFO ipython frappe.get_all("Fiscal Year", filters={"company": "Coffee Rosters"})
+2025-06-29 05:45:23,762 INFO ipython from frappe.utils import getdate
+fy = frappe.get_doc({
+    "doctype": "Fiscal Year",
+    "year": "2025",
+    "start_date": getdate("2025-01-01"),
+    "end_date": getdate("2025-12-31"),
+    "company": "Coffee Rosters"
+})
+fy.insert()
+2025-06-29 05:45:23,763 INFO ipython from frappe.utils import getdate
+fy = frappe.get_doc({
+    "doctype": "Fiscal Year",
+    "year": "2025",
+    "start_date": getdate("2025-01-01"),
+    "end_date": getdate("2025-12-31"),
+    "company": "Coffee Rosters"
+})
+fy.insert()
+2025-06-29 05:45:23,763 INFO ipython from frappe.utils import getdate
+fy = frappe.get_doc({
+    "doctype": "Fiscal Year",
+    "year": "2025",
+    "start_date": getdate("2025-01-01"),
+    "end_date": getdate("2025-12-31"),
+    "company": "Coffee Rosters"
+})
+fy.insert()
+2025-06-29 05:45:23,763 INFO ipython from frappe.utils import getdate
+fy = frappe.get_doc({
+    "doctype": "Fiscal Year",
+    "year": "2025",
+    "start_date": getdate("2025-01-01"),
+    "end_date": getdate("2025-12-31"),
+    "company": "Coffee Rosters"
+})
+fy.insert()
+2025-06-29 05:45:23,763 INFO ipython from frappe.utils import getdate
+fy = frappe.get_doc({
+    "doctype": "Fiscal Year",
+    "year": "2025",
+    "start_date": getdate("2025-07-08"),
+    "end_date": getdate("2025-07-07"),
+    "company": "Coffee Rosters"
+})
+fy.insert()
+2025-06-29 05:45:23,763 INFO ipython from frappe.utils import getdate
+
+fiscal_year = frappe.get_doc({
+    "doctype": "Fiscal Year",
+    "year": "2025",
+    "start_date": getdate("2025-01-01"),
+    "end_date": getdate("2025-12-31"),
+    "company": "Coffee Rosters"
+})
+fiscal_year.insert()
+2025-06-29 05:45:23,763 INFO ipython from frappe.utils import getdate
+
+fiscal_year = frappe.get_doc({
+    "doctype": "Fiscal Year",
+    "year": "2025",
+    "start_date": getdate("2025-01-01"),
+    "end_date": getdate("2026-01-01"),
+    "company": "Coffee Rosters"
+})
+fiscal_year.insert()
+2025-06-29 05:45:23,763 INFO ipython from frappe.utils import add_years, getdate
+import frappe
+
+start_date = getdate("2025-07-08")
+end_date = add_years(start_date, 1)
+
+fiscal_year = frappe.get_doc({
+    "doctype": "Fiscal Year",
+    "year": f"{start_date.year}-{end_date.year}",
+    "start_date": start_date,
+    "end_date": end_date,
+    "company": "Coffee Rosters"
+})
+fiscal_year.insert()
+2025-06-29 05:45:23,763 INFO ipython checks = {
+    "Roast Profile": frappe.db.count("Roast Profile"),
+    "Roast Batch": frappe.db.count("Roast Batch"),
+    "Stock Entry (Manufacture)": frappe.db.count("Stock Entry", {"stock_entry_type": "Manufacture"}),
+    "Batches Linked to Roast": frappe.db.count("Batch", {"reference_doctype": "Roast Batch"}),
+    "Company": frappe.db.exists("Company", "Coffee Rosters"),
+    "Accounts": frappe.db.count("Account", {"company": "Coffee Rosters"}),
+    "GL Entries": frappe.db.count("GL Entry", {"company": "Coffee Rosters"}),
+    "Fiscal Year": frappe.db.count("Fiscal Year", {"company": "Coffee Rosters"}),
+    "Custom Field in Sales Invoice": frappe.db.count("Custom Field", {"dt": "Sales Invoice Item", "fieldname": "roast_batch"}),
+    "Quality Control Doctypes": [d.name for d in frappe.get_all("DocType", filters={"module": "Coffee Roaster"}) if "Cupping" in d.name]
+}
+
+import pprint
+pprint.pprint(checks)
+2025-06-29 05:45:23,763 INFO ipython frappe.get_all("Fiscal Year", filters={"company": "Coffee Rosters"})
+2025-06-29 05:45:23,763 INFO ipython frappe.get_all("Fiscal Year", filters={"company": "Coffee Rosters"})
+2025-06-29 05:45:23,763 INFO ipython frappe.get_all("Fiscal Year", fields=["name", "year_start_date", "year_end_date", "disabled"])
+2025-06-29 05:45:23,764 INFO ipython frappe.get_all("Sales Order", fields=["name", "transaction_date", "status"])
+2025-06-29 05:45:23,764 INFO ipython frappe.get_all("Sales Invoice", fields=["name", "posting_date", "status"])
+2025-06-29 05:45:23,764 INFO ipython frappe.get_all(...)
+2025-06-29 05:45:23,764 INFO ipython === session end ===
+2025-06-29 06:17:28,317 INFO ipython === bench console session ===
+2025-06-29 06:17:28,320 INFO ipython frappe.get_doc({
+    "doctype": "Lead",
+    "lead_name": "Tomoca Coffee House",
+    "email_id": "tomoca@example.com",
+    "source": "Referral"
+}).insert()
+2025-06-29 06:17:28,321 INFO ipython frappe.get_all("Customer", fields=["name"])
+frappe.get_all("Sales Order", fields=["name", "customer", "status"])
+frappe.get_all("Opportunity", fields=["name", "status"])
+2025-06-29 06:17:28,321 INFO ipython frappe.get_all("Customer", fields=["name"])
+frappe.get_all("Sales Order", fields=["name", "customer", "status"])
+frappe.get_all("Opportunity", fields=["name", "status"])
+2025-06-29 06:17:28,321 INFO ipython # Create Lead
+lead = frappe.get_doc({
+    "doctype": "Lead",
+    "lead_name": "Tomoca Coffee House",
+    "email_id": "tomoca@example.com",
+    "source": "Referral"
+}).insert()
+
+# Convert to Opportunity
+opp = frappe.get_doc({
+    "doctype": "Opportunity",
+    "opportunity_from": "Lead",
+    "party_name": lead.name,
+    "items": [{"item_code": "ESPRESSO-250G", "qty": 5}]
+}).insert()
+
+# Convert to Quotation
+quotation = frappe.get_doc({
+    "doctype": "Quotation",
+    "quotation_to": "Lead",
+    "party_name": lead.name,
+    "items": [{"item_code": "ESPRESSO-250G", "qty": 5, "rate": 200}]
+}).insert()
+quotation.submit()
+
+# Convert to Sales Order (auto creates Customer)
+sales_order = frappe.get_doc({
+    "doctype": "Sales Order",
+    "customer": quotation.customer,
+    "items": quotation.items
+}).insert()
+sales_order.submit()
+2025-06-29 06:17:28,321 INFO ipython frappe.get_all("Customer", fields=["name"])
+frappe.get_all("Sales Order", fields=["name", "customer", "status"])
+frappe.get_all("Opportunity", fields=["name", "status"])
+2025-06-29 06:17:28,321 INFO ipython print(frappe.get_all("Customer", fields=["name"]))
+print(frappe.get_all("Sales Order", fields=["name", "customer", "status"]))
+print(frappe.get_all("Opportunity", fields=["name", "status"]))
+2025-06-29 06:17:28,321 INFO ipython opportunity = frappe.get_doc({
+    "doctype": "Opportunity",
+    "opportunity_from": "Customer",
+    "customer": "sime",
+    "enquiry_type": "Sales",
+    "status": "Open"
+})
+opportunity.insert()
+2025-06-29 06:17:28,321 INFO ipython frappe.get_doc({
+    "doctype": "Opportunity",
+    "opportunity_from": "Customer",
+    "party_name": "sime",  # must match existing Customer name
+    "status": "Open",
+    "transaction_date": frappe.utils.nowdate()
+}).insert()
+2025-06-29 06:17:28,321 INFO ipython frappe.get_doc({
+    "doctype": "Quotation",
+    "quotation_to": "Customer",
+    "party_name": "sime",
+    "order_type": "Sales",
+    "items": [
+        {
+            "item_code": "YOUR_ITEM_CODE",
+            "qty": 1,
+            "rate": 100
+        }
+    ],
+    "opportunity": "CRM-OPP-2025-00003"
+}).insert()
+2025-06-29 06:17:28,322 INFO ipython === session end ===
+2025-06-29 06:23:43,968 INFO ipython === bench console session ===
+2025-06-29 06:23:43,970 INFO ipython import os
+
+target_path = "apps/coffee_roaster/coffee_roaster/coffee_roaster/doctype/packaging_item"
+os.makedirs(target_path, exist_ok=True)
+
+python_file_path = os.path.join(target_path, "packaging_item.py")
+python_code = '''import frappe
+from frappe.model.document import Document
+
+class PackagingItem(Document):
+    def validate(self):
+        if not self.item_code:
+            self.item_code = frappe.scrub(self.item_name)
+'''
+
+with open(python_file_path, "w") as f:
+    f.write(python_code)
+
+print(f"✅ Created: {python_file_path}")
+2025-06-29 06:23:43,970 INFO ipython === session end ===
+2025-06-30 22:17:19,508 INFO ipython === bench console session ===
+2025-06-30 22:17:19,511 INFO ipython === session end ===
+2025-06-30 22:30:37,096 INFO ipython === bench console session ===
+2025-06-30 22:30:37,097 INFO ipython === session end ===
+2025-06-30 22:39:14,390 INFO ipython === bench console session ===
+2025-06-30 22:39:14,390 INFO ipython mkdir -p apps/coffee_roaster/coffee_roaster/coffee_roaster
+2025-06-30 22:39:14,390 INFO ipython === session end ===
+2025-06-30 23:48:50,328 INFO ipython === bench console session ===
+2025-06-30 23:48:50,330 INFO ipython import frappe
+frappe.delete_doc("Module Def", "Coffee Roaster", force=True)
+frappe.db.commit()
+quit()
+2025-06-30 23:48:50,331 INFO ipython === session end ===
+2025-06-30 23:51:44,588 INFO ipython === bench console session ===
+2025-06-30 23:51:44,589 INFO ipython import frappe
+frappe.delete_doc("Module Def", "Coffee Roaster", force=True)
+frappe.db.commit()
+2025-06-30 23:51:44,589 INFO ipython === session end ===
+2025-06-30 23:53:24,606 INFO ipython === bench console session ===
+2025-06-30 23:53:24,606 INFO ipython === session end ===
+2025-06-30 23:53:35,959 INFO ipython === bench console session ===
+2025-06-30 23:53:35,960 INFO ipython import frappe
+print(frappe.get_all("Module Def", pluck="name"))
+# expect: ['Roaster']
+quit()
+2025-06-30 23:53:35,960 INFO ipython === session end ===
+2025-07-01 00:01:50,252 INFO ipython === bench console session ===
+2025-07-01 00:01:50,253 INFO ipython === session end ===
+2025-07-01 00:02:44,584 INFO ipython === bench console session ===
+2025-07-01 00:02:44,584 INFO ipython import frappe, pprint, os
+2025-07-01 00:02:44,584 INFO ipython pprint.pp(frappe.get_all("Module Def", pluck="name"))
+2025-07-01 00:02:44,584 INFO ipython apps/coffee_roaster/coffee_roaster/roaster/doctype/<each_doctype>/<each_doctype>.json
+2025-07-01 00:02:44,585 INFO ipython === session end ===
+2025-07-01 00:07:32,666 INFO ipython === bench console session ===
+2025-07-01 00:07:32,666 INFO ipython frappe.get_all("Module Def", pluck="name")
+2025-07-01 00:07:32,667 INFO ipython === session end ===
+2025-07-01 00:19:14,114 INFO ipython === bench console session ===
+2025-07-01 00:19:14,114 INFO ipython pprint.pp(frappe.get_all("Module Def", pluck="name"))
+2025-07-01 00:19:14,115 INFO ipython import frappe, pprint
+2025-07-01 00:19:14,115 INFO ipython pprint.pp(frappe.get_all("Module Def", pluck="name"))
+2025-07-01 00:19:14,115 INFO ipython === session end ===
+2025-07-01 00:20:37,878 INFO ipython === bench console session ===
+2025-07-01 00:20:37,878 INFO ipython pprint.pp(frappe.get_all("Module Def", pluck="name"))
+2025-07-01 00:20:37,879 INFO ipython import frappe, pprint
+2025-07-01 00:20:37,879 INFO ipython pprint.pp(frappe.get_all("Module Def", pluck="name"))
+2025-07-01 00:20:37,879 INFO ipython === session end ===
+2025-07-01 00:22:50,515 INFO ipython === bench console session ===
+2025-07-01 00:22:50,515 INFO ipython import frappe, pprint
+docs = frappe.get_all("DocType",
+                      filters={"module": "coffee_roaster"},
+                      pluck="name")
+pprint.pp(docs)
+2025-07-01 00:22:50,515 INFO ipython for d in docs:
+    dt = frappe.get_doc("DocType", d)
+    dt.module = "Roaster"
+    dt.save()
+frappe.db.commit()
+quit()
+2025-07-01 00:22:50,515 INFO ipython === session end ===
+2025-07-01 00:24:06,446 INFO ipython === bench console session ===
+2025-07-01 00:24:06,447 INFO ipython for d in docs:
+    dt = frappe.get_doc("DocType", d)
+    dt.module = "Roaster"
+    dt.save()
+frappe.db.commit()
+2025-07-01 00:24:06,447 INFO ipython for d in docs:
+    dt = frappe.get_doc("DocType", d)
+    dt.module = "Roaster"
+    dt.save()
+frappe.db.commit()
+quit()
+2025-07-01 00:24:06,448 INFO ipython === session end ===
+2025-07-01 00:24:26,769 INFO ipython === bench console session ===
+2025-07-01 00:24:26,770 INFO ipython import frappe, pprint
+
+# 1 – grab every DocType that still claims the 'coffee_roaster' module
+docs = frappe.get_all("DocType",
+                      filters={"module": "coffee_roaster"},
+                      pluck="name")
+pprint.pp(docs)             # sanity-check the list
+
+# 2 – switch each one to Roaster
+for d in docs:
+    dt = frappe.get_doc("DocType", d)
+    dt.module = "Roaster"
+    dt.save()
+
+frappe.db.commit()
+quit()
+2025-07-01 00:24:26,770 INFO ipython === session end ===
+2025-07-01 00:26:51,922 INFO ipython === bench console session ===
+2025-07-01 00:26:51,923 INFO ipython import frappe, pprint
+2025-07-01 00:26:51,924 INFO ipython pprint.pp(frappe.get_all("Module Def", pluck="name"))
+2025-07-01 00:26:51,925 INFO ipython === session end ===
+2025-07-01 00:27:31,159 INFO ipython === bench console session ===
+2025-07-01 00:27:31,159 INFO ipython import frappe, pprint
+
+dt_needing_fix = frappe.get_all(
+    "DocType",
+    filters={"module": "coffee_roaster"},
+    pluck="name"
+)
+pprint.pp(dt_needing_fix)
+2025-07-01 00:27:31,159 INFO ipython for name in dt_needing_fix:
+    doc = frappe.get_doc("DocType", name)
+    doc.module = "Roaster"
+    doc.save()
+
+frappe.db.commit()
+print("All DocTypes patched.")
+2025-07-01 00:27:31,159 INFO ipython frappe.delete_doc("Module Def", "coffee_roaster", force=True)
+frappe.db.commit()
+print("Module Def 'coffee_roaster' removed.")
+quit()
+2025-07-01 00:27:31,159 INFO ipython === session end ===
+2025-07-01 00:28:20,674 INFO ipython === bench console session ===
+2025-07-01 00:28:20,674 INFO ipython import frappe, pprint
+2025-07-01 00:28:20,674 INFO ipython pprint.pp(frappe.get_all("Module Def", pluck="name"))
+2025-07-01 00:28:20,674 INFO ipython === session end ===
+2025-07-01 00:32:35,267 INFO ipython === bench console session ===

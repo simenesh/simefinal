@@ -1,0 +1,507 @@
+2025-06-18 00:01:41,394 ERROR scheduler Skipped queueing frappe.integrations.doctype.dropbox_settings.dropbox_settings.take_backups_daily because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,458 ERROR scheduler Skipped queueing frappe.twofactor.delete_all_barcodes_for_users because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,478 ERROR scheduler Skipped queueing erpnext.utilities.bulk_transaction.retry because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,493 ERROR scheduler Skipped queueing erpnext.erpnext_integrations.doctype.plaid_settings.plaid_settings.automatic_synchronization because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,508 ERROR scheduler Skipped queueing erpnext.assets.doctype.asset.depreciation.post_depreciation_entries because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,514 ERROR scheduler Skipped queueing frappe.model.utils.user_settings.sync_user_settings because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,542 ERROR scheduler Skipped queueing frappe.email.doctype.newsletter.newsletter.send_scheduled_email because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,575 ERROR scheduler Skipped queueing frappe.integrations.doctype.s3_backup_settings.s3_backup_settings.take_backups_daily because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,595 ERROR scheduler Skipped queueing frappe.automation.doctype.auto_repeat.auto_repeat.make_auto_repeat_entry because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,628 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,745 ERROR scheduler Skipped queueing frappe.desk.notifications.clear_notifications because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,897 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_drive.google_drive.daily_backup because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,913 ERROR scheduler Skipped queueing erpnext.crm.utils.open_leads_opportunities_based_on_todays_event because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,930 ERROR scheduler Skipped queueing frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request.remove_unverified_record because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,958 ERROR scheduler Skipped queueing erpnext.stock.doctype.repost_item_valuation.repost_item_valuation.repost_entries because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,971 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.project_status_update_reminder because it was found in queue for coffeesite.local
+2025-06-18 00:01:41,982 ERROR scheduler Skipped queueing frappe.website.doctype.web_page.web_page.check_publish_status because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,006 ERROR scheduler Skipped queueing erpnext.manufacturing.doctype.bom_update_log.bom_update_log.resume_bom_cost_update_jobs because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,015 ERROR scheduler Skipped queueing frappe.email.doctype.notification.notification.trigger_daily_alerts because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,054 ERROR scheduler Skipped queueing erpnext.accounts.utils.run_ledger_health_checks because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,064 ERROR scheduler Skipped queueing frappe.core.doctype.log_settings.log_settings.run_log_clean_up because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,083 ERROR scheduler Skipped queueing frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request.process_data_deletion_request because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,093 ERROR scheduler Skipped queueing erpnext.setup.doctype.email_digest.email_digest.send because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,147 ERROR scheduler Skipped queueing frappe.core.doctype.prepared_report.prepared_report.expire_stalled_report because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,192 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,240 ERROR scheduler Skipped queueing erpnext.selling.doctype.quotation.quotation.set_expired_status because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,304 ERROR scheduler Skipped queueing erpnext.accounts.doctype.process_subscription.process_subscription.create_subscription_process because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,400 ERROR scheduler Skipped queueing frappe.sessions.clear_expired_sessions because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,433 ERROR scheduler Skipped queueing erpnext.crm.doctype.opportunity.opportunity.auto_close_opportunity because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,452 ERROR scheduler Skipped queueing frappe.social.doctype.energy_point_settings.energy_point_settings.allocate_review_points because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,471 ERROR scheduler Skipped queueing erpnext.manufacturing.doctype.bom_update_tool.bom_update_tool.auto_update_latest_price_in_all_boms because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,479 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_contacts.google_contacts.sync because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,498 ERROR scheduler Skipped queueing frappe.email.doctype.auto_email_report.auto_email_report.send_daily because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,527 ERROR scheduler Skipped queueing frappe.oauth.delete_oauth2_data because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,564 ERROR scheduler Skipped queueing frappe.desk.form.document_follow.send_hourly_updates because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,587 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.pull because it was found in queue for coffeesite.local
+2025-06-18 00:01:42,595 ERROR scheduler Skipped queueing frappe.desk.page.backups.backups.delete_downloadable_backups because it was found in queue for coffeesite.local
+2025-06-18 16:53:14,260 ERROR scheduler Exception in Enqueue Events for Site coffeesite.local
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/scheduler.py", line 102, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events
+    all_jobs = frappe.get_all("Scheduled Job Type", filters={"stopped": 0}, fields="*")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2043, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 2018, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 206, in build_and_run
+    args = self.prepare_args()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 246, in prepare_args
+    self.build_conditions()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 582, in build_conditions
+    self.build_filter_conditions(self.filters, self.conditions)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 600, in build_filter_conditions
+    conditions.append(self.prepare_filter_condition(f))
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/db_query.py", line 720, in prepare_filter_condition
+    f = get_filter(self.doctype, f, additional_filters_config)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/data.py", line 1888, in get_filter
+    meta = frappe.get_meta(f.doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/__init__.py", line 1335, in get_meta
+    return frappe.model.meta.get_meta(doctype, cached=cached)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/meta.py", line 70, in get_meta
+    meta = Meta(doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/meta.py", line 124, in __init__
+    super().__init__("DocType", doctype)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/meta.py", line 130, in load_from_db
+    super().load_from_db()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/model/document.py", line 196, in load_from_db
+    frappe.db.get_values(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 619, in get_values
+    out = self._get_values_from_table(
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 892, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+2025-06-21 10:24:43,533 ERROR scheduler Exception in Enqueue Events for Site coffeesite.local
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 1002, in _connect
+    raise err
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 990, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/scheduler.py", line 102, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/scheduler.py", line 122, in enqueue_events
+    if job_type.enqueue():
+  File "/home/sime/coffee_bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
+    if not self.is_job_in_queue():
+  File "/home/sime/coffee_bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 95, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 568, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 573, in get_job_status
+    job = get_job(job_id)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 580, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 500, in get_redis_conn
+    return get_redis_connection_without_auth()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 522, in get_redis_connection_without_auth
+    _redis_queue_conn = RedisQueue.get_connection()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/redis_queue.py", line 35, in get_connection
+    conn.ping()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/commands/core.py", line 1205, in ping
+    return self.execute_command("PING", **kwargs)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/client.py", line 1266, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 1457, in get_connection
+    connection.connect()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11001. Connection refused.
+2025-06-21 10:25:47,872 ERROR scheduler Exception in Enqueue Events for Site coffeesite.local
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 1002, in _connect
+    raise err
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 990, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/scheduler.py", line 102, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/scheduler.py", line 122, in enqueue_events
+    if job_type.enqueue():
+  File "/home/sime/coffee_bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
+    if not self.is_job_in_queue():
+  File "/home/sime/coffee_bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 95, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 568, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 573, in get_job_status
+    job = get_job(job_id)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 580, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 500, in get_redis_conn
+    return get_redis_connection_without_auth()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 522, in get_redis_connection_without_auth
+    _redis_queue_conn = RedisQueue.get_connection()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/redis_queue.py", line 35, in get_connection
+    conn.ping()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/commands/core.py", line 1205, in ping
+    return self.execute_command("PING", **kwargs)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/client.py", line 1266, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 1457, in get_connection
+    connection.connect()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11001. Connection refused.
+2025-06-22 11:24:27,477 ERROR scheduler Exception in Enqueue Events for Site coffeesite.local
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 1002, in _connect
+    raise err
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 990, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/scheduler.py", line 102, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/scheduler.py", line 122, in enqueue_events
+    if job_type.enqueue():
+  File "/home/sime/coffee_bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
+    if not self.is_job_in_queue():
+  File "/home/sime/coffee_bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 95, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 568, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 573, in get_job_status
+    job = get_job(job_id)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 580, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 500, in get_redis_conn
+    return get_redis_connection_without_auth()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 522, in get_redis_connection_without_auth
+    _redis_queue_conn = RedisQueue.get_connection()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/redis_queue.py", line 35, in get_connection
+    conn.ping()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/commands/core.py", line 1205, in ping
+    return self.execute_command("PING", **kwargs)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/client.py", line 1266, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 1457, in get_connection
+    connection.connect()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11001. Connection refused.
+2025-06-22 11:25:31,822 ERROR scheduler Exception in Enqueue Events for Site coffeesite.local
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 1002, in _connect
+    raise err
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 990, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/scheduler.py", line 102, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/scheduler.py", line 122, in enqueue_events
+    if job_type.enqueue():
+  File "/home/sime/coffee_bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
+    if not self.is_job_in_queue():
+  File "/home/sime/coffee_bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 95, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 568, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 573, in get_job_status
+    job = get_job(job_id)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 580, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 500, in get_redis_conn
+    return get_redis_connection_without_auth()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 522, in get_redis_connection_without_auth
+    _redis_queue_conn = RedisQueue.get_connection()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/redis_queue.py", line 35, in get_connection
+    conn.ping()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/commands/core.py", line 1205, in ping
+    return self.execute_command("PING", **kwargs)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/client.py", line 1266, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 1457, in get_connection
+    connection.connect()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11001. Connection refused.
+2025-06-22 11:26:36,516 ERROR scheduler Exception in Enqueue Events for Site coffeesite.local
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 1002, in _connect
+    raise err
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 990, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/scheduler.py", line 102, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/scheduler.py", line 122, in enqueue_events
+    if job_type.enqueue():
+  File "/home/sime/coffee_bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
+    if not self.is_job_in_queue():
+  File "/home/sime/coffee_bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 95, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 568, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 573, in get_job_status
+    job = get_job(job_id)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 580, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/tenacity/__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 500, in get_redis_conn
+    return get_redis_connection_without_auth()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/background_jobs.py", line 522, in get_redis_connection_without_auth
+    _redis_queue_conn = RedisQueue.get_connection()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/redis_queue.py", line 35, in get_connection
+    conn.ping()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/commands/core.py", line 1205, in ping
+    return self.execute_command("PING", **kwargs)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/client.py", line 1266, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 1457, in get_connection
+    connection.connect()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11001. Connection refused.
+2025-07-01 15:51:47,350 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.pull because it was found in queue for coffeesite.local
+2025-07-02 13:01:47,381 ERROR scheduler Skipped queueing frappe.model.utils.link_count.update_link_count because it was found in queue for coffeesite.local
+2025-07-02 13:01:47,810 ERROR scheduler Skipped queueing frappe.desk.page.backups.backups.delete_downloadable_backups because it was found in queue for coffeesite.local
+2025-07-02 13:01:47,864 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.collect_project_status because it was found in queue for coffeesite.local
+2025-07-02 13:01:48,036 ERROR scheduler Skipped queueing frappe.website.doctype.web_page.web_page.check_publish_status because it was found in queue for coffeesite.local
+2025-07-02 13:01:48,322 ERROR scheduler Skipped queueing hrms.hr.doctype.shift_type.shift_type.update_last_sync_of_checkin because it was found in queue for coffeesite.local
+2025-07-02 13:01:48,684 ERROR scheduler Skipped queueing erpnext.utilities.doctype.video.video.update_youtube_data because it was found in queue for coffeesite.local
+2025-07-02 13:01:49,213 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for coffeesite.local
+2025-07-02 13:01:49,252 ERROR scheduler Skipped queueing frappe.model.utils.user_settings.sync_user_settings because it was found in queue for coffeesite.local
+2025-07-02 13:01:49,379 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.hourly_reminder because it was found in queue for coffeesite.local
+2025-07-02 13:01:49,399 ERROR scheduler Skipped queueing frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request.process_data_deletion_request because it was found in queue for coffeesite.local
+2025-07-02 13:01:49,404 ERROR scheduler Skipped queueing erpnext.utilities.bulk_transaction.retry because it was found in queue for coffeesite.local
+2025-07-02 13:01:49,413 ERROR scheduler Skipped queueing frappe.utils.global_search.sync_global_search because it was found in queue for coffeesite.local
+2025-07-02 13:01:49,508 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for coffeesite.local
+2025-07-02 13:01:49,817 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.pull because it was found in queue for coffeesite.local
+2025-07-02 13:01:50,271 ERROR scheduler Skipped queueing hrms.hr.doctype.daily_work_summary_group.daily_work_summary_group.trigger_emails because it was found in queue for coffeesite.local
+2025-07-02 13:01:50,746 ERROR scheduler Skipped queueing erpnext.stock.doctype.repost_item_valuation.repost_item_valuation.repost_entries because it was found in queue for coffeesite.local
+2025-07-02 13:01:50,800 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.project_status_update_reminder because it was found in queue for coffeesite.local
+2025-07-02 13:01:50,834 ERROR scheduler Skipped queueing frappe.twofactor.delete_all_barcodes_for_users because it was found in queue for coffeesite.local
+2025-07-02 13:01:50,846 ERROR scheduler Skipped queueing frappe.desk.form.document_follow.send_hourly_updates because it was found in queue for coffeesite.local
+2025-07-02 13:01:50,857 ERROR scheduler Skipped queueing payments.payment_gateways.doctype.razorpay_settings.razorpay_settings.capture_payment because it was found in queue for coffeesite.local
+2025-07-02 13:01:50,871 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for coffeesite.local
+2025-07-02 13:01:51,014 ERROR scheduler Skipped queueing erpnext.manufacturing.doctype.bom_update_log.bom_update_log.resume_bom_cost_update_jobs because it was found in queue for coffeesite.local
+2025-07-02 13:01:52,382 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.notify_unreplied because it was found in queue for coffeesite.local
+2025-07-02 13:01:52,888 ERROR scheduler Skipped queueing hrms.hr.doctype.interview.interview.send_interview_reminder because it was found in queue for coffeesite.local
+2025-07-02 13:01:52,944 ERROR scheduler Skipped queueing hrms.hr.doctype.shift_schedule_assignment.shift_schedule_assignment.process_auto_shift_creation because it was found in queue for coffeesite.local
+2025-07-02 13:01:53,056 ERROR scheduler Skipped queueing hrms.hr.doctype.shift_type.shift_type.process_auto_attendance_for_all_shifts because it was found in queue for coffeesite.local
+2025-07-02 13:01:53,071 ERROR scheduler Skipped queueing frappe.email.doctype.newsletter.newsletter.send_scheduled_email because it was found in queue for coffeesite.local
+2025-07-02 13:01:53,350 ERROR scheduler Skipped queueing frappe.automation.doctype.reminder.reminder.send_reminders because it was found in queue for coffeesite.local
+2025-07-02 13:01:53,518 ERROR scheduler Skipped queueing frappe.core.doctype.prepared_report.prepared_report.expire_stalled_report because it was found in queue for coffeesite.local
+2025-07-05 11:41:46,119 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for coffeesite.local
+2025-07-05 11:41:46,351 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for coffeesite.local
+2025-07-05 11:41:46,453 ERROR scheduler Skipped queueing hrms.hr.doctype.interview.interview.send_interview_reminder because it was found in queue for coffeesite.local
+2025-07-05 11:41:46,590 ERROR scheduler Skipped queueing payments.payment_gateways.doctype.razorpay_settings.razorpay_settings.capture_payment because it was found in queue for coffeesite.local
+2025-07-05 11:41:46,935 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.pull because it was found in queue for coffeesite.local
+2025-07-05 11:41:46,961 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for coffeesite.local
+2025-07-06 00:07:07,009 ERROR scheduler Exception in Enqueue Events for Site coffeesite.local
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+  File "/home/sime/coffee_bench/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+  File "/home/sime/coffee_bench/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/sime/coffee_bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2025-07-06 23:21:58,815 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.pull because it was found in queue for coffeesite.local
+2025-07-06 23:21:59,246 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for coffeesite.local
+2025-07-06 23:21:59,538 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for coffeesite.local
+2025-07-06 23:21:59,707 ERROR scheduler Skipped queueing hrms.hr.doctype.interview.interview.send_interview_reminder because it was found in queue for coffeesite.local
+2025-07-06 23:21:59,738 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for coffeesite.local
+2025-07-06 23:21:59,770 ERROR scheduler Skipped queueing payments.payment_gateways.doctype.razorpay_settings.razorpay_settings.capture_payment because it was found in queue for coffeesite.local
+2025-07-08 07:01:21,928 ERROR scheduler Skipped queueing frappe.desk.page.backups.backups.delete_downloadable_backups because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,248 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.project_status_update_reminder because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,259 ERROR scheduler Skipped queueing hrms.hr.doctype.shift_type.shift_type.update_last_sync_of_checkin because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,304 ERROR scheduler Skipped queueing frappe.deferred_insert.save_to_db because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,318 ERROR scheduler Skipped queueing frappe.website.doctype.web_page.web_page.check_publish_status because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,333 ERROR scheduler Skipped queueing frappe.automation.doctype.reminder.reminder.send_reminders because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,348 ERROR scheduler Skipped queueing erpnext.utilities.bulk_transaction.retry because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,366 ERROR scheduler Skipped queueing frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request.process_data_deletion_request because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,396 ERROR scheduler Skipped queueing frappe.desk.form.document_follow.send_hourly_updates because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,410 ERROR scheduler Skipped queueing frappe.oauth.delete_oauth2_data because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,453 ERROR scheduler Skipped queueing frappe.model.utils.user_settings.sync_user_settings because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,485 ERROR scheduler Skipped queueing hrms.hr.doctype.shift_schedule_assignment.shift_schedule_assignment.process_auto_shift_creation because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,512 ERROR scheduler Skipped queueing frappe.core.doctype.prepared_report.prepared_report.expire_stalled_report because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,556 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.collect_project_status because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,562 ERROR scheduler Skipped queueing hrms.hr.doctype.daily_work_summary_group.daily_work_summary_group.trigger_emails because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,571 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,589 ERROR scheduler Skipped queueing erpnext.stock.doctype.repost_item_valuation.repost_item_valuation.repost_entries because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,607 ERROR scheduler Skipped queueing frappe.twofactor.delete_all_barcodes_for_users because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,623 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.hourly_reminder because it was found in queue for coffeesite.local
+2025-07-08 07:01:22,695 ERROR scheduler Skipped queueing hrms.hr.doctype.shift_type.shift_type.process_auto_attendance_for_all_shifts because it was found in queue for coffeesite.local
+2025-07-09 08:37:45,589 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for coffeesite.local
+2025-07-09 08:45:18,161 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for coffeesite.local
+2025-07-09 08:46:36,011 ERROR scheduler Skipped queueing erpnext.manufacturing.doctype.bom_update_log.bom_update_log.resume_bom_cost_update_jobs because it was found in queue for coffeesite.local
+2025-07-09 08:46:45,306 ERROR scheduler Skipped queueing frappe.utils.global_search.sync_global_search because it was found in queue for coffeesite.local
+2025-07-09 08:46:48,151 ERROR scheduler Skipped queueing frappe.deferred_insert.save_to_db because it was found in queue for coffeesite.local
+2025-07-09 08:46:51,198 ERROR scheduler Skipped queueing frappe.model.utils.link_count.update_link_count because it was found in queue for coffeesite.local
+2025-07-09 15:30:00,214 ERROR scheduler Skipped queueing hrms.hr.doctype.interview.interview.send_interview_reminder because it was found in queue for coffeesite.local
+2025-07-09 15:30:20,099 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for coffeesite.local
+2025-07-09 15:30:20,215 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for coffeesite.local
+2025-07-09 15:30:20,256 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for coffeesite.local
+2025-07-09 15:45:27,355 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for coffeesite.local

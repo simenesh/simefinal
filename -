@@ -1,0 +1,22 @@
+[
+ {
+  "charge_temp": 0,
+  "development_time": 0.0,
+  "docstatus": 0,
+  "doctype": "Roast Profile",
+  "modified": "2025-06-22 22:49:47.922051",
+  "name": "bsnd9kdc82",
+  "profile_name": "sime T",
+  "target_agtron": 0
+ },
+ {
+  "charge_temp": 0,
+  "development_time": 0.0,
+  "docstatus": 0,
+  "doctype": "Roast Profile",
+  "modified": "2025-06-22 23:23:29.650237",
+  "name": "vkh481j1bk",
+  "profile_name": "simet2",
+  "target_agtron": 0
+ }
+]

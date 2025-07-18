@@ -1,0 +1,102 @@
+set -o pipefail; /usr/bin/mariadb-dump --user=_29a1b9c886bb7434 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _29a1b9c886bb7434 | /usr/bin/gzip >> ./coffeesite.local/private/backups/20250618_000007-coffeesite_local-database.sql.gz
+
+Backup Summary for coffeesite.local at 2025-06-18 00:00:19.907651
+Config  : ./coffeesite.local/private/backups/20250618_000007-coffeesite_local-site_config_backup.json 94.0B
+Database: ./coffeesite.local/private/backups/20250618_000007-coffeesite_local-database.sql.gz         810.1KiB
+Backup for Site coffeesite.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_29a1b9c886bb7434 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _29a1b9c886bb7434 | /usr/bin/gzip >> ./coffeesite.local/private/backups/20250619_120003-coffeesite_local-database.sql.gz
+
+Backup Summary for coffeesite.local at 2025-06-19 12:00:10.176907
+Config  : ./coffeesite.local/private/backups/20250619_120003-coffeesite_local-site_config_backup.json 217.0B
+Database: ./coffeesite.local/private/backups/20250619_120003-coffeesite_local-database.sql.gz         850.0KiB
+Backup for Site coffeesite.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_29a1b9c886bb7434 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _29a1b9c886bb7434 | /usr/bin/gzip >> ./coffeesite.local/private/backups/20250622_120003-coffeesite_local-database.sql.gz
+
+Backup Summary for coffeesite.local at 2025-06-22 12:00:10.259650
+Config  : ./coffeesite.local/private/backups/20250622_120003-coffeesite_local-site_config_backup.json 217.0B
+Database: ./coffeesite.local/private/backups/20250622_120003-coffeesite_local-database.sql.gz         928.7KiB
+Backup for Site coffeesite.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_29a1b9c886bb7434 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _29a1b9c886bb7434 | /usr/bin/gzip >> ./coffeesite.local/private/backups/20250622_180004-coffeesite_local-database.sql.gz
+
+Backup Summary for coffeesite.local at 2025-06-22 18:00:12.965787
+Config  : ./coffeesite.local/private/backups/20250622_180004-coffeesite_local-site_config_backup.json 217.0B
+Database: ./coffeesite.local/private/backups/20250622_180004-coffeesite_local-database.sql.gz         935.5KiB
+Backup for Site coffeesite.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_29a1b9c886bb7434 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _29a1b9c886bb7434 | /usr/bin/gzip >> ./coffeesite.local/private/backups/20250623_000003-coffeesite_local-database.sql.gz
+
+Backup Summary for coffeesite.local at 2025-06-23 00:00:07.922925
+Config  : ./coffeesite.local/private/backups/20250623_000003-coffeesite_local-site_config_backup.json 217.0B
+Database: ./coffeesite.local/private/backups/20250623_000003-coffeesite_local-database.sql.gz         960.4KiB
+Backup for Site coffeesite.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_29a1b9c886bb7434 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _29a1b9c886bb7434 | /usr/bin/gzip >> ./coffeesite.local/private/backups/20250623_120004-coffeesite_local-database.sql.gz
+
+Backup Summary for coffeesite.local at 2025-06-23 12:00:11.282745
+Config  : ./coffeesite.local/private/backups/20250623_120004-coffeesite_local-site_config_backup.json 217.0B
+Database: ./coffeesite.local/private/backups/20250623_120004-coffeesite_local-database.sql.gz         968.6KiB
+Backup for Site coffeesite.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_29a1b9c886bb7434 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _29a1b9c886bb7434 | /usr/bin/gzip >> ./coffeesite.local/private/backups/20250624_120003-coffeesite_local-database.sql.gz
+
+Backup Summary for coffeesite.local at 2025-06-24 12:00:08.152175
+Config  : ./coffeesite.local/private/backups/20250624_120003-coffeesite_local-site_config_backup.json 217.0B
+Database: ./coffeesite.local/private/backups/20250624_120003-coffeesite_local-database.sql.gz         983.4KiB
+Backup for Site coffeesite.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_29a1b9c886bb7434 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _29a1b9c886bb7434 | /usr/bin/gzip >> ./coffeesite.local/private/backups/20250625_120004-coffeesite_local-database.sql.gz
+
+Backup Summary for coffeesite.local at 2025-06-25 12:00:12.749875
+Config  : ./coffeesite.local/private/backups/20250625_120004-coffeesite_local-site_config_backup.json 263.0B
+Database: ./coffeesite.local/private/backups/20250625_120004-coffeesite_local-database.sql.gz         1.1MiB
+Backup for Site coffeesite.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_29a1b9c886bb7434 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _29a1b9c886bb7434 | /usr/bin/gzip >> ./coffeesite.local/private/backups/20250626_120003-coffeesite_local-database.sql.gz
+
+Backup Summary for coffeesite.local at 2025-06-26 12:00:10.622670
+Config  : ./coffeesite.local/private/backups/20250626_120003-coffeesite_local-site_config_backup.json 263.0B
+Database: ./coffeesite.local/private/backups/20250626_120003-coffeesite_local-database.sql.gz         1.1MiB
+Backup for Site coffeesite.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_29a1b9c886bb7434 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _29a1b9c886bb7434 | /usr/bin/gzip >> ./coffeesite.local/private/backups/20250627_120004-coffeesite_local-database.sql.gz
+
+Backup Summary for coffeesite.local at 2025-06-27 12:00:13.426229
+Config  : ./coffeesite.local/private/backups/20250627_120004-coffeesite_local-site_config_backup.json 263.0B
+Database: ./coffeesite.local/private/backups/20250627_120004-coffeesite_local-database.sql.gz         1.1MiB
+Backup for Site coffeesite.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_29a1b9c886bb7434 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _29a1b9c886bb7434 | /usr/bin/gzip >> ./coffeesite.local/private/backups/20250629_000002-coffeesite_local-database.sql.gz
+
+Backup Summary for coffeesite.local at 2025-06-29 00:00:08.017526
+Config  : ./coffeesite.local/private/backups/20250629_000002-coffeesite_local-site_config_backup.json 263.0B
+Database: ./coffeesite.local/private/backups/20250629_000002-coffeesite_local-database.sql.gz         1.2MiB
+Backup for Site coffeesite.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_29a1b9c886bb7434 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _29a1b9c886bb7434 | /usr/bin/gzip >> ./coffeesite.local/private/backups/20250629_060003-coffeesite_local-database.sql.gz
+
+Backup Summary for coffeesite.local at 2025-06-29 06:00:08.766575
+Config  : ./coffeesite.local/private/backups/20250629_060003-coffeesite_local-site_config_backup.json 263.0B
+Database: ./coffeesite.local/private/backups/20250629_060003-coffeesite_local-database.sql.gz         1.2MiB
+Backup for Site coffeesite.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_29a1b9c886bb7434 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _29a1b9c886bb7434 | /usr/bin/gzip >> ./coffeesite.local/private/backups/20250629_120003-coffeesite_local-database.sql.gz
+
+Backup Summary for coffeesite.local at 2025-06-29 12:00:08.393068
+Config  : ./coffeesite.local/private/backups/20250629_120003-coffeesite_local-site_config_backup.json 263.0B
+Database: ./coffeesite.local/private/backups/20250629_120003-coffeesite_local-database.sql.gz         1.2MiB
+Backup for Site coffeesite.local has been successfully completed
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
+/bin/sh: 1: /home/sime/.local/bin/bench: not found
